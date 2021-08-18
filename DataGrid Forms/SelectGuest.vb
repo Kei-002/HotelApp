@@ -49,7 +49,7 @@ Public Class SelectGuest
         dt = New DataTable("Guests")
 
         sql = "SELECT guestID as ID, guestName as Guest, guestAddress as Address, guestAge as Age, guestPhone as PhoneNum,
-               guestEmail as Email FROM Guest"
+               guestEmail as Email FROM Guest WHERE Remarks = 'Available'"
 
         cmd = New OleDbCommand(sql, con)
         dr = cmd.ExecuteReader
@@ -77,7 +77,7 @@ Public Class SelectGuest
         Me.Close()
     End Sub
 
+    Private Sub dgList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgList.CellContentClick
 
-
-
+    End Sub
 End Class

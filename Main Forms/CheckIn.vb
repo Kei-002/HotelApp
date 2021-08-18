@@ -159,6 +159,7 @@ Public Class CheckIn
             MsgBox("Room set status failed")
         End If
 
+        SetGuestRemarks(guest_ID, "Checkin")
 
         clear_text()
 
@@ -166,47 +167,7 @@ Public Class CheckIn
     End Sub
 
     'Function for inserting the checkIn/Reservation
-    Private Function InsertGuestReservation(ByVal gID As Integer, ByVal rNum As Integer, ByVal rDate As Date,
-                                             ByVal cIN As Date, ByVal cOUT As Date, ByVal advPay As Decimal)
 
-        sql = "INSERT INTO Reservation(guestID, roomNum, reservationDate, checkIN, checkOUT, advancePayment)
-               VALUES  (@gID, @rNum, @rDate, @cIN, @cOUT, @advPay)"
-
-        cmd = New OleDbCommand(sql, con)
-
-        With cmd
-            .Parameters.AddWithValue("@gID", gID)
-            .Parameters.AddWithValue("@rNum", rNum)
-            .Parameters.AddWithValue("@rDate", rDate)
-            .Parameters.AddWithValue("@cIN", cIN)
-            .Parameters.AddWithValue("@cOUT", cOUT)
-            .Parameters.AddWithValue("@advPay", advPay)
-        End With
-
-        Dim i As Integer = cmd.ExecuteNonQuery
-
-        cmd.Dispose()
-
-        Return i
-    End Function
-
-    Public Function SetRoomStatus(ByVal roomNum As Integer, ByVal status As String)
-
-        sql1 = "UPDATE Rooms SET Status = @stat WHERE roomNum = @rNum"
-
-        cmd = New OleDbCommand(sql1, con)
-
-        With cmd
-            .Parameters.AddWithValue("@stat", status)
-            .Parameters.AddWithValue("@rNum", roomNum)
-        End With
-
-        Dim i As Integer = cmd.ExecuteNonQuery
-
-        cmd.Dispose()
-
-        Return i
-    End Function
 
     Private Sub clear_text()
         txtGuest.Clear()
@@ -222,5 +183,9 @@ Public Class CheckIn
 
         txtSubtotal.Clear()
         txtTotal.Clear()
+    End Sub
+
+    Private Sub cmdViewCheckIns_Click(sender As Object, e As EventArgs) Handles cmdViewCheckIns.Click
+        CurrentCheckIn.Show()
     End Sub
 End Class
