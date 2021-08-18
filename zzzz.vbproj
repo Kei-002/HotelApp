@@ -77,6 +77,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataGrid Forms\SelectGuest.Designer.vb">
+      <DependentUpon>SelectGuest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataGrid Forms\SelectGuest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataGrid Forms\SelectRoom.Designer.vb">
+      <DependentUpon>SelectRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataGrid Forms\SelectRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main Forms\CheckIn.Designer.vb">
       <DependentUpon>CheckIn.vb</DependentUpon>
     </Compile>
@@ -100,6 +112,12 @@
     </Compile>
     <Compile Include="Main Forms\Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Forms\Rooms.Designer.vb">
+      <DependentUpon>Rooms.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main Forms\Rooms.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -130,8 +148,20 @@
     <Compile Include="Sub Forms\AddCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Sub Forms\NewRoom.Designer.vb">
+      <DependentUpon>NewRoom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sub Forms\NewRoom.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DataGrid Forms\SelectGuest.resx">
+      <DependentUpon>SelectGuest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataGrid Forms\SelectRoom.resx">
+      <DependentUpon>SelectRoom.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main Forms\CheckIn.resx">
       <DependentUpon>CheckIn.vb</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +177,9 @@
     <EmbeddedResource Include="Main Forms\Reservation.resx">
       <DependentUpon>Reservation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main Forms\Rooms.resx">
+      <DependentUpon>Rooms.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -155,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sub Forms\AddCustomer.resx">
       <DependentUpon>AddCustomer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub Forms\NewRoom.resx">
+      <DependentUpon>NewRoom.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -175,8 +211,6 @@
   <ItemGroup>
     <None Include="Resources\default-CheckIn.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

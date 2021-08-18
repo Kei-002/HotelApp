@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Data.OleDb
 
 Public Class CheckIn
 #Region " Move Form "
@@ -45,13 +46,24 @@ Public Class CheckIn
 
 #End Region
 
+
     Private Sub CheckIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Guna2ShadowForm1.SetShadowForm(Me)
+        Dim time As DateTime = DateTime.Now
+
+        dtpCheckIn.Text = time
+        dtpCheckOut.Text = Now.AddDays(1D)
+
+
     End Sub
 
     Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
         Me.Close()
     End Sub
+
+
+
+
 
     Private Sub CheckIn_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         Dim exit_app As String = MsgBox("Cancel Transaction?", vbQuestion + vbYesNo, "Cancel Check In")
@@ -60,5 +72,155 @@ Public Class CheckIn
         Else
 
         End If
+    End Sub
+
+    Private Sub cmdSelectGuest_Click(sender As Object, e As EventArgs) Handles cmdSelectGuest.Click
+        SelectGuest.Show()
+    End Sub
+
+    Private Sub cmdSelectRoom_Click(sender As Object, e As EventArgs) Handles cmdSelectRoom.Click
+        SelectRoom.Show()
+    End Sub
+
+    Private Sub dtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckOut.ValueChanged
+        Dim T As TimeSpan = dtpCheckOut.Value - dtpCheckIn.Value
+        If T.Days < 1 Then
+            dtpCheckOut.Text = dtpCheckIn.Value.AddDays(1D)
+            txtNumDays.Text = "1"
+        Else
+            txtNumDays.Text = T.Days
+        End If
+
+        txtTotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
+        txtSubtotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
+
+    End Sub
+
+    Private Sub cmdMinusCount_Click(sender As Object, e As EventArgs) Handles cmdMinusCount.Click
+        totalOccupants = txtNumGuest.Text
+        maxOccupants = lblMaxOccu.Text
+
+        If totalOccupants > 0 Then
+            txtNumGuest.Text = txtNumGuest.Text - 1
+        End If
+    End Sub
+
+    Private Sub cmdAddCount_Click(sender As Object, e As EventArgs) Handles cmdAddCount.Click
+        totalOccupants = txtNumGuest.Text
+        maxOccupants = lblMaxOccu.Text
+
+        If totalOccupants < maxOccupants Then
+            txtNumGuest.Text = txtNumGuest.Text + 1
+        End If
+    End Sub
+
+    Private Sub txtNumGuest_TextChanged(sender As Object, e As EventArgs) Handles txtNumGuest.TextChanged
+
+
+        If txtNumGuest.Text = "" Or lblMaxOccu.Text = "" Then
+            totalOccupants = 0
+            maxOccupants = 0
+        Else
+            maxOccupants = lblMaxOccu.Text
+            totalOccupants = txtNumGuest.Text
+            If totalOccupants > maxOccupants Then
+                MsgBox("Num of Occupants exceeds maximum capacity of the room")
+                txtNumGuest.Text = 0
+            End If
+        End If
+
+
+    End Sub
+
+    Private Sub cmdCheckIn_Click(sender As Object, e As EventArgs) Handles cmdCheckIn.Click
+        Dim guest_ID As Integer = lblGuestID.Text
+        Dim room_Num As Integer = txtRoomNum.Text
+        Dim reserveDate As Date = Now.ToString("dd/MM/yyyy")
+        Dim inDate As Date = Now.ToString("dd/MM/yyyy")
+        Dim outDate As Date = dtpCheckOut.Value.ToString("dd/MM/yyyy")
+        Dim advancePay As Decimal = 0
+
+        checkOpen()
+
+
+        Dim i As Integer = InsertGuestReservation(guest_ID, room_Num, reserveDate, inDate, outDate, advancePay)
+        If i > 0 Then
+            MsgBox("Check In Complete. Enjoy your stay!")
+        Else
+            MsgBox("Check in failed. Try Again")
+        End If
+
+
+        Dim j As Integer = SetRoomStatus(room_Num, "Occupied")
+
+        If j > 0 Then
+            MsgBox("Room " + room_Num.ToString + " status set to Occupied")
+        Else
+            MsgBox("Room set status failed")
+        End If
+
+
+        clear_text()
+
+        con.Close()
+    End Sub
+
+    'Function for inserting the checkIn/Reservation
+    Private Function InsertGuestReservation(ByVal gID As Integer, ByVal rNum As Integer, ByVal rDate As Date,
+                                             ByVal cIN As Date, ByVal cOUT As Date, ByVal advPay As Decimal)
+
+        sql = "INSERT INTO Reservation(guestID, roomNum, reservationDate, checkIN, checkOUT, advancePayment)
+               VALUES  (@gID, @rNum, @rDate, @cIN, @cOUT, @advPay)"
+
+        cmd = New OleDbCommand(sql, con)
+
+        With cmd
+            .Parameters.AddWithValue("@gID", gID)
+            .Parameters.AddWithValue("@rNum", rNum)
+            .Parameters.AddWithValue("@rDate", rDate)
+            .Parameters.AddWithValue("@cIN", cIN)
+            .Parameters.AddWithValue("@cOUT", cOUT)
+            .Parameters.AddWithValue("@advPay", advPay)
+        End With
+
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+        cmd.Dispose()
+
+        Return i
+    End Function
+
+    Public Function SetRoomStatus(ByVal roomNum As Integer, ByVal status As String)
+
+        sql1 = "UPDATE Rooms SET Status = @stat WHERE roomNum = @rNum"
+
+        cmd = New OleDbCommand(sql1, con)
+
+        With cmd
+            .Parameters.AddWithValue("@stat", status)
+            .Parameters.AddWithValue("@rNum", roomNum)
+        End With
+
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+        cmd.Dispose()
+
+        Return i
+    End Function
+
+    Private Sub clear_text()
+        txtGuest.Clear()
+        txtNumDays.Text = 1
+        txtRoomNum.Clear()
+        txtRoomType.Clear()
+        txtRate.Clear()
+        txtNumGuest.Text = 0
+        lblMaxOccu.Text = "X"
+
+        dtpCheckIn.Value = Now
+        dtpCheckOut.Text = Now.AddDays(1D)
+
+        txtSubtotal.Clear()
+        txtTotal.Clear()
     End Sub
 End Class

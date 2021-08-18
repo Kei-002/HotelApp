@@ -69,25 +69,23 @@ Public Class Main
     End Sub
 
     Private Sub cmdCheckIn_Click(sender As Object, e As EventArgs) Handles cmdCheckIn.Click
-        Dim cIN As New CheckIn
-        cIN.Show()
+        CheckIn.Show()
     End Sub
 
     Private Sub cmdCheckOut_Click(sender As Object, e As EventArgs) Handles cmdCheckOut.Click
-        Dim cOut As New CheckIn
-        cOut.Show()
+        CheckOut.Show()
     End Sub
 
     Private Sub cmdReservation_Click(sender As Object, e As EventArgs) Handles cmdReservation.Click
-        Dim reserveR As New Reservation
-
-        reserveR.Show()
+        Reservation.Show()
 
     End Sub
 
     Private Sub cmdGuest_Click(sender As Object, e As EventArgs) Handles cmdGuest.Click
-        Dim gList As New Guests
+        Guests.Show()
+    End Sub
 
-        gList.Show()
+    Private Sub cmdRoom_Click(sender As Object, e As EventArgs) Handles cmdRoom.Click
+        Rooms.Show()
     End Sub
 End Class
