@@ -65,6 +65,7 @@ Public Class CheckOut
         cmbType.SelectedIndex = 0
     End Sub
 
+
     Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
         Me.Close()
     End Sub
@@ -99,7 +100,7 @@ Public Class CheckOut
             gCash = 0
         Else
             gCash = txtCash.Text
-            txtChange.Text = gCash - CDec(txtTotal.Text)
+            txtChange.Text = gCash - Val(txtTotal.Text)
 
         End If
     End Sub
@@ -125,7 +126,7 @@ Public Class CheckOut
             txtChange.Text = 0
         Else
             gCash = txtCash.Text
-            txtChange.Text = CDec(txtTotal.Text) - gCash
+            txtChange.Text = Val(txtTotal.Text) - gCash
 
             Dim i As Integer = InsertIntoPayment(guestID, payDesc, payTID, payDate, payAmount)
 
@@ -184,5 +185,6 @@ Public Class CheckOut
         txtCash.Text = 0
         txtChange.Text = 0
     End Sub
+
 
 End Class

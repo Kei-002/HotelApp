@@ -72,12 +72,12 @@ Public Class SelectGuest
         CheckIn.txtGuest.Text = Me.dgList.CurrentRow.Cells("Guest").Value
 
         Reservation.txtGuest.Text = Me.dgList.CurrentRow.Cells("Guest").Value
-
+        Reservation.lblGuestID.Text = Me.dgList.CurrentRow.Cells("ID").Value
         dt.Clear()
         Me.Close()
     End Sub
 
-    Private Sub dgList_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgList.CellContentClick
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
 
     End Sub
 End Class

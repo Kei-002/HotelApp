@@ -81,42 +81,6 @@ Public Class Rooms
         dgGuests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
 
-    'Private Sub dgGuests_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles dgGuests.MouseDoubleClick
-    '    txtRoomID.Text = Me.dgGuests.CurrentRow.Cells("RoomID").Value
-    '    cmbTypes.SelectedItem = Me.dgGuests.CurrentRow.Cells("RoomDesc").Value
-    '    txtNumOccu.Text = Me.dgGuests.CurrentRow.Cells("NumOccupants").Value
-    '    If Me.dgGuests.CurrentRow.Cells("roomStatus").Value = "Available" Then
-    '        rbAvail.Checked = True
-    '    Else
-    '        rbOccu.Checked = True
-    '    End If
-
-    'End Sub
-
-    'Private Sub rbAvail_CheckedChanged(sender As Object, e As EventArgs)
-    '    If rbAvail.Checked = True Then
-    '        txtNumOccu.Text = 0
-    '    Else
-    '        txtNumOccu.Text = Me.dgGuests.CurrentRow.Cells("NumOccupants").Value
-    '    End If
-    'End Sub
-
-
-
-    'Private Sub cmbTypes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTypes.SelectedIndexChanged
-    '    checkOpen()
-
-    '    sql = "SELECT Capacity FROM RoomType WHERE RoomDesc = @rDesc"
-    '    cmd = New OleDbCommand(sql, con)
-    '    cmd.Parameters.AddWithValue("@rDesc", cmbTypes.SelectedItem)
-
-    '    dr = cmd.ExecuteReader
-    '    While dr.Read
-    '        txtOccu.Text = dr(0)
-    '    End While
-
-    '    con.Close()
-    'End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         ''con.ConnectionString = dbcon

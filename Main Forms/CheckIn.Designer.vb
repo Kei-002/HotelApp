@@ -364,7 +364,7 @@ Partial Class CheckIn
         Me.txtNumGuest.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.txtNumGuest.BorderRadius = 14
         Me.txtNumGuest.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtNumGuest.DefaultText = "0"
+        Me.txtNumGuest.DefaultText = "1"
         Me.txtNumGuest.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.txtNumGuest.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.txtNumGuest.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -381,7 +381,6 @@ Partial Class CheckIn
         Me.txtNumGuest.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNumGuest.PlaceholderText = ""
         Me.txtNumGuest.SelectedText = ""
-        Me.txtNumGuest.SelectionStart = 1
         Me.txtNumGuest.ShadowDecoration.Parent = Me.txtNumGuest
         Me.txtNumGuest.Size = New System.Drawing.Size(125, 31)
         Me.txtNumGuest.TabIndex = 19

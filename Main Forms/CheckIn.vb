@@ -100,7 +100,7 @@ Public Class CheckIn
         totalOccupants = txtNumGuest.Text
         maxOccupants = lblMaxOccu.Text
 
-        If totalOccupants > 0 Then
+        If totalOccupants > 1 Then
             txtNumGuest.Text = txtNumGuest.Text - 1
         End If
     End Sub
@@ -125,7 +125,7 @@ Public Class CheckIn
             totalOccupants = txtNumGuest.Text
             If totalOccupants > maxOccupants Then
                 MsgBox("Num of Occupants exceeds maximum capacity of the room")
-                txtNumGuest.Text = 0
+                txtNumGuest.Text = 1
             End If
         End If
 
@@ -139,11 +139,12 @@ Public Class CheckIn
         Dim inDate As Date = Now.ToString("dd/MM/yyyy")
         Dim outDate As Date = dtpCheckOut.Value.ToString("dd/MM/yyyy")
         Dim advancePay As Decimal = 0
+        Dim reserveDesc As String = "Checkin"
 
         checkOpen()
 
 
-        Dim i As Integer = InsertGuestReservation(guest_ID, room_Num, reserveDate, inDate, outDate, advancePay)
+        Dim i As Integer = InsertGuestReservation(guest_ID, room_Num, reserveDesc, reserveDate, inDate, outDate, advancePay)
         If i > 0 Then
             MsgBox("Check In Complete. Enjoy your stay!")
         Else
@@ -166,7 +167,7 @@ Public Class CheckIn
         con.Close()
     End Sub
 
-    'Function for inserting the checkIn/Reservation
+
 
 
     Private Sub clear_text()
