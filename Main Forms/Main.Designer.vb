@@ -24,9 +24,6 @@ Partial Class Main
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.cmdMinimize = New Guna.UI2.WinForms.Guna2CircleButton()
-        Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.cmdFeedback = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdServices = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdRoom = New Guna.UI2.WinForms.Guna2Button()
@@ -34,7 +31,10 @@ Partial Class Main
         Me.cmdReservation = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdCheckOut = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdCheckIn = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.cmdMinimize = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -60,48 +60,6 @@ Partial Class Main
         Me.Guna2Panel1.ShadowDecoration.Shadow = New System.Windows.Forms.Padding(0, 0, 3, 0)
         Me.Guna2Panel1.Size = New System.Drawing.Size(196, 670)
         Me.Guna2Panel1.TabIndex = 0
-        '
-        'Guna2Panel2
-        '
-        Me.Guna2Panel2.Controls.Add(Me.PictureBox1)
-        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel2.Name = "Guna2Panel2"
-        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(196, 153)
-        Me.Guna2Panel2.TabIndex = 1
-        '
-        'cmdMinimize
-        '
-        Me.cmdMinimize.CheckedState.Parent = Me.cmdMinimize
-        Me.cmdMinimize.CustomImages.Parent = Me.cmdMinimize
-        Me.cmdMinimize.FillColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(198, Byte), Integer))
-        Me.cmdMinimize.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdMinimize.ForeColor = System.Drawing.Color.White
-        Me.cmdMinimize.HoverState.Parent = Me.cmdMinimize
-        Me.cmdMinimize.Location = New System.Drawing.Point(963, 12)
-        Me.cmdMinimize.Name = "cmdMinimize"
-        Me.cmdMinimize.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.cmdMinimize.ShadowDecoration.Parent = Me.cmdMinimize
-        Me.cmdMinimize.Size = New System.Drawing.Size(20, 20)
-        Me.cmdMinimize.TabIndex = 2
-        Me.cmdMinimize.Text = "-"
-        '
-        'cmdCLose
-        '
-        Me.cmdCLose.CheckedState.Parent = Me.cmdCLose
-        Me.cmdCLose.CustomImages.Parent = Me.cmdCLose
-        Me.cmdCLose.FillColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.cmdCLose.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdCLose.ForeColor = System.Drawing.Color.White
-        Me.cmdCLose.HoverState.Parent = Me.cmdCLose
-        Me.cmdCLose.Location = New System.Drawing.Point(989, 12)
-        Me.cmdCLose.Name = "cmdCLose"
-        Me.cmdCLose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.cmdCLose.ShadowDecoration.Parent = Me.cmdCLose
-        Me.cmdCLose.Size = New System.Drawing.Size(20, 20)
-        Me.cmdCLose.TabIndex = 3
-        Me.cmdCLose.Text = "X"
         '
         'cmdFeedback
         '
@@ -278,6 +236,16 @@ Partial Class Main
         Me.cmdCheckIn.TabIndex = 1
         Me.cmdCheckIn.Text = "Check In"
         '
+        'Guna2Panel2
+        '
+        Me.Guna2Panel2.Controls.Add(Me.PictureBox1)
+        Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel2.Name = "Guna2Panel2"
+        Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
+        Me.Guna2Panel2.Size = New System.Drawing.Size(196, 153)
+        Me.Guna2Panel2.TabIndex = 1
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.zzzz.My.Resources.Resources.customehtd
@@ -287,6 +255,38 @@ Partial Class Main
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'cmdMinimize
+        '
+        Me.cmdMinimize.CheckedState.Parent = Me.cmdMinimize
+        Me.cmdMinimize.CustomImages.Parent = Me.cmdMinimize
+        Me.cmdMinimize.FillColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(198, Byte), Integer))
+        Me.cmdMinimize.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdMinimize.ForeColor = System.Drawing.Color.White
+        Me.cmdMinimize.HoverState.Parent = Me.cmdMinimize
+        Me.cmdMinimize.Location = New System.Drawing.Point(963, 12)
+        Me.cmdMinimize.Name = "cmdMinimize"
+        Me.cmdMinimize.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.cmdMinimize.ShadowDecoration.Parent = Me.cmdMinimize
+        Me.cmdMinimize.Size = New System.Drawing.Size(20, 20)
+        Me.cmdMinimize.TabIndex = 2
+        Me.cmdMinimize.Text = "-"
+        '
+        'cmdCLose
+        '
+        Me.cmdCLose.CheckedState.Parent = Me.cmdCLose
+        Me.cmdCLose.CustomImages.Parent = Me.cmdCLose
+        Me.cmdCLose.FillColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.cmdCLose.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdCLose.ForeColor = System.Drawing.Color.White
+        Me.cmdCLose.HoverState.Parent = Me.cmdCLose
+        Me.cmdCLose.Location = New System.Drawing.Point(989, 12)
+        Me.cmdCLose.Name = "cmdCLose"
+        Me.cmdCLose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.cmdCLose.ShadowDecoration.Parent = Me.cmdCLose
+        Me.cmdCLose.Size = New System.Drawing.Size(20, 20)
+        Me.cmdCLose.TabIndex = 3
+        Me.cmdCLose.Text = "X"
         '
         'Main
         '

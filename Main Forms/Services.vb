@@ -51,7 +51,7 @@ Public Class Services
         sql = "SELECT G.guestID as ID, guestName as Guest, R.roomNum as RoomNum, NumOfOccupants as GuestsInRoom
               FROM Guest G, Reservation RV, Rooms R
               WHERE G.guestID = RV.guestID AND RV.roomNum = R.roomNum AND Remarks = 'Checkin' and reserveStatus = 'Active'
-              SORT BY G.guestID"
+              "
 
         cmd = New OleDbCommand(sql, con)
         dr = cmd.ExecuteReader
@@ -68,5 +68,65 @@ Public Class Services
 
     Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
         Me.Close()
+    End Sub
+
+    Private Sub cmdRoomService_Click(sender As Object, e As EventArgs) Handles cmdRoomService.Click
+        Dim prompt As String = MsgBox("Avail room service?", vbQuestion + vbYesNo, "Avail")
+        If prompt = vbNo Then
+            MsgBox("Canceled")
+        Else
+            AvailService.txtGuestName.Text = Me.dgCheckedIn.CurrentRow.Cells("Guest").Value
+            AvailService.txtRoomNum.Text = Me.dgCheckedIn.CurrentRow.Cells("RoomNum").Value
+            AvailService.txtGuestID.Text = Me.dgCheckedIn.CurrentRow.Cells("ID").Value
+            AvailService.txtOccu.Text = Me.dgCheckedIn.CurrentRow.Cells("GuestsInRoom").Value
+            'AvailService.cmbServices.SelectedItem = ""
+            AvailService.Show()
+            AvailService.cmbServices.SelectedItem = "Room Service"
+        End If
+    End Sub
+
+    Private Sub cmdCleaning_Click(sender As Object, e As EventArgs) Handles cmdCleaning.Click
+        Dim prompt As String = MsgBox("Avail Cleaning service?", vbQuestion + vbYesNo, "Avail")
+        If prompt = vbNo Then
+            MsgBox("Canceled")
+        Else
+            AvailService.txtGuestName.Text = Me.dgCheckedIn.CurrentRow.Cells("Guest").Value
+            AvailService.txtRoomNum.Text = Me.dgCheckedIn.CurrentRow.Cells("RoomNum").Value
+            AvailService.txtGuestID.Text = Me.dgCheckedIn.CurrentRow.Cells("ID").Value
+            AvailService.txtOccu.Text = Me.dgCheckedIn.CurrentRow.Cells("GuestsInRoom").Value
+            'AvailService.cmbServices.SelectedItem = ""
+            AvailService.Show()
+            AvailService.cmbServices.SelectedItem = "Cleaning Service"
+        End If
+    End Sub
+
+    Private Sub cmdDoctor_Click(sender As Object, e As EventArgs) Handles cmdDoctor.Click
+        Dim prompt As String = MsgBox("Avail Doctor on Call Service?", vbQuestion + vbYesNo, "Avail")
+        If prompt = vbNo Then
+            MsgBox("Canceled")
+        Else
+            AvailService.txtGuestName.Text = Me.dgCheckedIn.CurrentRow.Cells("Guest").Value
+            AvailService.txtRoomNum.Text = Me.dgCheckedIn.CurrentRow.Cells("RoomNum").Value
+            AvailService.txtGuestID.Text = Me.dgCheckedIn.CurrentRow.Cells("ID").Value
+            AvailService.txtOccu.Text = Me.dgCheckedIn.CurrentRow.Cells("GuestsInRoom").Value
+            'AvailService.cmbServices.SelectedItem = ""
+            AvailService.Show()
+            AvailService.cmbServices.SelectedItem = "Doctor On Call"
+        End If
+    End Sub
+
+    Private Sub cmdLaundry_Click(sender As Object, e As EventArgs) Handles cmdLaundry.Click
+        Dim prompt As String = MsgBox("Avail Laundry service?", vbQuestion + vbYesNo, "Avail")
+        If prompt = vbNo Then
+            MsgBox("Canceled")
+        Else
+            AvailService.txtGuestName.Text = Me.dgCheckedIn.CurrentRow.Cells("Guest").Value
+            AvailService.txtRoomNum.Text = Me.dgCheckedIn.CurrentRow.Cells("RoomNum").Value
+            AvailService.txtGuestID.Text = Me.dgCheckedIn.CurrentRow.Cells("ID").Value
+            AvailService.txtOccu.Text = Me.dgCheckedIn.CurrentRow.Cells("GuestsInRoom").Value
+            'AvailService.cmbServices.SelectedItem = ""
+            AvailService.Show()
+            AvailService.cmbServices.SelectedItem = "Laundry Service"
+        End If
     End Sub
 End Class

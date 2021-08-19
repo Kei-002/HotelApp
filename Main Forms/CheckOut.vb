@@ -175,6 +175,11 @@ Public Class CheckOut
 
 
         con.Close()
+
+        CustomerFeedback.lblGuestID.Text = guestID
+        CustomerFeedback.txtGuestName.Text = txtGuest.Text
+        CustomerFeedback.ShowDialog()
+
         clear_text()
     End Sub
 

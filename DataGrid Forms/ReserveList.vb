@@ -125,6 +125,7 @@ Public Class ReserveList
             MsgBox(ex.ToString)
         End Try
         con.Close()
+        Call ReserveList_Load(sender, e)
     End Sub
 
     Private Sub cmdCancel_Click(sender As Object, e As EventArgs) Handles cmdCancel.Click
@@ -156,7 +157,6 @@ Public Class ReserveList
         End If
 
 
-
         Dim k As Integer = SetGuestRemarks(guest_ID, myStatus)
         If k > 0 Then
             MsgBox("Guest set to Available")
@@ -166,5 +166,7 @@ Public Class ReserveList
         End If
 
         con.Close()
+
+        Call ReserveList_Load(sender, e)
     End Sub
 End Class

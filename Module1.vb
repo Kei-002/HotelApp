@@ -174,5 +174,27 @@ Module Module1
 
     End Function
 
+    Public Function InsertIntoServices(ByVal serviceDesc As String, ByVal guestID As Integer, ByVal serviceFee As Decimal, ByVal empID As Integer)
+        sql = "INSERT INTO Services(serviceDesc, guestID, serviceFee, employeeID)
+               VALUES  (@serDesc, @gID, @serFee, @empID)"
+
+        cmd = New OleDbCommand(sql, con)
+
+        With cmd
+            .Parameters.AddWithValue("@serDesc", serviceDesc)
+            .Parameters.AddWithValue("@gID", guestID)
+            .Parameters.AddWithValue("@serFee", serviceFee)
+            .Parameters.AddWithValue("@empID", empID)
+        End With
+
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+        cmd.Dispose()
+
+        Return i
+
+    End Function
+
+
 End Module
 

@@ -178,6 +178,12 @@
     <Compile Include="Main Forms\CheckOut.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Main Forms\Feedback.Designer.vb">
+      <DependentUpon>Feedback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main Forms\Feedback.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main Forms\Guests.Designer.vb">
       <DependentUpon>Guests.vb</DependentUpon>
     </Compile>
@@ -226,6 +232,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Sub Forms\AvailService.Designer.vb">
+      <DependentUpon>AvailService.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sub Forms\AvailService.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sub Forms\CustomerFeedback.Designer.vb">
+      <DependentUpon>CustomerFeedback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sub Forms\CustomerFeedback.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Sub Forms\NewRoom.Designer.vb">
       <DependentUpon>NewRoom.vb</DependentUpon>
     </Compile>
@@ -259,6 +277,9 @@
     <EmbeddedResource Include="Main Forms\CheckOut.resx">
       <DependentUpon>CheckOut.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Main Forms\Feedback.resx">
+      <DependentUpon>Feedback.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main Forms\Guests.resx">
       <DependentUpon>Guests.vb</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +300,12 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub Forms\AvailService.resx">
+      <DependentUpon>AvailService.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub Forms\CustomerFeedback.resx">
+      <DependentUpon>CustomerFeedback.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sub Forms\NewRoom.resx">
       <DependentUpon>NewRoom.vb</DependentUpon>
@@ -342,6 +369,126 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\traveler.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-button %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer-review.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-avail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-available.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-check-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-check-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-customer-review.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-guest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-occu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-occupied.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-reservation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-reserved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\def-room-service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dguest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loupe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnifying-glass %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-available.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-check-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-check-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-guest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-occupied.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-reservation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-reserved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\on-room.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reserved.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\room-service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting-lines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting-lines1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transparency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updated %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\where.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

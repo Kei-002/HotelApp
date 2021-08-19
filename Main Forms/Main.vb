@@ -69,30 +69,44 @@ Public Class Main
     End Sub
 
     Private Sub cmdCheckIn_Click(sender As Object, e As EventArgs) Handles cmdCheckIn.Click
-        CheckIn.Show()
+        cmdCheckIn.Checked = True
+        CheckIn.ShowDialog()
+        cmdCheckIn.Checked = False
     End Sub
 
     Private Sub cmdCheckOut_Click(sender As Object, e As EventArgs) Handles cmdCheckOut.Click
-        CheckOut.Show()
+        cmdCheckOut.Checked = True
+        CheckOut.ShowDialog()
+        cmdCheckOut.Checked = False
     End Sub
 
     Private Sub cmdReservation_Click(sender As Object, e As EventArgs) Handles cmdReservation.Click
-
-        Reservation.Show()
-
+        cmdReservation.Checked = True
+        Reservation.ShowDialog()
+        cmdReservation.Checked = False
     End Sub
 
     Private Sub cmdGuest_Click(sender As Object, e As EventArgs) Handles cmdGuest.Click
-        Guests.Show()
+        cmdGuest.Checked = True
+        Guests.ShowDialog()
+        cmdGuest.Checked = False
     End Sub
 
     Private Sub cmdRoom_Click(sender As Object, e As EventArgs) Handles cmdRoom.Click
-        Rooms.Show()
+        cmdRoom.Checked = True
+        Rooms.ShowDialog()
+        cmdRoom.Checked = False
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles cmdServices.Click
+    Private Sub cmdServices_Click(sender As Object, e As EventArgs) Handles cmdServices.Click
         cmdServices.Checked = True
         Services.ShowDialog()
         cmdServices.Checked = False
+    End Sub
+
+    Private Sub cmdFeedback_Click(sender As Object, e As EventArgs) Handles cmdFeedback.Click
+        cmdFeedback.Checked = True
+        Feedback.ShowDialog()
+        cmdFeedback.Checked = False
     End Sub
 End Class
