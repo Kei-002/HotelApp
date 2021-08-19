@@ -92,7 +92,7 @@ Public Class Main
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles cmdServices.Click
         cmdServices.Checked = True
-        Rooms.ShowDialog()
+        Services.ShowDialog()
         cmdServices.Checked = False
     End Sub
 End Class
