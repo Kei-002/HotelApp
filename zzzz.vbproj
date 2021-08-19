@@ -48,14 +48,23 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI2">
       <HintPath>..\..\..\Documents\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -77,6 +86,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalForms\RoomReportForm.Designer.vb">
+      <DependentUpon>RoomReportForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalForms\RoomReportForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystals\RoomReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataGrid Forms\CurrentCheckIn.Designer.vb">
       <DependentUpon>CurrentCheckIn.vb</DependentUpon>
     </Compile>
@@ -100,6 +121,11 @@
     </Compile>
     <Compile Include="DataGrid Forms\SelectRoom.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSets\ReportData.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportData.xsd</DependentUpon>
     </Compile>
     <Compile Include="Main Forms\CheckIn.Designer.vb">
       <DependentUpon>CheckIn.vb</DependentUpon>
@@ -143,6 +169,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -162,6 +189,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalForms\RoomReportForm.resx">
+      <DependentUpon>RoomReportForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystals\RoomReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RoomReport.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataGrid Forms\CurrentCheckIn.resx">
       <DependentUpon>CurrentCheckIn.vb</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +237,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSets\ReportData.xsc">
+      <DependentUpon>ReportData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ReportData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportData.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSets\ReportData.xss">
+      <DependentUpon>ReportData.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -219,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\default-CheckIn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
