@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CheckOut
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class CheckOut
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CheckOut))
@@ -62,9 +62,9 @@ Partial Class CheckOut
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblGuestID = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.txtSubtotal = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.lblReserveID = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.txtSubtotal = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2ShadowPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -710,6 +710,27 @@ Partial Class CheckOut
         Me.Panel1.Size = New System.Drawing.Size(737, 390)
         Me.Panel1.TabIndex = 74
         '
+        'lblReserveID
+        '
+        Me.lblReserveID.AutoSize = True
+        Me.lblReserveID.BackColor = System.Drawing.Color.Transparent
+        Me.lblReserveID.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReserveID.Location = New System.Drawing.Point(136, 11)
+        Me.lblReserveID.Name = "lblReserveID"
+        Me.lblReserveID.Size = New System.Drawing.Size(0, 17)
+        Me.lblReserveID.TabIndex = 41
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(474, 99)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(57, 17)
+        Me.Label16.TabIndex = 42
+        Me.Label16.Text = "Subtotal:"
+        '
         'txtSubtotal
         '
         Me.txtSubtotal.AutoRoundedCorners = True
@@ -737,27 +758,6 @@ Partial Class CheckOut
         Me.txtSubtotal.Size = New System.Drawing.Size(125, 31)
         Me.txtSubtotal.TabIndex = 52
         Me.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(474, 99)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(57, 17)
-        Me.Label16.TabIndex = 42
-        Me.Label16.Text = "Subtotal:"
-        '
-        'lblReserveID
-        '
-        Me.lblReserveID.AutoSize = True
-        Me.lblReserveID.BackColor = System.Drawing.Color.Transparent
-        Me.lblReserveID.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblReserveID.Location = New System.Drawing.Point(136, 11)
-        Me.lblReserveID.Name = "lblReserveID"
-        Me.lblReserveID.Size = New System.Drawing.Size(0, 17)
-        Me.lblReserveID.TabIndex = 41
         '
         'CheckOut
         '

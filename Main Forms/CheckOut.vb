@@ -116,6 +116,7 @@ Public Class CheckOut
         Dim payTID As Integer = CInt(payType(0))
         Dim payDate As Date = Now.ToString("dd/MM/yyyy")
         Dim payAmount As Decimal = txtTotal.Text
+        Dim reserveID As Integer = lblReserveID.Text
 
         checkOpen()
 
@@ -156,6 +157,16 @@ Public Class CheckOut
             If k > 0 Then
 
                 MsgBox("Room " + roomNum.ToString + " set to Available")
+
+            Else
+                MsgBox("Room set failed")
+            End If
+
+            Dim l As Integer = SetReservationStatus(reserveID, "Inactive")
+
+            If l > 0 Then
+
+                MsgBox("Reservation set to inactive")
 
             Else
                 MsgBox("Room set failed")

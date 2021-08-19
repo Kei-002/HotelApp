@@ -35,10 +35,10 @@ Module Module1
     ''' Inserts the info to Reservation Table
     ''' </summary>
     Public Function InsertGuestReservation(ByVal gID As Integer, ByVal rNum As Integer, ByVal rDesc As String, ByVal rDate As Date,
-                                           ByVal cIN As Date, ByVal cOUT As Date, ByVal advPay As Decimal)
+                                           ByVal cIN As Date, ByVal cOUT As Date, ByVal advPay As Decimal, ByVal reStatus As String)
 
-        sql = "INSERT INTO Reservation(guestID, roomNum, reservationDesc,reservationDate, checkIN, checkOUT, advancePayment)
-               VALUES  (@gID, @rNum,@rDesc , @rDate, @cIN, @cOUT, @advPay)"
+        sql = "INSERT INTO Reservation(guestID, roomNum, reservationDesc,reservationDate, checkIN, checkOUT, advancePayment, reserveStatus)
+               VALUES  (@gID, @rNum,@rDesc , @rDate, @cIN, @cOUT, @advPay, @rStatus)"
 
         cmd = New OleDbCommand(sql, con)
 
@@ -50,6 +50,7 @@ Module Module1
             .Parameters.AddWithValue("@cIN", cIN)
             .Parameters.AddWithValue("@cOUT", cOUT)
             .Parameters.AddWithValue("@advPay", advPay)
+            .Parameters.AddWithValue("rStatus", reStatus)
         End With
 
         Dim i As Integer = cmd.ExecuteNonQuery
@@ -62,13 +63,14 @@ Module Module1
     ''' <summary>
     ''' Updates the Reservation Info based on the reservationID
     ''' </summary>
-    Public Function UpdateGuestReservation(ByVal reserveID As Integer, ByVal rDesc As String)
+    Public Function UpdateGuestReservation(ByVal reserveID As Integer, ByVal rDesc As String, ByVal rStat As String)
 
-        sql = "UPDATE Reservation SET reservationDesc = @rDesc WHERE reservationID = @reID"
+        sql = "UPDATE Reservation SET reservationDesc = @rDesc, reserveStatus = @rStat WHERE reservationID = @reID"
         cmd = New OleDbCommand(sql, con)
 
         With cmd
             .Parameters.AddWithValue("@rDesc", rDesc)
+            .Parameters.AddWithValue("@rStat", rStat)
             .Parameters.AddWithValue("@reID", reserveID)
         End With
         Dim i As Integer = cmd.ExecuteNonQuery
@@ -152,6 +154,25 @@ Module Module1
 
     End Function
 
+    Public Function SetReservationStatus(ByVal reID As Integer, ByVal reStatus As String)
+
+        sql = "UPDATE Reservation SET reserveStatus = @reStat WHERE reservationID = @rID"
+
+        cmd = New OleDbCommand(sql, con)
+
+        With cmd
+            .Parameters.AddWithValue("@reStat", reStatus)
+            .Parameters.AddWithValue("@rID", reID)
+        End With
+
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+
+        cmd.Dispose()
+
+        Return i
+
+    End Function
 
 End Module
 

@@ -77,6 +77,7 @@ Public Class Main
     End Sub
 
     Private Sub cmdReservation_Click(sender As Object, e As EventArgs) Handles cmdReservation.Click
+
         Reservation.Show()
 
     End Sub
@@ -87,5 +88,11 @@ Public Class Main
 
     Private Sub cmdRoom_Click(sender As Object, e As EventArgs) Handles cmdRoom.Click
         Rooms.Show()
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles cmdServices.Click
+        cmdServices.Checked = True
+        Rooms.ShowDialog()
+        cmdServices.Checked = False
     End Sub
 End Class

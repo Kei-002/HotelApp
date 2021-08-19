@@ -90,7 +90,7 @@ Public Class ReserveList
             checkOpen()
 
 
-            Dim i As Integer = UpdateGuestReservation(reserveID, myStatus)
+            Dim i As Integer = UpdateGuestReservation(reserveID, myStatus, "Active")
 
             If i > 0 Then
                 MsgBox("Customer reservation successfully checked in")
@@ -137,7 +137,7 @@ Public Class ReserveList
         Dim numGuest As Integer = Me.dgList.CurrentRow.Cells("GuestsInRoom").Value
         Dim myStatus As String = "Available"
 
-        Dim i As Integer = UpdateGuestReservation(reserveID, "Cancelled")
+        Dim i As Integer = UpdateGuestReservation(reserveID, "Canceled", "Inactive")
 
         If i > 0 Then
             MsgBox("Customer reservation successfully cancelled")

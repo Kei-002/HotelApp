@@ -27,6 +27,8 @@ Partial Class Main
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.cmdMinimize = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.cmdFeedback = New Guna.UI2.WinForms.Guna2Button()
+        Me.cmdServices = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdRoom = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdGuest = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdReservation = New Guna.UI2.WinForms.Guna2Button()
@@ -41,6 +43,8 @@ Partial Class Main
         'Guna2Panel1
         '
         Me.Guna2Panel1.BackColor = System.Drawing.Color.White
+        Me.Guna2Panel1.Controls.Add(Me.cmdFeedback)
+        Me.Guna2Panel1.Controls.Add(Me.cmdServices)
         Me.Guna2Panel1.Controls.Add(Me.cmdRoom)
         Me.Guna2Panel1.Controls.Add(Me.cmdGuest)
         Me.Guna2Panel1.Controls.Add(Me.cmdReservation)
@@ -64,7 +68,7 @@ Partial Class Main
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.ShadowDecoration.Parent = Me.Guna2Panel2
-        Me.Guna2Panel2.Size = New System.Drawing.Size(196, 176)
+        Me.Guna2Panel2.Size = New System.Drawing.Size(196, 153)
         Me.Guna2Panel2.TabIndex = 1
         '
         'cmdMinimize
@@ -99,9 +103,60 @@ Partial Class Main
         Me.cmdCLose.TabIndex = 3
         Me.cmdCLose.Text = "X"
         '
+        'cmdFeedback
+        '
+        Me.cmdFeedback.CheckedState.ForeColor = System.Drawing.Color.Black
+        Me.cmdFeedback.CheckedState.Image = CType(resources.GetObject("cmdFeedback.CheckedState.Image"), System.Drawing.Image)
+        Me.cmdFeedback.CheckedState.Parent = Me.cmdFeedback
+        Me.cmdFeedback.CustomImages.Parent = Me.cmdFeedback
+        Me.cmdFeedback.Dock = System.Windows.Forms.DockStyle.Top
+        Me.cmdFeedback.FillColor = System.Drawing.Color.Transparent
+        Me.cmdFeedback.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdFeedback.ForeColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.cmdFeedback.HoverState.FillColor = System.Drawing.Color.Transparent
+        Me.cmdFeedback.HoverState.ForeColor = System.Drawing.Color.Black
+        Me.cmdFeedback.HoverState.Image = CType(resources.GetObject("cmdFeedback.HoverState.Image"), System.Drawing.Image)
+        Me.cmdFeedback.HoverState.Parent = Me.cmdFeedback
+        Me.cmdFeedback.Image = CType(resources.GetObject("cmdFeedback.Image"), System.Drawing.Image)
+        Me.cmdFeedback.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.cmdFeedback.ImageOffset = New System.Drawing.Point(0, -3)
+        Me.cmdFeedback.ImageSize = New System.Drawing.Size(30, 30)
+        Me.cmdFeedback.Location = New System.Drawing.Point(0, 507)
+        Me.cmdFeedback.Name = "cmdFeedback"
+        Me.cmdFeedback.ShadowDecoration.Parent = Me.cmdFeedback
+        Me.cmdFeedback.Size = New System.Drawing.Size(196, 59)
+        Me.cmdFeedback.TabIndex = 7
+        Me.cmdFeedback.Text = "Feedback"
+        '
+        'cmdServices
+        '
+        Me.cmdServices.CheckedState.ForeColor = System.Drawing.Color.Black
+        Me.cmdServices.CheckedState.Image = CType(resources.GetObject("cmdServices.CheckedState.Image"), System.Drawing.Image)
+        Me.cmdServices.CheckedState.Parent = Me.cmdServices
+        Me.cmdServices.CustomImages.Parent = Me.cmdServices
+        Me.cmdServices.Dock = System.Windows.Forms.DockStyle.Top
+        Me.cmdServices.FillColor = System.Drawing.Color.Transparent
+        Me.cmdServices.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdServices.ForeColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.cmdServices.HoverState.FillColor = System.Drawing.Color.Transparent
+        Me.cmdServices.HoverState.ForeColor = System.Drawing.Color.Black
+        Me.cmdServices.HoverState.Image = CType(resources.GetObject("cmdServices.HoverState.Image"), System.Drawing.Image)
+        Me.cmdServices.HoverState.Parent = Me.cmdServices
+        Me.cmdServices.Image = CType(resources.GetObject("cmdServices.Image"), System.Drawing.Image)
+        Me.cmdServices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.cmdServices.ImageOffset = New System.Drawing.Point(0, -3)
+        Me.cmdServices.ImageSize = New System.Drawing.Size(28, 28)
+        Me.cmdServices.Location = New System.Drawing.Point(0, 448)
+        Me.cmdServices.Name = "cmdServices"
+        Me.cmdServices.ShadowDecoration.Parent = Me.cmdServices
+        Me.cmdServices.Size = New System.Drawing.Size(196, 59)
+        Me.cmdServices.TabIndex = 6
+        Me.cmdServices.Text = "Services"
+        '
         'cmdRoom
         '
         Me.cmdRoom.CheckedState.ForeColor = System.Drawing.Color.Black
+        Me.cmdRoom.CheckedState.Image = CType(resources.GetObject("cmdRoom.CheckedState.Image"), System.Drawing.Image)
         Me.cmdRoom.CheckedState.Parent = Me.cmdRoom
         Me.cmdRoom.CustomImages.Parent = Me.cmdRoom
         Me.cmdRoom.Dock = System.Windows.Forms.DockStyle.Top
@@ -116,7 +171,7 @@ Partial Class Main
         Me.cmdRoom.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdRoom.ImageOffset = New System.Drawing.Point(0, -3)
         Me.cmdRoom.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdRoom.Location = New System.Drawing.Point(0, 412)
+        Me.cmdRoom.Location = New System.Drawing.Point(0, 389)
         Me.cmdRoom.Name = "cmdRoom"
         Me.cmdRoom.ShadowDecoration.Parent = Me.cmdRoom
         Me.cmdRoom.Size = New System.Drawing.Size(196, 59)
@@ -126,6 +181,7 @@ Partial Class Main
         'cmdGuest
         '
         Me.cmdGuest.CheckedState.ForeColor = System.Drawing.Color.Black
+        Me.cmdGuest.CheckedState.Image = Global.zzzz.My.Resources.Resources.traveler
         Me.cmdGuest.CheckedState.Parent = Me.cmdGuest
         Me.cmdGuest.CustomImages.Parent = Me.cmdGuest
         Me.cmdGuest.Dock = System.Windows.Forms.DockStyle.Top
@@ -140,7 +196,7 @@ Partial Class Main
         Me.cmdGuest.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdGuest.ImageOffset = New System.Drawing.Point(0, -3)
         Me.cmdGuest.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdGuest.Location = New System.Drawing.Point(0, 353)
+        Me.cmdGuest.Location = New System.Drawing.Point(0, 330)
         Me.cmdGuest.Name = "cmdGuest"
         Me.cmdGuest.ShadowDecoration.Parent = Me.cmdGuest
         Me.cmdGuest.Size = New System.Drawing.Size(196, 59)
@@ -150,6 +206,7 @@ Partial Class Main
         'cmdReservation
         '
         Me.cmdReservation.CheckedState.ForeColor = System.Drawing.Color.Black
+        Me.cmdReservation.CheckedState.Image = CType(resources.GetObject("cmdReservation.CheckedState.Image"), System.Drawing.Image)
         Me.cmdReservation.CheckedState.Parent = Me.cmdReservation
         Me.cmdReservation.CustomImages.Parent = Me.cmdReservation
         Me.cmdReservation.Dock = System.Windows.Forms.DockStyle.Top
@@ -163,7 +220,7 @@ Partial Class Main
         Me.cmdReservation.Image = CType(resources.GetObject("cmdReservation.Image"), System.Drawing.Image)
         Me.cmdReservation.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdReservation.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdReservation.Location = New System.Drawing.Point(0, 294)
+        Me.cmdReservation.Location = New System.Drawing.Point(0, 271)
         Me.cmdReservation.Name = "cmdReservation"
         Me.cmdReservation.ShadowDecoration.Parent = Me.cmdReservation
         Me.cmdReservation.Size = New System.Drawing.Size(196, 59)
@@ -174,6 +231,7 @@ Partial Class Main
         'cmdCheckOut
         '
         Me.cmdCheckOut.CheckedState.ForeColor = System.Drawing.Color.Black
+        Me.cmdCheckOut.CheckedState.Image = CType(resources.GetObject("cmdCheckOut.CheckedState.Image"), System.Drawing.Image)
         Me.cmdCheckOut.CheckedState.Parent = Me.cmdCheckOut
         Me.cmdCheckOut.CustomImages.Parent = Me.cmdCheckOut
         Me.cmdCheckOut.Dock = System.Windows.Forms.DockStyle.Top
@@ -188,7 +246,7 @@ Partial Class Main
         Me.cmdCheckOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdCheckOut.ImageOffset = New System.Drawing.Point(0, -3)
         Me.cmdCheckOut.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdCheckOut.Location = New System.Drawing.Point(0, 235)
+        Me.cmdCheckOut.Location = New System.Drawing.Point(0, 212)
         Me.cmdCheckOut.Name = "cmdCheckOut"
         Me.cmdCheckOut.ShadowDecoration.Parent = Me.cmdCheckOut
         Me.cmdCheckOut.Size = New System.Drawing.Size(196, 59)
@@ -198,6 +256,7 @@ Partial Class Main
         'cmdCheckIn
         '
         Me.cmdCheckIn.CheckedState.ForeColor = System.Drawing.Color.Black
+        Me.cmdCheckIn.CheckedState.Image = CType(resources.GetObject("cmdCheckIn.CheckedState.Image"), System.Drawing.Image)
         Me.cmdCheckIn.CheckedState.Parent = Me.cmdCheckIn
         Me.cmdCheckIn.CustomImages.Parent = Me.cmdCheckIn
         Me.cmdCheckIn.Dock = System.Windows.Forms.DockStyle.Top
@@ -212,7 +271,7 @@ Partial Class Main
         Me.cmdCheckIn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdCheckIn.ImageOffset = New System.Drawing.Point(0, -3)
         Me.cmdCheckIn.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdCheckIn.Location = New System.Drawing.Point(0, 176)
+        Me.cmdCheckIn.Location = New System.Drawing.Point(0, 153)
         Me.cmdCheckIn.Name = "cmdCheckIn"
         Me.cmdCheckIn.ShadowDecoration.Parent = Me.cmdCheckIn
         Me.cmdCheckIn.Size = New System.Drawing.Size(196, 59)
@@ -258,4 +317,6 @@ Partial Class Main
     Friend WithEvents cmdCheckOut As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cmdGuest As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cmdReservation As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cmdFeedback As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cmdServices As Guna.UI2.WinForms.Guna2Button
 End Class

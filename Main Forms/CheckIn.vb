@@ -175,7 +175,7 @@ Public Class CheckIn
             checkOpen()
 
 
-            Dim i As Integer = InsertGuestReservation(guest_ID, room_Num, reserveDesc, reserveDate, inDate, outDate, advancePay)
+            Dim i As Integer = InsertGuestReservation(guest_ID, room_Num, reserveDesc, reserveDate, inDate, outDate, advancePay, "Active")
             If i > 0 Then
                 MsgBox("Check In Complete. Enjoy your stay!")
             Else

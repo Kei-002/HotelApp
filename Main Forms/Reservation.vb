@@ -43,6 +43,7 @@ Public Class Reservation
     Private Sub Reservation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Guna2ShadowForm1.SetShadowForm(Me)
         Dim time As DateTime = DateTime.Now
+        clear_text()
 
         'dtpReserveDate.Text = time
         dtpCheckIn.Text = time
@@ -169,7 +170,7 @@ Public Class Reservation
 
             checkOpen()
 
-            Dim i As Integer = InsertGuestReservation(guest_ID, room_Num, reserveDesc, reserveDate, inDate, outDate, advancePay)
+            Dim i As Integer = InsertGuestReservation(guest_ID, room_Num, reserveDesc, reserveDate, inDate, outDate, advancePay, "Active")
             If i > 0 Then
                 MsgBox("Reservation Complete. Enjoy your stay!")
             Else

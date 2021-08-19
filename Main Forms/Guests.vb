@@ -84,6 +84,24 @@ Public Class Guests
     End Sub
 
     Private Sub cmdAdd_Click(sender As Object, e As EventArgs) Handles cmdAdd.Click
+
+        checkOpen()
+
+        sql = "INSERT INTO Guest (guestName, guestAddress, guestAge, guestPhone, guestEmail, Remarks) 
+        VALUES ('" & txtGuest.Text & "','" & txtAddress.Text & "','" & txtAge.Text & "','" & txtPhone.Text & "','" & txtEmail.Text & "', 'Available')"
+        cmd = New OleDbCommand(sql, con)
+        cmd.ExecuteNonQuery()
+
+
+        MsgBox("Data inserted.")
+
+
+        con.Close()
+
+
+
+
+
         Call Guests_Load(sender, e)
     End Sub
 
@@ -105,5 +123,9 @@ Public Class Guests
 
         cmdUpdate.Enabled = True
         cmdDelete.Enabled = True
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
+
     End Sub
 End Class
