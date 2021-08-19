@@ -85,6 +85,7 @@ Public Class ReserveList
             Dim room_Num As Integer = Me.dgList.CurrentRow.Cells("RoomNum").Value
             Dim reserveID As Integer = Me.dgList.CurrentRow.Cells("reservationID").Value
             Dim myStatus As String = "Checkin"
+            Dim numGuest As Integer = Me.dgList.CurrentRow.Cells("GuestsInRoom").Value
 
             checkOpen()
 
@@ -99,7 +100,7 @@ Public Class ReserveList
 
 
 
-            Dim j As Integer = SetRoomStatus(room_Num, myStatus)
+            Dim j As Integer = SetRoomStatus(room_Num, numGuest, myStatus)
 
             If j > 0 Then
                 MsgBox("Room " + room_Num.ToString + " set to Checkin")
@@ -133,6 +134,7 @@ Public Class ReserveList
         Dim guest_ID As Integer = Me.dgList.CurrentRow.Cells("ID").Value
         Dim room_Num As Integer = Me.dgList.CurrentRow.Cells("RoomNum").Value
         Dim reserveID As Integer = Me.dgList.CurrentRow.Cells("reservationID").Value
+        Dim numGuest As Integer = Me.dgList.CurrentRow.Cells("GuestsInRoom").Value
         Dim myStatus As String = "Available"
 
         Dim i As Integer = UpdateGuestReservation(reserveID, "Cancelled")
@@ -145,7 +147,7 @@ Public Class ReserveList
 
 
 
-        Dim j As Integer = SetRoomStatus(room_Num, myStatus)
+        Dim j As Integer = SetRoomStatus(room_Num, numGuest, myStatus)
 
         If j > 0 Then
             MsgBox("Room " + room_Num.ToString + " set to Available")

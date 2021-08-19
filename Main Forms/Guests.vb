@@ -64,12 +64,11 @@ Public Class Guests
 
         Guna2ShadowForm1.SetShadowForm(Me)
 
-        con.ConnectionString = dbcon
-        con.Open()
+        checkOpen()
         ds = New DataSet
 
-        sql = "SELECT customerID as ID, cusName as Name, cusAddress as Address,
-               cusAge as Age, cusPhoneNum as Phone FROM Guest ORDER BY customerID"
+        sql = "SELECT guestID as ID, guestName as Name, guestAddress as Address, guestAge as Age, guestPhone as Phone,
+              guestEmail as Email, Remarks as Status FROM Guest"
 
         da = New OleDbDataAdapter(sql, con)
 
@@ -79,19 +78,22 @@ Public Class Guests
         da.Dispose()
         con.Close()
 
+        cmdUpdate.Enabled = False
+        cmdDelete.Enabled = False
         dgGuests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
     End Sub
 
     Private Sub cmdAdd_Click(sender As Object, e As EventArgs) Handles cmdAdd.Click
-
+        Call Guests_Load(sender, e)
     End Sub
 
     Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
-
+        Call Guests_Load(sender, e)
     End Sub
 
     Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles cmdDelete.Click
 
+        Call Guests_Load(sender, e)
     End Sub
 
     Private Sub dgGuests_DoubleClick(sender As Object, e As EventArgs) Handles dgGuests.DoubleClick
@@ -100,5 +102,8 @@ Public Class Guests
         txtAge.Text = Me.dgGuests.CurrentRow.Cells("Age").Value
         txtPhone.Text = Me.dgGuests.CurrentRow.Cells("Phone").Value
         lblCusID.Text = Me.dgGuests.CurrentRow.Cells("ID").Value
+
+        cmdUpdate.Enabled = True
+        cmdDelete.Enabled = True
     End Sub
 End Class

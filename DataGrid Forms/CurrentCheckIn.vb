@@ -54,7 +54,8 @@ Public Class CurrentCheckIn
         checkOpen()
         dt = New DataTable("CheckedIN")
 
-        sql = "SELECT G.guestID as ID, guestName as Guest, R.roomNum as RoomNum, roomType as Type, roomRate as Rate, NumOfOccupants as GuestsInRoom,checkIN as InDate, checkOUT as OutDate FROM Guest G, Reservation RV, Rooms R
+        sql = "SELECT G.guestID as ID, guestName as Guest, reservationID as ReserveID, R.roomNum as RoomNum, roomType as Type, roomRate as Rate, NumOfOccupants as GuestsInRoom,checkIN as InDate, checkOUT as OutDate, advancePayment as AdvancePayment
+              FROM Guest G, Reservation RV, Rooms R
               WHERE G.guestID = RV.guestID AND RV.roomNum = R.roomNum AND Remarks = 'Checkin'"
 
         cmd = New OleDbCommand(sql, con)
@@ -74,10 +75,11 @@ Public Class CurrentCheckIn
         CheckOut.txtRoomNum.Text = Me.dgCheckedIn.CurrentRow.Cells("RoomNum").Value
         CheckOut.txtRoomType.Text = Me.dgCheckedIn.CurrentRow.Cells("Type").Value
         CheckOut.txtRate.Text = Me.dgCheckedIn.CurrentRow.Cells("Rate").Value
+        CheckOut.lblReserveID.Text = Me.dgCheckedIn.CurrentRow.Cells("ReserveID").Value
         CheckOut.dtpCheckIn.Text = Me.dgCheckedIn.CurrentRow.Cells("InDate").Value
         CheckOut.dtpCheckOut.Text = Me.dgCheckedIn.CurrentRow.Cells("OutDate").Value
         CheckOut.txtNumGuest.Text = Me.dgCheckedIn.CurrentRow.Cells("GuestsInRoom").Value
-
+        CheckOut.txtAdvance.Text = Me.dgCheckedIn.CurrentRow.Cells("AdvancePayment").Value
         Me.Close()
     End Sub
 

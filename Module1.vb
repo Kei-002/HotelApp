@@ -79,17 +79,18 @@ Module Module1
 
     End Function
     'Sets the room status based on the pased string
-    Public Function SetRoomStatus(ByVal roomNum As Integer, ByVal status As String)
+    Public Function SetRoomStatus(ByVal roomNum As Integer, ByVal numGuest As Integer, ByVal status As String)
         If status = "Checkin" Then
             status = "Occupied"
         End If
 
-        sql = "UPDATE Rooms SET Status = @stat WHERE roomNum = @rNum"
+        sql = "UPDATE Rooms SET Status = @stat, NumOfOccupants = @numG WHERE roomNum = @rNum"
 
         cmd = New OleDbCommand(sql, con)
 
         With cmd
             .Parameters.AddWithValue("@stat", status)
+            .Parameters.AddWithValue("@numG", numGuest)
             .Parameters.AddWithValue("@rNum", roomNum)
         End With
 

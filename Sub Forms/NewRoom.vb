@@ -48,36 +48,38 @@ Public Class NewRoom
         'con.ConnectionString = dbcon
 
         checkOpen()
-
-        txtRoomID.Text = getLastRoomID() + 1
-        sql1 = "SELECT RoomDesc FROM RoomType"
+        sql1 = "SELECT DISTINCT roomType, Capacity FROM Rooms ORDER BY Capacity"
 
         cmd = New OleDbCommand(sql1, con)
-
         dr = cmd.ExecuteReader
+
         While dr.Read
-            cmbTypes.Items.Add(dr("RoomDesc"))
+            cmbTypes.Items.Add(dr("roomType"))
         End While
 
+        cmbTypes.SelectedIndex = 0
         dr.Dispose()
-        con.Close()
 
+        con.Close()
     End Sub
 
 
     Private Sub cmbTypes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTypes.SelectedIndexChanged
         checkOpen()
+        Dim valAny As String = cmbTypes.SelectedItem
 
-        sql = "SELECT Capacity FROM RoomType WHERE RoomDesc = @rDesc"
+        sql = "SELECT DISTINCT roomRate, Capacity FROM Rooms WHERE roomType = @rDesc"
         cmd = New OleDbCommand(sql, con)
-        cmd.Parameters.AddWithValue("@rDesc", cmbTypes.SelectedItem)
+        cmd.Parameters.AddWithValue("@rDesc", valAny)
 
         dr = cmd.ExecuteReader
         While dr.Read
-            txtOccu.Text = dr(0)
+            txtOccu.Text = dr("Capacity")
+            txtRate.Text = dr("roomRate")
         End While
 
         con.Close()
+
 
     End Sub
 
@@ -87,18 +89,20 @@ Public Class NewRoom
     Private Sub cmdAdd_Click(sender As Object, e As EventArgs) Handles cmdAdd.Click
 
         con.Open()
-        Dim rTypeID As Integer = getTypeID(cmbTypes.SelectedItem)
+        Dim roomType As String = cmbTypes.SelectedItem
 
-        sql = "INSERT INTO Rooms(RoomType, NumOccupants, RoomStatus) 
-              VALUES (@rType, @rNum, @rStatus)"
+        sql = "INSERT INTO Rooms(roomNum ,roomType, roomRate, NumOfOccupants, Capacity, Status) 
+              VALUES (@rNum, @rType, @rRate, @NumOccu, @rCapacity, @rStat)"
 
         cmd = New OleDbCommand(sql, con)
 
         With cmd
-            ' .Parameters.AddWithValue("@rID", txtRoomID.Text)
-            .Parameters.AddWithValue("@rType", rTypeID)
-            .Parameters.AddWithValue("@rNum", txtNumOccu.Text)
-            .Parameters.AddWithValue("@rStatus", "Available")
+            .Parameters.AddWithValue("@rNum", txtRoomID.Text)
+            .Parameters.AddWithValue("@rType", roomType)
+            .Parameters.AddWithValue("@rRate", txtRate.Text)
+            .Parameters.AddWithValue("@NumOccu", txtNumOccu.Text)
+            .Parameters.AddWithValue("@rCapacity", txtOccu.Text)
+            .Parameters.AddWithValue("@rStat", "Available")
         End With
 
         Dim i As Integer = cmd.ExecuteNonQuery
@@ -121,7 +125,7 @@ Public Class NewRoom
 
     Private Function getTypeID(ByVal TypeName As String)
         Dim tID As Integer
-        sql = "SELECT RoomTypeID FROM RoomType WHERE RoomDesc = @rName"
+        sql = "SELECT RoomTypeID FROM Room WHERE RoomDesc = @rName"
 
         cmd = New OleDbCommand(sql, con)
         cmd.Parameters.AddWithValue("@rName", TypeName)
@@ -134,21 +138,21 @@ Public Class NewRoom
         Return tID
     End Function
 
-    Private Function getLastRoomID()
-        Dim lastRoom As Integer
-        sql = "SELECT LAST(RoomID) FROM Rooms"
+    Public Function getTpeRate(ByVal TypeName As String)
+
+        Dim tID As Integer
+        sql = "SELECT roomRate FROM Room WHERE RoomDesc = @rName"
 
         cmd = New OleDbCommand(sql, con)
+        cmd.Parameters.AddWithValue("@rName", TypeName)
 
         dr = cmd.ExecuteReader
-
         While dr.Read
-            lastRoom = dr(0)
+            tID = dr(0)
         End While
-
         dr.Dispose()
+        Return tID
 
-        Return lastRoom
     End Function
 #End Region
 

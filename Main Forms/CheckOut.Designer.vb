@@ -50,7 +50,7 @@ Partial Class CheckOut
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txtSubtotal = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.txtAdvance = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtChange = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtCash = New Guna.UI2.WinForms.Guna2TextBox()
@@ -62,6 +62,9 @@ Partial Class CheckOut
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblGuestID = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txtSubtotal = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.lblReserveID = New System.Windows.Forms.Label()
         Me.Guna2ShadowPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -115,7 +118,7 @@ Partial Class CheckOut
         Me.txtCheckOut.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCheckOut.ForeColor = System.Drawing.Color.White
         Me.txtCheckOut.HoverState.Parent = Me.txtCheckOut
-        Me.txtCheckOut.Location = New System.Drawing.Point(212, 140)
+        Me.txtCheckOut.Location = New System.Drawing.Point(160, 125)
         Me.txtCheckOut.Name = "txtCheckOut"
         Me.txtCheckOut.ShadowDecoration.Parent = Me.txtCheckOut
         Me.txtCheckOut.Size = New System.Drawing.Size(128, 36)
@@ -130,7 +133,7 @@ Partial Class CheckOut
         Me.dtpCheckOut.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dtpCheckOut.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dtpCheckOut.HoverState.Parent = Me.dtpCheckOut
-        Me.dtpCheckOut.Location = New System.Drawing.Point(120, 264)
+        Me.dtpCheckOut.Location = New System.Drawing.Point(120, 259)
         Me.dtpCheckOut.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dtpCheckOut.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dtpCheckOut.Name = "dtpCheckOut"
@@ -147,7 +150,7 @@ Partial Class CheckOut
         Me.dtpCheckIn.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dtpCheckIn.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(61, Byte), Integer))
         Me.dtpCheckIn.HoverState.Parent = Me.dtpCheckIn
-        Me.dtpCheckIn.Location = New System.Drawing.Point(120, 222)
+        Me.dtpCheckIn.Location = New System.Drawing.Point(120, 217)
         Me.dtpCheckIn.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.dtpCheckIn.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dtpCheckIn.Name = "dtpCheckIn"
@@ -164,7 +167,7 @@ Partial Class CheckOut
         Me.cmdCheckList.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdCheckList.ForeColor = System.Drawing.Color.White
         Me.cmdCheckList.HoverState.Parent = Me.cmdCheckList
-        Me.cmdCheckList.Location = New System.Drawing.Point(296, 52)
+        Me.cmdCheckList.Location = New System.Drawing.Point(296, 47)
         Me.cmdCheckList.Name = "cmdCheckList"
         Me.cmdCheckList.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.cmdCheckList.ShadowDecoration.Parent = Me.cmdCheckList
@@ -190,7 +193,7 @@ Partial Class CheckOut
         Me.txtNumDays.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNumDays.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtNumDays.HoverState.Parent = Me.txtNumDays
-        Me.txtNumDays.Location = New System.Drawing.Point(120, 313)
+        Me.txtNumDays.Location = New System.Drawing.Point(120, 308)
         Me.txtNumDays.Name = "txtNumDays"
         Me.txtNumDays.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNumDays.PlaceholderText = "Days staying"
@@ -218,7 +221,7 @@ Partial Class CheckOut
         Me.txtTotal.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtTotal.HoverState.Parent = Me.txtTotal
-        Me.txtTotal.Location = New System.Drawing.Point(495, 153)
+        Me.txtTotal.Location = New System.Drawing.Point(552, 167)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtTotal.PlaceholderText = "Select Room"
@@ -246,7 +249,7 @@ Partial Class CheckOut
         Me.txtRate.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRate.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtRate.HoverState.Parent = Me.txtRate
-        Me.txtRate.Location = New System.Drawing.Point(120, 174)
+        Me.txtRate.Location = New System.Drawing.Point(120, 169)
         Me.txtRate.Name = "txtRate"
         Me.txtRate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtRate.PlaceholderText = ""
@@ -274,7 +277,7 @@ Partial Class CheckOut
         Me.txtRoomType.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRoomType.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtRoomType.HoverState.Parent = Me.txtRoomType
-        Me.txtRoomType.Location = New System.Drawing.Point(120, 137)
+        Me.txtRoomType.Location = New System.Drawing.Point(120, 132)
         Me.txtRoomType.Name = "txtRoomType"
         Me.txtRoomType.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtRoomType.PlaceholderText = ""
@@ -302,7 +305,7 @@ Partial Class CheckOut
         Me.txtRoomNum.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtRoomNum.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtRoomNum.HoverState.Parent = Me.txtRoomNum
-        Me.txtRoomNum.Location = New System.Drawing.Point(120, 100)
+        Me.txtRoomNum.Location = New System.Drawing.Point(120, 95)
         Me.txtRoomNum.Name = "txtRoomNum"
         Me.txtRoomNum.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtRoomNum.PlaceholderText = "Select Room"
@@ -330,7 +333,7 @@ Partial Class CheckOut
         Me.txtNumGuest.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNumGuest.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtNumGuest.HoverState.Parent = Me.txtNumGuest
-        Me.txtNumGuest.Location = New System.Drawing.Point(495, 53)
+        Me.txtNumGuest.Location = New System.Drawing.Point(552, 46)
         Me.txtNumGuest.Name = "txtNumGuest"
         Me.txtNumGuest.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNumGuest.PlaceholderText = "Enter guests"
@@ -358,7 +361,7 @@ Partial Class CheckOut
         Me.txtGuest.ForeColor = System.Drawing.Color.Black
         Me.txtGuest.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtGuest.HoverState.Parent = Me.txtGuest
-        Me.txtGuest.Location = New System.Drawing.Point(119, 53)
+        Me.txtGuest.Location = New System.Drawing.Point(119, 48)
         Me.txtGuest.Name = "txtGuest"
         Me.txtGuest.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtGuest.PlaceholderText = "Select Guest"
@@ -373,7 +376,7 @@ Partial Class CheckOut
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(11, 319)
+        Me.Label9.Location = New System.Drawing.Point(11, 314)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(80, 17)
         Me.Label9.TabIndex = 47
@@ -384,7 +387,7 @@ Partial Class CheckOut
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(417, 159)
+        Me.Label12.Location = New System.Drawing.Point(487, 173)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(38, 17)
         Me.Label12.TabIndex = 46
@@ -395,7 +398,7 @@ Partial Class CheckOut
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(13, 273)
+        Me.Label8.Location = New System.Drawing.Point(13, 268)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(94, 17)
         Me.Label8.TabIndex = 45
@@ -406,7 +409,7 @@ Partial Class CheckOut
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(11, 180)
+        Me.Label7.Location = New System.Drawing.Point(11, 175)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 17)
         Me.Label7.TabIndex = 44
@@ -417,7 +420,7 @@ Partial Class CheckOut
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(13, 231)
+        Me.Label6.Location = New System.Drawing.Point(13, 226)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(84, 17)
         Me.Label6.TabIndex = 43
@@ -428,7 +431,7 @@ Partial Class CheckOut
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(365, 58)
+        Me.Label10.Location = New System.Drawing.Point(422, 51)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(109, 17)
         Me.Label10.TabIndex = 41
@@ -439,7 +442,7 @@ Partial Class CheckOut
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(12, 143)
+        Me.Label5.Location = New System.Drawing.Point(12, 138)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(72, 17)
         Me.Label5.TabIndex = 40
@@ -450,7 +453,7 @@ Partial Class CheckOut
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(12, 58)
+        Me.Label4.Location = New System.Drawing.Point(12, 53)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(76, 17)
         Me.Label4.TabIndex = 39
@@ -461,7 +464,7 @@ Partial Class CheckOut
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 106)
+        Me.Label3.Location = New System.Drawing.Point(12, 101)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(72, 17)
         Me.Label3.TabIndex = 38
@@ -474,9 +477,9 @@ Partial Class CheckOut
         Me.Label2.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(12, 11)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(89, 17)
+        Me.Label2.Size = New System.Drawing.Size(86, 17)
         Me.Label2.TabIndex = 48
-        Me.Label2.Text = "Transaction ID:"
+        Me.Label2.Text = "TransactionID:"
         '
         'Label1
         '
@@ -488,50 +491,50 @@ Partial Class CheckOut
         Me.Label1.TabIndex = 37
         Me.Label1.Text = "Check Out"
         '
-        'txtSubtotal
+        'txtAdvance
         '
-        Me.txtSubtotal.AutoRoundedCorners = True
-        Me.txtSubtotal.BorderColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.txtSubtotal.BorderRadius = 14
-        Me.txtSubtotal.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtSubtotal.DefaultText = ""
-        Me.txtSubtotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtSubtotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtSubtotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubtotal.DisabledState.Parent = Me.txtSubtotal
-        Me.txtSubtotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtSubtotal.Enabled = False
-        Me.txtSubtotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.txtSubtotal.FocusedState.Parent = Me.txtSubtotal
-        Me.txtSubtotal.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSubtotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtSubtotal.HoverState.Parent = Me.txtSubtotal
-        Me.txtSubtotal.Location = New System.Drawing.Point(495, 116)
-        Me.txtSubtotal.Name = "txtSubtotal"
-        Me.txtSubtotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSubtotal.PlaceholderText = "Select Room"
-        Me.txtSubtotal.SelectedText = ""
-        Me.txtSubtotal.ShadowDecoration.Parent = Me.txtSubtotal
-        Me.txtSubtotal.Size = New System.Drawing.Size(125, 31)
-        Me.txtSubtotal.TabIndex = 52
-        Me.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txtAdvance.AutoRoundedCorners = True
+        Me.txtAdvance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.txtAdvance.BorderRadius = 14
+        Me.txtAdvance.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtAdvance.DefaultText = ""
+        Me.txtAdvance.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtAdvance.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtAdvance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtAdvance.DisabledState.Parent = Me.txtAdvance
+        Me.txtAdvance.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtAdvance.Enabled = False
+        Me.txtAdvance.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.txtAdvance.FocusedState.Parent = Me.txtAdvance
+        Me.txtAdvance.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAdvance.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtAdvance.HoverState.Parent = Me.txtAdvance
+        Me.txtAdvance.Location = New System.Drawing.Point(552, 130)
+        Me.txtAdvance.Name = "txtAdvance"
+        Me.txtAdvance.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtAdvance.PlaceholderText = "Select Room"
+        Me.txtAdvance.SelectedText = ""
+        Me.txtAdvance.ShadowDecoration.Parent = Me.txtAdvance
+        Me.txtAdvance.Size = New System.Drawing.Size(125, 31)
+        Me.txtAdvance.TabIndex = 52
+        Me.txtAdvance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(417, 122)
+        Me.Label11.Location = New System.Drawing.Point(421, 136)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(57, 17)
+        Me.Label11.Size = New System.Drawing.Size(107, 17)
         Me.Label11.TabIndex = 42
-        Me.Label11.Text = "Subtotal:"
+        Me.Label11.Text = "Advance Payment:"
         '
         'txtChange
         '
         Me.txtChange.AutoRoundedCorners = True
         Me.txtChange.BorderColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
-        Me.txtChange.BorderRadius = 15
+        Me.txtChange.BorderRadius = 10
         Me.txtChange.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtChange.DefaultText = ""
         Me.txtChange.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -543,21 +546,21 @@ Partial Class CheckOut
         Me.txtChange.FocusedState.Parent = Me.txtChange
         Me.txtChange.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtChange.HoverState.Parent = Me.txtChange
-        Me.txtChange.Location = New System.Drawing.Point(183, 96)
+        Me.txtChange.Location = New System.Drawing.Point(131, 90)
         Me.txtChange.Name = "txtChange"
         Me.txtChange.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtChange.PlaceholderText = ""
         Me.txtChange.ReadOnly = True
         Me.txtChange.SelectedText = ""
         Me.txtChange.ShadowDecoration.Parent = Me.txtChange
-        Me.txtChange.Size = New System.Drawing.Size(162, 32)
+        Me.txtChange.Size = New System.Drawing.Size(162, 23)
         Me.txtChange.TabIndex = 70
         '
         'txtCash
         '
         Me.txtCash.AutoRoundedCorners = True
         Me.txtCash.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(61, Byte), Integer))
-        Me.txtCash.BorderRadius = 15
+        Me.txtCash.BorderRadius = 10
         Me.txtCash.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtCash.DefaultText = ""
         Me.txtCash.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -570,23 +573,23 @@ Partial Class CheckOut
         Me.txtCash.ForeColor = System.Drawing.Color.Black
         Me.txtCash.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtCash.HoverState.Parent = Me.txtCash
-        Me.txtCash.Location = New System.Drawing.Point(183, 58)
+        Me.txtCash.Location = New System.Drawing.Point(131, 52)
         Me.txtCash.Name = "txtCash"
         Me.txtCash.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtCash.PlaceholderText = ""
         Me.txtCash.SelectedText = ""
         Me.txtCash.ShadowDecoration.Parent = Me.txtCash
-        Me.txtCash.Size = New System.Drawing.Size(162, 32)
+        Me.txtCash.Size = New System.Drawing.Size(162, 23)
         Me.txtCash.TabIndex = 71
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Font = New System.Drawing.Font("Source Sans Pro", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(33, 104)
+        Me.Label14.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(20, 94)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(64, 19)
+        Me.Label14.Size = New System.Drawing.Size(59, 16)
         Me.Label14.TabIndex = 68
         Me.Label14.Text = "Change:"
         '
@@ -594,10 +597,10 @@ Partial Class CheckOut
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
-        Me.Label13.Font = New System.Drawing.Font("Source Sans Pro", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(35, 64)
+        Me.Label13.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(22, 54)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(47, 20)
+        Me.Label13.Size = New System.Drawing.Size(41, 16)
         Me.Label13.TabIndex = 69
         Me.Label13.Text = "Cash:"
         '
@@ -612,12 +615,12 @@ Partial Class CheckOut
         Me.Guna2ShadowPanel1.Controls.Add(Me.txtCash)
         Me.Guna2ShadowPanel1.Controls.Add(Me.Label14)
         Me.Guna2ShadowPanel1.FillColor = System.Drawing.Color.White
-        Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(359, 190)
+        Me.Guna2ShadowPanel1.Location = New System.Drawing.Point(389, 207)
         Me.Guna2ShadowPanel1.Name = "Guna2ShadowPanel1"
         Me.Guna2ShadowPanel1.Radius = 5
         Me.Guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black
         Me.Guna2ShadowPanel1.ShadowDepth = 20
-        Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(358, 189)
+        Me.Guna2ShadowPanel1.Size = New System.Drawing.Size(328, 172)
         Me.Guna2ShadowPanel1.TabIndex = 72
         '
         'cmbType
@@ -637,7 +640,7 @@ Partial Class CheckOut
         Me.cmbType.HoverState.Parent = Me.cmbType
         Me.cmbType.ItemHeight = 20
         Me.cmbType.ItemsAppearance.Parent = Me.cmbType
-        Me.cmbType.Location = New System.Drawing.Point(200, 27)
+        Me.cmbType.Location = New System.Drawing.Point(148, 12)
         Me.cmbType.Name = "cmbType"
         Me.cmbType.ShadowDecoration.Parent = Me.cmbType
         Me.cmbType.Size = New System.Drawing.Size(140, 26)
@@ -647,10 +650,10 @@ Partial Class CheckOut
         '
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.Transparent
-        Me.Label15.Font = New System.Drawing.Font("Source Sans Pro", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(35, 28)
+        Me.Label15.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(22, 18)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(113, 20)
+        Me.Label15.Size = New System.Drawing.Size(101, 16)
         Me.Label15.TabIndex = 69
         Me.Label15.Text = "Payment Type:"
         '
@@ -681,7 +684,9 @@ Partial Class CheckOut
         Me.Panel1.Controls.Add(Me.Guna2ShadowPanel1)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.lblReserveID)
         Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Controls.Add(Me.Label16)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.dtpCheckOut)
         Me.Panel1.Controls.Add(Me.Label6)
@@ -696,6 +701,7 @@ Partial Class CheckOut
         Me.Panel1.Controls.Add(Me.txtRate)
         Me.Panel1.Controls.Add(Me.txtGuest)
         Me.Panel1.Controls.Add(Me.txtSubtotal)
+        Me.Panel1.Controls.Add(Me.txtAdvance)
         Me.Panel1.Controls.Add(Me.txtNumGuest)
         Me.Panel1.Controls.Add(Me.txtRoomType)
         Me.Panel1.Controls.Add(Me.txtRoomNum)
@@ -703,6 +709,55 @@ Partial Class CheckOut
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(737, 390)
         Me.Panel1.TabIndex = 74
+        '
+        'txtSubtotal
+        '
+        Me.txtSubtotal.AutoRoundedCorners = True
+        Me.txtSubtotal.BorderColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.txtSubtotal.BorderRadius = 14
+        Me.txtSubtotal.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtSubtotal.DefaultText = ""
+        Me.txtSubtotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtSubtotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtSubtotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubtotal.DisabledState.Parent = Me.txtSubtotal
+        Me.txtSubtotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtSubtotal.Enabled = False
+        Me.txtSubtotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.txtSubtotal.FocusedState.Parent = Me.txtSubtotal
+        Me.txtSubtotal.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSubtotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtSubtotal.HoverState.Parent = Me.txtSubtotal
+        Me.txtSubtotal.Location = New System.Drawing.Point(552, 93)
+        Me.txtSubtotal.Name = "txtSubtotal"
+        Me.txtSubtotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtSubtotal.PlaceholderText = "Select Room"
+        Me.txtSubtotal.SelectedText = ""
+        Me.txtSubtotal.ShadowDecoration.Parent = Me.txtSubtotal
+        Me.txtSubtotal.Size = New System.Drawing.Size(125, 31)
+        Me.txtSubtotal.TabIndex = 52
+        Me.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(474, 99)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(57, 17)
+        Me.Label16.TabIndex = 42
+        Me.Label16.Text = "Subtotal:"
+        '
+        'lblReserveID
+        '
+        Me.lblReserveID.AutoSize = True
+        Me.lblReserveID.BackColor = System.Drawing.Color.Transparent
+        Me.lblReserveID.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblReserveID.Location = New System.Drawing.Point(136, 11)
+        Me.lblReserveID.Name = "lblReserveID"
+        Me.lblReserveID.Size = New System.Drawing.Size(0, 17)
+        Me.lblReserveID.TabIndex = 41
         '
         'CheckOut
         '
@@ -761,10 +816,13 @@ Partial Class CheckOut
     Friend WithEvents txtChange As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents txtCash As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents txtSubtotal As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents txtAdvance As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents lblGuestID As Label
     Friend WithEvents cmbType As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label16 As Label
+    Friend WithEvents txtSubtotal As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents lblReserveID As Label
 End Class

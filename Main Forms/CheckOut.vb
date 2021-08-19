@@ -90,8 +90,9 @@ Public Class CheckOut
             txtNumDays.Text = T.Days
         End If
 
-        txtTotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
         txtSubtotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
+        txtTotal.Text = Val(txtSubtotal.Text) - Val(txtAdvance.Text)
+        'txtAdvance.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
     End Sub
 
     Private Sub txtCash_TextChanged(sender As Object, e As EventArgs) Handles txtCash.TextChanged
@@ -150,7 +151,7 @@ Public Class CheckOut
             End If
 
 
-            Dim k As Integer = SetRoomStatus(roomNum, "Available")
+            Dim k As Integer = SetRoomStatus(roomNum, 0, "Available")
 
             If k > 0 Then
 
@@ -180,6 +181,7 @@ Public Class CheckOut
         dtpCheckOut.Text = Now.AddDays(1D)
 
         txtSubtotal.Clear()
+        txtAdvance.Clear()
         txtTotal.Clear()
 
         txtCash.Text = 0

@@ -69,7 +69,7 @@ Public Class SelectRoom
         End While
 
         cmbTypes.SelectedIndex = 0
-
+        dr.Dispose()
 
         dgList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         con.Close()

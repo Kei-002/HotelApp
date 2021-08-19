@@ -160,6 +160,7 @@ Public Class Reservation
         Dim payTID As Integer = CInt(payType(0))
         Dim payDate As Date = Now.ToString("dd/MM/yyyy")
         Dim reserveDesc As String = "Reserve"
+        Dim numGuest As String = txtNumGuest.Text
 
         If advancePay < lblMinPay.Text Then
             MsgBox("Insufficient Advance Payment. Increase payment to proceed")
@@ -176,7 +177,7 @@ Public Class Reservation
             End If
 
 
-            Dim j As Integer = SetRoomStatus(room_Num, "Reserved")
+            Dim j As Integer = SetRoomStatus(room_Num, numGuest, "Reserved")
 
             If j > 0 Then
                 MsgBox("Room " + room_Num.ToString + " status set to Reserved")
@@ -234,5 +235,9 @@ Public Class Reservation
             adPay = txtAdvPay.Text
             txtTotal.Text = Val(txtSubtotal.Text) - adPay
         End If
+    End Sub
+
+    Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
+        Me.Close()
     End Sub
 End Class

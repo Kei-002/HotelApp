@@ -29,6 +29,8 @@ Partial Class NewRoom
         Me.rbAvail = New Guna.UI2.WinForms.Guna2ImageRadioButton()
         Me.cmbTypes = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtRate = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtNumOccu = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtOccu = New Guna.UI2.WinForms.Guna2TextBox()
@@ -50,6 +52,8 @@ Partial Class NewRoom
         Me.Guna2Panel1.Controls.Add(Me.rbAvail)
         Me.Guna2Panel1.Controls.Add(Me.cmbTypes)
         Me.Guna2Panel1.Controls.Add(Me.Label1)
+        Me.Guna2Panel1.Controls.Add(Me.txtRate)
+        Me.Guna2Panel1.Controls.Add(Me.Label6)
         Me.Guna2Panel1.Controls.Add(Me.txtNumOccu)
         Me.Guna2Panel1.Controls.Add(Me.Label5)
         Me.Guna2Panel1.Controls.Add(Me.txtOccu)
@@ -57,11 +61,11 @@ Partial Class NewRoom
         Me.Guna2Panel1.Controls.Add(Me.Label2)
         Me.Guna2Panel1.Controls.Add(Me.txtRoomID)
         Me.Guna2Panel1.Controls.Add(Me.Label4)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(12, 97)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(12, 53)
         Me.Guna2Panel1.MinimumSize = New System.Drawing.Size(296, 10)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(296, 316)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(296, 320)
         Me.Guna2Panel1.TabIndex = 80
         '
         'cmdAdd
@@ -77,7 +81,7 @@ Partial Class NewRoom
         Me.cmdAdd.HoverState.Parent = Me.cmdAdd
         Me.cmdAdd.Image = CType(resources.GetObject("cmdAdd.Image"), System.Drawing.Image)
         Me.cmdAdd.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdAdd.Location = New System.Drawing.Point(65, 263)
+        Me.cmdAdd.Location = New System.Drawing.Point(66, 267)
         Me.cmdAdd.Name = "cmdAdd"
         Me.cmdAdd.ShadowDecoration.Parent = Me.cmdAdd
         Me.cmdAdd.Size = New System.Drawing.Size(166, 45)
@@ -94,7 +98,7 @@ Partial Class NewRoom
         Me.rbOccu.HoverState.Parent = Me.rbOccu
         Me.rbOccu.Image = CType(resources.GetObject("rbOccu.Image"), System.Drawing.Image)
         Me.rbOccu.ImageSize = New System.Drawing.Size(40, 40)
-        Me.rbOccu.Location = New System.Drawing.Point(185, 167)
+        Me.rbOccu.Location = New System.Drawing.Point(208, 194)
         Me.rbOccu.Name = "rbOccu"
         Me.rbOccu.PressedState.Parent = Me.rbOccu
         Me.rbOccu.Size = New System.Drawing.Size(79, 50)
@@ -110,7 +114,7 @@ Partial Class NewRoom
         Me.rbAvail.HoverState.Parent = Me.rbAvail
         Me.rbAvail.Image = CType(resources.GetObject("rbAvail.Image"), System.Drawing.Image)
         Me.rbAvail.ImageSize = New System.Drawing.Size(40, 40)
-        Me.rbAvail.Location = New System.Drawing.Point(93, 167)
+        Me.rbAvail.Location = New System.Drawing.Point(116, 194)
         Me.rbAvail.Name = "rbAvail"
         Me.rbAvail.PressedState.Parent = Me.rbAvail
         Me.rbAvail.Size = New System.Drawing.Size(86, 50)
@@ -143,11 +147,51 @@ Partial Class NewRoom
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(10, 167)
+        Me.Label1.Location = New System.Drawing.Point(10, 199)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 17)
         Me.Label1.TabIndex = 50
         Me.Label1.Text = "Status:"
+        '
+        'txtRate
+        '
+        Me.txtRate.AutoRoundedCorners = True
+        Me.txtRate.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtRate.BorderRadius = 14
+        Me.txtRate.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtRate.DefaultText = ""
+        Me.txtRate.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtRate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtRate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtRate.DisabledState.Parent = Me.txtRate
+        Me.txtRate.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtRate.Enabled = False
+        Me.txtRate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.txtRate.FocusedState.Parent = Me.txtRate
+        Me.txtRate.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRate.ForeColor = System.Drawing.Color.Black
+        Me.txtRate.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtRate.HoverState.Parent = Me.txtRate
+        Me.txtRate.Location = New System.Drawing.Point(141, 83)
+        Me.txtRate.Name = "txtRate"
+        Me.txtRate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtRate.PlaceholderText = "Select Guest"
+        Me.txtRate.SelectedText = ""
+        Me.txtRate.ShadowDecoration.Parent = Me.txtRate
+        Me.txtRate.Size = New System.Drawing.Size(146, 31)
+        Me.txtRate.TabIndex = 51
+        Me.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(10, 89)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(70, 17)
+        Me.Label6.TabIndex = 50
+        Me.Label6.Text = "Room Rate:"
         '
         'txtNumOccu
         '
@@ -167,7 +211,7 @@ Partial Class NewRoom
         Me.txtNumOccu.ForeColor = System.Drawing.Color.Black
         Me.txtNumOccu.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtNumOccu.HoverState.Parent = Me.txtNumOccu
-        Me.txtNumOccu.Location = New System.Drawing.Point(141, 83)
+        Me.txtNumOccu.Location = New System.Drawing.Point(141, 120)
         Me.txtNumOccu.Name = "txtNumOccu"
         Me.txtNumOccu.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtNumOccu.PlaceholderText = "Select Guest"
@@ -182,11 +226,11 @@ Partial Class NewRoom
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(10, 88)
+        Me.Label5.Location = New System.Drawing.Point(10, 125)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(109, 17)
+        Me.Label5.Size = New System.Drawing.Size(112, 17)
         Me.Label5.TabIndex = 50
-        Me.Label5.Text = "Num of Occupants"
+        Me.Label5.Text = "Num of Occupants:"
         '
         'txtOccu
         '
@@ -200,13 +244,14 @@ Partial Class NewRoom
         Me.txtOccu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtOccu.DisabledState.Parent = Me.txtOccu
         Me.txtOccu.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtOccu.Enabled = False
         Me.txtOccu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.txtOccu.FocusedState.Parent = Me.txtOccu
         Me.txtOccu.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtOccu.ForeColor = System.Drawing.Color.Black
         Me.txtOccu.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtOccu.HoverState.Parent = Me.txtOccu
-        Me.txtOccu.Location = New System.Drawing.Point(141, 120)
+        Me.txtOccu.Location = New System.Drawing.Point(141, 157)
         Me.txtOccu.Name = "txtOccu"
         Me.txtOccu.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtOccu.PlaceholderText = "Select Guest"
@@ -221,11 +266,11 @@ Partial Class NewRoom
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(10, 125)
+        Me.Label3.Location = New System.Drawing.Point(10, 162)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 17)
+        Me.Label3.Size = New System.Drawing.Size(58, 17)
         Me.Label3.TabIndex = 50
-        Me.Label3.Text = "Occupancy"
+        Me.Label3.Text = "Capacity:"
         '
         'Label2
         '
@@ -273,9 +318,9 @@ Partial Class NewRoom
         Me.Label4.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(10, 17)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 17)
+        Me.Label4.Size = New System.Drawing.Size(72, 17)
         Me.Label4.TabIndex = 50
-        Me.Label4.Text = "Room ID:"
+        Me.Label4.Text = "Room Num:"
         '
         'Label7
         '
@@ -325,7 +370,7 @@ Partial Class NewRoom
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(319, 425)
+        Me.ClientSize = New System.Drawing.Size(319, 388)
         Me.Controls.Add(Me.cmdMinimize)
         Me.Controls.Add(Me.cmdCLose)
         Me.Controls.Add(Me.Label7)
@@ -356,4 +401,6 @@ Partial Class NewRoom
     Friend WithEvents Label7 As Label
     Friend WithEvents cmdMinimize As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents cmdCLose As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents txtRate As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label6 As Label
 End Class

@@ -154,12 +154,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Sub Forms\AddCustomer.Designer.vb">
-      <DependentUpon>AddCustomer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Sub Forms\AddCustomer.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Sub Forms\NewRoom.Designer.vb">
       <DependentUpon>NewRoom.vb</DependentUpon>
     </Compile>
@@ -203,9 +197,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sub Forms\AddCustomer.resx">
-      <DependentUpon>AddCustomer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sub Forms\NewRoom.resx">
       <DependentUpon>NewRoom.vb</DependentUpon>

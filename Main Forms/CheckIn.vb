@@ -53,7 +53,25 @@ Public Class CheckIn
 
         dtpCheckIn.Text = time
         dtpCheckOut.Text = Now.AddDays(1D)
+        txtNumDays.Text = 1
 
+
+        checkOpen()
+
+        sql = "Select * FROM PaymentType"
+        cmd = New OleDbCommand(sql, con)
+
+        dr = cmd.ExecuteReader
+
+        While dr.Read
+
+            cmbTypes.Items.Add(dr(0).ToString + " - " + dr(1).ToString)
+
+        End While
+
+        con.Close()
+
+        cmbTypes.SelectedIndex = 0
 
     End Sub
 
@@ -79,7 +97,10 @@ Public Class CheckIn
     End Sub
 
     Private Sub cmdSelectRoom_Click(sender As Object, e As EventArgs) Handles cmdSelectRoom.Click
-        SelectRoom.Show()
+        SelectRoom.ShowDialog()
+        txtTotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
+        txtSubtotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
+        lblMinPay.Text = Val(txtSubtotal.Text) / 2
     End Sub
 
     Private Sub dtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckOut.ValueChanged
@@ -94,6 +115,7 @@ Public Class CheckIn
         txtTotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
         txtSubtotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
 
+        lblMinPay.Text = Val(txtSubtotal.Text) / 2
     End Sub
 
     Private Sub cmdMinusCount_Click(sender As Object, e As EventArgs) Handles cmdMinusCount.Click
@@ -133,38 +155,52 @@ Public Class CheckIn
     End Sub
 
     Private Sub cmdCheckIn_Click(sender As Object, e As EventArgs) Handles cmdCheckIn.Click
-        Dim guest_ID As Integer = lblGuestID.Text
-        Dim room_Num As Integer = txtRoomNum.Text
-        Dim reserveDate As Date = Now.ToString("dd/MM/yyyy")
-        Dim inDate As Date = Now.ToString("dd/MM/yyyy")
-        Dim outDate As Date = dtpCheckOut.Value.ToString("dd/MM/yyyy")
-        Dim advancePay As Decimal = 0
-        Dim reserveDesc As String = "Checkin"
 
-        checkOpen()
-
-
-        Dim i As Integer = InsertGuestReservation(guest_ID, room_Num, reserveDesc, reserveDate, inDate, outDate, advancePay)
-        If i > 0 Then
-            MsgBox("Check In Complete. Enjoy your stay!")
+        If txtAdvPay.Text < lblMinPay.Text Then
+            MsgBox("Advance Payment insufficient. Amount should be half of subtotal")
+            txtAdvPay.Text = 0
         Else
-            MsgBox("Check in failed. Try Again")
+
+            Dim guest_ID As Integer = lblGuestID.Text
+            Dim room_Num As Integer = txtRoomNum.Text
+            Dim reserveDate As Date = Now.ToString("dd/MM/yyyy")
+            Dim inDate As Date = Now.ToString("dd/MM/yyyy")
+            Dim outDate As Date = dtpCheckOut.Value.ToString("dd/MM/yyyy")
+            Dim numGuest As Integer = txtNumGuest.Text
+            Dim advancePay As Decimal = txtAdvPay.Text
+            Dim reserveDesc As String = "Checkin"
+            Dim payType() As String = (cmbTypes.SelectedItem).ToString.Split(" ")
+            Dim payTID As Integer = CInt(payType(0))
+
+            checkOpen()
+
+
+            Dim i As Integer = InsertGuestReservation(guest_ID, room_Num, reserveDesc, reserveDate, inDate, outDate, advancePay)
+            If i > 0 Then
+                MsgBox("Check In Complete. Enjoy your stay!")
+            Else
+                MsgBox("Check in failed. Try Again")
+            End If
+
+
+            Dim j As Integer = SetRoomStatus(room_Num, numGuest, "Occupied")
+
+            If j > 0 Then
+                MsgBox("Room " + room_Num.ToString + " status set to Occupied")
+            Else
+                MsgBox("Room set status failed")
+            End If
+
+            SetGuestRemarks(guest_ID, "Checkin")
+
+            Dim k As Integer = InsertIntoPayment(guest_ID, "Advance Payment", payTID, inDate, advancePay)
+
+            clear_text()
+
+            con.Close()
+
         End If
 
-
-        Dim j As Integer = SetRoomStatus(room_Num, "Occupied")
-
-        If j > 0 Then
-            MsgBox("Room " + room_Num.ToString + " status set to Occupied")
-        Else
-            MsgBox("Room set status failed")
-        End If
-
-        SetGuestRemarks(guest_ID, "Checkin")
-
-        clear_text()
-
-        con.Close()
     End Sub
 
 
@@ -188,5 +224,18 @@ Public Class CheckIn
 
     Private Sub cmdViewCheckIns_Click(sender As Object, e As EventArgs) Handles cmdViewCheckIns.Click
         CurrentCheckIn.Show()
+    End Sub
+
+    Private Sub txtAdvPay_TextChanged(sender As Object, e As EventArgs) Handles txtAdvPay.TextChanged
+        Dim adPay As Decimal
+        If txtAdvPay.Text = "" Then
+            adPay = 0
+        ElseIf txtAdvPay.Text Like "[A-Za-z]" Then
+            MsgBox("Advance only accepts numbers,")
+            txtAdvPay.Text = 0
+        Else
+            adPay = txtAdvPay.Text
+            txtTotal.Text = Val(txtSubtotal.Text) - adPay
+        End If
     End Sub
 End Class
