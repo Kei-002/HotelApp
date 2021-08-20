@@ -57,8 +57,8 @@ Public Class CurrentCheckIn
 
         sql = "SELECT G.guestID as ID, guestName as Guest, reservationID as ReserveID, R.roomNum as RoomNum, roomType as Type, roomRate as Rate, NumOfOccupants as GuestsInRoom,checkIN as InDate, checkOUT as OutDate, advancePayment as AdvancePayment
               FROM Guest G, Reservation RV, Rooms R
-              WHERE G.guestID = RV.guestID AND RV.roomNum = R.roomNum AND Remarks = 'Checkin' and reserveStatus = 'Active'"
-
+              WHERE G.guestID = RV.guestID AND RV.roomNum = R.roomNum and reserveStatus = 'Active'"
+        'Remarks = 'Checkin'
         cmd = New OleDbCommand(sql, con)
         dr = cmd.ExecuteReader
 

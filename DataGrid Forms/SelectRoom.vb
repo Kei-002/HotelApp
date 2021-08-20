@@ -45,6 +45,8 @@ Public Class SelectRoom
 #End Region
 
     Private Sub SelectRoom_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cmbTypes.Items.Clear()
+        cmbTypes.Items.Add("Any")
         Guna2ShadowForm1.SetShadowForm(Me)
         checkOpen()
         dt = New DataTable("Guests")

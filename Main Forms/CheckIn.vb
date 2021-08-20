@@ -46,8 +46,8 @@ Public Class CheckIn
 
 #End Region
 
-
     Private Sub CheckIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        clear_text()
         Guna2ShadowForm1.SetShadowForm(Me)
         cmbTypes.Items.Clear()
         Dim time As DateTime = DateTime.Now
@@ -56,8 +56,8 @@ Public Class CheckIn
         dtpCheckOut.Text = Now.AddDays(1D)
         txtNumDays.Text = 1
 
-
         checkOpen()
+
 
         sql = "Select * FROM PaymentType"
         cmd = New OleDbCommand(sql, con)
@@ -79,8 +79,6 @@ Public Class CheckIn
     Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
         Me.Close()
     End Sub
-
-
 
 
 
@@ -106,6 +104,7 @@ Public Class CheckIn
         cmdAddCount.Enabled = True
         cmdMinusCount.Enabled = True
         txtAdvPay.Enabled = True
+        txtNumGuest.Enabled = True
     End Sub
 
     Private Sub dtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckOut.ValueChanged
@@ -200,15 +199,34 @@ Public Class CheckIn
 
             Dim k As Integer = InsertIntoPayment(guest_ID, "Advance Payment", payTID, inDate, advancePay)
 
-            clear_text()
 
             con.Close()
 
+            Dim ans As String = MsgBox("Do you want to check in another room?", vbQuestion + vbYesNo, "Avail another room?")
+            If ans = vbNo Then
+                clear_text()
+                cmdSelectGuest.Enabled = True
+                txtGuest.Enabled = True
+            Else
+                cmdSelectGuest.Enabled = False
+                txtGuest.Enabled = False
+
+
+                txtRoomNum.Clear()
+                txtRoomType.Clear()
+                txtRate.Clear()
+                dtpCheckIn.Value = Now
+                Dim time As DateTime = DateTime.Now
+                dtpCheckIn.Text = time
+                txtNumGuest.Text = 1
+                txtAdvPay.Text = 0
+                txtSubtotal.Text = 0
+                txtTotal.Text = 0
+                cmbTypes.SelectedIndex = 0
+            End If
         End If
 
     End Sub
-
-
 
 
     Private Sub clear_text()
@@ -217,8 +235,8 @@ Public Class CheckIn
         txtRoomNum.Clear()
         txtRoomType.Clear()
         txtRate.Clear()
-        txtNumGuest.Text = 0
-        lblMaxOccu.Text = "X"
+        txtNumGuest.Text = 1
+        lblMaxOccu.Text = 1
         txtAdvPay.Text = 0
 
         dtpCheckIn.Value = Now
@@ -229,7 +247,9 @@ Public Class CheckIn
     End Sub
 
     Private Sub cmdViewCheckIns_Click(sender As Object, e As EventArgs) Handles cmdViewCheckIns.Click
-        CurrentCheckIn.Show()
+        CurrentCheckIn.cmdSelect.Enabled = True
+        CurrentCheckIn.ShowDialog()
+        CurrentCheckIn.cmdSelect.Enabled = False
     End Sub
 
     Private Sub txtAdvPay_TextChanged(sender As Object, e As EventArgs) Handles txtAdvPay.TextChanged

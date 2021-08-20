@@ -99,7 +99,9 @@ Public Class SelectGuest
     End Sub
 
     Private Sub cmdRegister_Click(sender As Object, e As EventArgs) Handles cmdRegister.Click
-        RegisterGuest.Show()
+        RegisterGuest.ShowDialog()
+
+        Call SelectGuest_Load(sender, e)
     End Sub
 
     Private Sub cmdSelect_Click(sender As Object, e As EventArgs) Handles cmdSelect.Click

@@ -107,10 +107,34 @@ Public Class Guests
     End Sub
 
     Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
+
+        checkOpen()
+
+        sql = "DELETE FROM Guest where guest.guestID = " & lblCusID.Text & ""
+        cmd = New OleDbCommand(sql, con)
+        cmd.ExecuteNonQuery()
+
+        MsgBox("Data deleted.")
+
+        con.Close()
+
+
         Call Guests_Load(sender, e)
     End Sub
 
     Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles cmdDelete.Click
+        con.Open()
+
+        sql = "UPDATE Guest set guestName = '" & txtGuest.Text & "', guestAddress = '" & txtAddress.Text & "', guestAge = '" & txtAge.Text & "', 
+        guestPhone = '" & txtPhone.Text & "', guestEmail = '" & txtEmail.Text & "' WHERE guest.guestID = " & lblCusID.Text & ""
+        cmd = New OleDbCommand(sql, con)
+        cmd.ExecuteNonQuery()
+
+
+        MsgBox("Data updated.")
+
+        con.Close()
+
 
         Call Guests_Load(sender, e)
     End Sub

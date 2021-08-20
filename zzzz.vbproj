@@ -126,10 +126,40 @@
     <Compile Include="CrystalForms\RoomReportForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CrystalForms\ServicesReportForm.Designer.vb">
+      <DependentUpon>ServicesReportForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalForms\ServicesReportForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystals\PaymentReportX.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentReportX.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crystals\PayReports.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayReports.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Crystals\RoomReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RoomReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crystals\RoomReportX.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RoomReportX.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crystals\ServiceReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataGrid Forms\CurrentCheckIn.Designer.vb">
@@ -161,10 +191,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CrystalForms\PaymentReport.Designer.vb">
+      <DependentUpon>PaymentReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalForms\PaymentReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSets\PaymentData.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\ReportData.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ServicesReport.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServicesReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\ServicesReport.vb">
+      <DependentUpon>ServicesReport.xsd</DependentUpon>
     </Compile>
     <Compile Include="Main Forms\CheckIn.Designer.vb">
       <DependentUpon>CheckIn.vb</DependentUpon>
@@ -261,9 +310,28 @@
     <EmbeddedResource Include="CrystalForms\RoomReportForm.resx">
       <DependentUpon>RoomReportForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalForms\ServicesReportForm.resx">
+      <DependentUpon>ServicesReportForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystals\PaymentReportX.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PaymentReportX.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystals\PayReports.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PayReports.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Crystals\RoomReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RoomReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystals\RoomReportX.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RoomReportX.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystals\ServiceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ServiceReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DataGrid Forms\CurrentCheckIn.resx">
       <DependentUpon>CurrentCheckIn.vb</DependentUpon>
@@ -276,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataGrid Forms\SelectRoom.resx">
       <DependentUpon>SelectRoom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalForms\PaymentReport.resx">
+      <DependentUpon>PaymentReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Forms\CheckIn.resx">
       <DependentUpon>CheckIn.vb</DependentUpon>
@@ -332,6 +403,17 @@
     <None Include="DataSets\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="DataSets\PaymentData.xsc">
+      <DependentUpon>PaymentData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\PaymentData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PaymentData.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSets\PaymentData.xss">
+      <DependentUpon>PaymentData.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\ReportData.xsc">
       <DependentUpon>ReportData.xsd</DependentUpon>
     </None>
@@ -342,6 +424,17 @@
     </None>
     <None Include="DataSets\ReportData.xss">
       <DependentUpon>ReportData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ServicesReport.xsc">
+      <DependentUpon>ServicesReport.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\ServicesReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ServicesReport.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSets\ServicesReport.xss">
+      <DependentUpon>ServicesReport.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

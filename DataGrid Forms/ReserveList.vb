@@ -174,4 +174,8 @@ Public Class ReserveList
 
         Call ReserveList_Load(sender, e)
     End Sub
+
+    Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
+        Me.Close()
+    End Sub
 End Class

@@ -74,7 +74,9 @@ Public Class Reservation
     End Sub
 
     Private Sub cmdSelectGuest_Click(sender As Object, e As EventArgs) Handles cmdSelectGuest.Click
-        SelectGuest.Show()
+
+        SelectGuest.ShowDialog()
+
     End Sub
 
 
@@ -213,6 +215,29 @@ Public Class Reservation
 
             con.Close()
 
+
+            Dim ans As String = MsgBox("Do you want to reserve another room?", vbQuestion + vbYesNo, "Reserve another room?")
+            If ans = vbNo Then
+                clear_text()
+                cmdSelectGuest.Enabled = True
+                txtGuest.Enabled = True
+            Else
+                cmdSelectGuest.Enabled = False
+                txtGuest.Enabled = False
+
+
+                txtRoomNum.Clear()
+                txtRoomType.Clear()
+                txtRate.Clear()
+                dtpCheckIn.Value = Now
+                Dim time As DateTime = DateTime.Now
+                dtpCheckIn.Text = time
+                txtNumGuest.Text = 1
+                txtAdvPay.Text = 0
+                txtSubtotal.Text = 0
+                txtTotal.Text = 0
+                cmbTypes.SelectedIndex = 0
+            End If
         End If
 
 
@@ -238,7 +263,8 @@ Public Class Reservation
     End Sub
 
     Private Sub cmdReserveList_Click(sender As Object, e As EventArgs) Handles cmdReserveList.Click
-        ReserveList.Show()
+
+        ReserveList.ShowDialog()
     End Sub
 
     Private Sub txtAdvPay_TextChanged(sender As Object, e As EventArgs) Handles txtAdvPay.TextChanged
@@ -255,7 +281,5 @@ Public Class Reservation
         Me.Close()
     End Sub
 
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
-    End Sub
 End Class

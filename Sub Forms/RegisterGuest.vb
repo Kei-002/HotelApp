@@ -59,13 +59,12 @@ Public Class RegisterGuest
         Dim i As Integer = cmd.ExecuteNonQuery
 
         If i > 0 Then
-            MsgBox("User successfully registered! registration form will now close", "Registration Success")
+            MsgBox("User successfully registered! registration form will now close", Title:="Registration Success")
         Else
             MsgBox("User registration failed. registration form will now close", "Registration failed")
         End If
 
         con.Close()
-
 
         Dim ans As String = MsgBox("Register another user?", vbQuestion + vbYesNo, "User registration")
         If ans = vbNo Then

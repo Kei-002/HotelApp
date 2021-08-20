@@ -46,6 +46,7 @@ Public Class CheckOut
 #End Region
 
     Private Sub CheckOut_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        clear_text()
         Guna2ShadowForm1.SetShadowForm(Me)
         cmbType.Items.Clear()
         checkOpen()
@@ -75,8 +76,6 @@ Public Class CheckOut
         Dim exit_app As String = MsgBox("Exit check out?", vbQuestion + vbYesNo, "Exit Check Out")
         If exit_app = vbNo Then
             e.Cancel = True
-
-
         End If
     End Sub
 
@@ -205,5 +204,7 @@ Public Class CheckOut
         txtChange.Text = 0
     End Sub
 
+    Private Sub dtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckOut.ValueChanged
 
+    End Sub
 End Class

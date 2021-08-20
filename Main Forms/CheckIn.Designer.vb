@@ -587,9 +587,9 @@ Partial Class CheckIn
         Me.lblMaxOccu.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
         Me.lblMaxOccu.Location = New System.Drawing.Point(596, 91)
         Me.lblMaxOccu.Name = "lblMaxOccu"
-        Me.lblMaxOccu.Size = New System.Drawing.Size(14, 15)
+        Me.lblMaxOccu.Size = New System.Drawing.Size(11, 15)
         Me.lblMaxOccu.TabIndex = 37
-        Me.lblMaxOccu.Text = "X"
+        Me.lblMaxOccu.Text = "1"
         '
         'Panel1
         '
