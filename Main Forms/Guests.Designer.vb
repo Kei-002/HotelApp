@@ -48,6 +48,7 @@ Partial Class Guests
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblCusID = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.cmdClear = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgGuests, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -221,6 +222,7 @@ Partial Class Guests
         '
         'Guna2Panel1
         '
+        Me.Guna2Panel1.Controls.Add(Me.cmdClear)
         Me.Guna2Panel1.Controls.Add(Me.txtEmail)
         Me.Guna2Panel1.Controls.Add(Me.Label6)
         Me.Guna2Panel1.Controls.Add(Me.txtPhone)
@@ -258,7 +260,7 @@ Partial Class Guests
         Me.txtEmail.Location = New System.Drawing.Point(116, 157)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtEmail.PlaceholderText = "Select Guest"
+        Me.txtEmail.PlaceholderText = ""
         Me.txtEmail.SelectedText = ""
         Me.txtEmail.ShadowDecoration.Parent = Me.txtEmail
         Me.txtEmail.Size = New System.Drawing.Size(170, 31)
@@ -295,10 +297,9 @@ Partial Class Guests
         Me.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtPhone.HoverState.Parent = Me.txtPhone
         Me.txtPhone.Location = New System.Drawing.Point(116, 120)
-        Me.txtPhone.MaxLength = 11
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtPhone.PlaceholderText = "Select Guest"
+        Me.txtPhone.PlaceholderText = ""
         Me.txtPhone.SelectedText = ""
         Me.txtPhone.ShadowDecoration.Parent = Me.txtPhone
         Me.txtPhone.Size = New System.Drawing.Size(170, 31)
@@ -337,7 +338,7 @@ Partial Class Guests
         Me.txtAge.Location = New System.Drawing.Point(116, 83)
         Me.txtAge.Name = "txtAge"
         Me.txtAge.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtAge.PlaceholderText = "Select Guest"
+        Me.txtAge.PlaceholderText = ""
         Me.txtAge.SelectedText = ""
         Me.txtAge.ShadowDecoration.Parent = Me.txtAge
         Me.txtAge.Size = New System.Drawing.Size(170, 31)
@@ -376,7 +377,7 @@ Partial Class Guests
         Me.txtAddress.Location = New System.Drawing.Point(116, 46)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtAddress.PlaceholderText = "Select Guest"
+        Me.txtAddress.PlaceholderText = ""
         Me.txtAddress.SelectedText = ""
         Me.txtAddress.ShadowDecoration.Parent = Me.txtAddress
         Me.txtAddress.Size = New System.Drawing.Size(170, 31)
@@ -415,7 +416,7 @@ Partial Class Guests
         Me.txtGuest.Location = New System.Drawing.Point(116, 9)
         Me.txtGuest.Name = "txtGuest"
         Me.txtGuest.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtGuest.PlaceholderText = "Select Guest"
+        Me.txtGuest.PlaceholderText = ""
         Me.txtGuest.SelectedText = ""
         Me.txtGuest.ShadowDecoration.Parent = Me.txtGuest
         Me.txtGuest.Size = New System.Drawing.Size(170, 31)
@@ -452,6 +453,22 @@ Partial Class Guests
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 69
         Me.PictureBox1.TabStop = False
+        '
+        'cmdClear
+        '
+        Me.cmdClear.AutoRoundedCorners = True
+        Me.cmdClear.BorderRadius = 12
+        Me.cmdClear.CheckedState.Parent = Me.cmdClear
+        Me.cmdClear.CustomImages.Parent = Me.cmdClear
+        Me.cmdClear.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.cmdClear.ForeColor = System.Drawing.Color.White
+        Me.cmdClear.HoverState.Parent = Me.cmdClear
+        Me.cmdClear.Location = New System.Drawing.Point(162, 197)
+        Me.cmdClear.Name = "cmdClear"
+        Me.cmdClear.ShadowDecoration.Parent = Me.cmdClear
+        Me.cmdClear.Size = New System.Drawing.Size(124, 26)
+        Me.cmdClear.TabIndex = 52
+        Me.cmdClear.Text = "Clear Text"
         '
         'Guests
         '
@@ -502,4 +519,5 @@ Partial Class Guests
     Friend WithEvents lblCusID As Label
     Friend WithEvents txtEmail As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents cmdClear As Guna.UI2.WinForms.Guna2Button
 End Class

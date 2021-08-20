@@ -64,8 +64,7 @@ Public Class Rooms
     Private Sub Rooms_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Guna2ShadowForm1.SetShadowForm(Me)
 
-        con.ConnectionString = dbcon
-        con.Open()
+        checkOpen()
         ds = New DataSet
 
         sql = "SELECT roomNum as RoomNum, roomType as Type, roomRate as RatePerNight, NumOfOccupants as GuestInRoom, Capacity, Status

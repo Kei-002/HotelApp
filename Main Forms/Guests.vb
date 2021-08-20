@@ -94,14 +94,14 @@ Public Class Guests
         Dim i As Integer = cmd.ExecuteNonQuery
 
         If i > 0 Then
-            MsgBox("User successfully registered! registration form will now close", "Registration Success")
+            MsgBox("User successfully registered! registration form will now close", Title:="Registration Success")
         Else
             MsgBox("User registration failed. registration form will now close", "Registration failed")
         End If
 
         con.Close()
 
-
+        Call cmdClear_Click(sender, e)
 
         Call Guests_Load(sender, e)
     End Sub
@@ -109,21 +109,6 @@ Public Class Guests
     Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
 
         checkOpen()
-
-        sql = "DELETE FROM Guest where guest.guestID = " & lblCusID.Text & ""
-        cmd = New OleDbCommand(sql, con)
-        cmd.ExecuteNonQuery()
-
-        MsgBox("Data deleted.")
-
-        con.Close()
-
-
-        Call Guests_Load(sender, e)
-    End Sub
-
-    Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles cmdDelete.Click
-        con.Open()
 
         sql = "UPDATE Guest set guestName = '" & txtGuest.Text & "', guestAddress = '" & txtAddress.Text & "', guestAge = '" & txtAge.Text & "', 
         guestPhone = '" & txtPhone.Text & "', guestEmail = '" & txtEmail.Text & "' WHERE guest.guestID = " & lblCusID.Text & ""
@@ -139,18 +124,42 @@ Public Class Guests
         Call Guests_Load(sender, e)
     End Sub
 
+    Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles cmdDelete.Click
+
+        checkOpen()
+
+        sql = "DELETE FROM Guest where guest.guestID = " & lblCusID.Text & ""
+        cmd = New OleDbCommand(sql, con)
+        cmd.ExecuteNonQuery()
+
+        MsgBox("Data deleted.")
+
+        con.Close()
+
+
+        Call Guests_Load(sender, e)
+
+    End Sub
+
     Private Sub dgGuests_DoubleClick(sender As Object, e As EventArgs) Handles dgGuests.DoubleClick
         txtGuest.Text = Me.dgGuests.CurrentRow.Cells("Name").Value
         txtAddress.Text = Me.dgGuests.CurrentRow.Cells("Address").Value
         txtAge.Text = Me.dgGuests.CurrentRow.Cells("Age").Value
         txtPhone.Text = Me.dgGuests.CurrentRow.Cells("Phone").Value
         lblCusID.Text = Me.dgGuests.CurrentRow.Cells("ID").Value
+        txtEmail.Text = Me.dgGuests.CurrentRow.Cells("Email").Value
 
         cmdUpdate.Enabled = True
         cmdDelete.Enabled = True
     End Sub
 
-    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtEmail.TextChanged
 
+
+    Private Sub cmdClear_Click(sender As Object, e As EventArgs) Handles cmdClear.Click
+        txtGuest.Clear()
+        txtEmail.Clear()
+        txtAge.Clear()
+        txtAddress.Clear()
+        txtPhone.Clear()
     End Sub
 End Class
