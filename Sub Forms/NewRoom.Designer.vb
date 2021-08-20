@@ -22,6 +22,7 @@ Partial Class NewRoom
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(NewRoom))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.cmdAdd = New Guna.UI2.WinForms.Guna2Button()
@@ -41,6 +42,7 @@ Partial Class NewRoom
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cmdMinimize = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -377,6 +379,7 @@ Partial Class NewRoom
         Me.Controls.Add(Me.Guna2Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "NewRoom"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "NewRoom"
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
@@ -403,4 +406,5 @@ Partial Class NewRoom
     Friend WithEvents cmdCLose As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents txtRate As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
 End Class

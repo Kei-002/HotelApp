@@ -44,6 +44,7 @@ Public Class Services
 
 #End Region
     Private Sub Services_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Guna2ShadowForm1.SetShadowForm(Me)
         checkOpen()
 
         dt = New DataTable("CheckedIN")
@@ -128,5 +129,24 @@ Public Class Services
             AvailService.Show()
             AvailService.cmbServices.SelectedItem = "Laundry Service"
         End If
+    End Sub
+
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        checkOpen()
+
+        dt = New DataTable
+
+        sql = "SELECT G.guestID as ID, guestName as Guest, R.roomNum as RoomNum, NumOfOccupants as GuestsInRoom
+              FROM Guest G, Reservation RV, Rooms R
+              WHERE G.guestID = RV.guestID AND RV.roomNum = R.roomNum AND Remarks = 'Checkin' and reserveStatus = 'Active'
+              AND guestName like '% " & txtSearch.Text & " %'
+              "
+        da = New OleDbDataAdapter(sql, con)
+
+        da.Fill(dt)
+
+        dgCheckedIn.DataSource = dt
+
+        con.Close()
     End Sub
 End Class

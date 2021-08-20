@@ -22,6 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.cmdFeedback = New Guna.UI2.WinForms.Guna2Button()
@@ -35,6 +36,7 @@ Partial Class Main
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cmdMinimize = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -319,4 +321,5 @@ Partial Class Main
     Friend WithEvents cmdReservation As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cmdFeedback As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cmdServices As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
 End Class

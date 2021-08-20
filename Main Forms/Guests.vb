@@ -51,7 +51,7 @@ Public Class Guests
     End Sub
 
     Private Sub Guests_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Dim exit_app As String = MsgBox("Cancel Transaction?", vbQuestion + vbYesNo, "Cancel Check In")
+        Dim exit_app As String = MsgBox("Exit Guest List?", vbQuestion + vbYesNo, "Exit List")
         If exit_app = vbNo Then
             e.Cancel = True
         Else
@@ -81,6 +81,7 @@ Public Class Guests
         cmdUpdate.Enabled = False
         cmdDelete.Enabled = False
         dgGuests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgGuests.Sort(dgGuests.Columns(0), ListSortDirection.Ascending)
     End Sub
 
     Private Sub cmdAdd_Click(sender As Object, e As EventArgs) Handles cmdAdd.Click
@@ -90,15 +91,15 @@ Public Class Guests
         sql = "INSERT INTO Guest (guestName, guestAddress, guestAge, guestPhone, guestEmail, Remarks) 
         VALUES ('" & txtGuest.Text & "','" & txtAddress.Text & "','" & txtAge.Text & "','" & txtPhone.Text & "','" & txtEmail.Text & "', 'Available')"
         cmd = New OleDbCommand(sql, con)
-        cmd.ExecuteNonQuery()
+        Dim i As Integer = cmd.ExecuteNonQuery
 
-
-        MsgBox("Data inserted.")
-
+        If i > 0 Then
+            MsgBox("User successfully registered! registration form will now close", "Registration Success")
+        Else
+            MsgBox("User registration failed. registration form will now close", "Registration failed")
+        End If
 
         con.Close()
-
-
 
 
 

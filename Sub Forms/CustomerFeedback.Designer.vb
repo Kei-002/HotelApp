@@ -22,6 +22,7 @@ Partial Class CustomerFeedback
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ctRating = New Guna.UI2.WinForms.Guna2RatingStar()
         Me.txtFeedback = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -31,17 +32,21 @@ Partial Class CustomerFeedback
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmdSubmit = New Guna.UI2.WinForms.Guna2Button()
         Me.lblGuestID = New System.Windows.Forms.Label()
+        Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
+        Me.cmdMinimize = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.SuspendLayout()
         '
         'ctRating
         '
-        Me.ctRating.Location = New System.Drawing.Point(74, 325)
+        Me.ctRating.Location = New System.Drawing.Point(72, 325)
         Me.ctRating.Name = "ctRating"
         Me.ctRating.Size = New System.Drawing.Size(186, 44)
         Me.ctRating.TabIndex = 0
         '
         'txtFeedback
         '
+        Me.txtFeedback.Font = New System.Drawing.Font("Open Sans", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFeedback.Location = New System.Drawing.Point(12, 152)
         Me.txtFeedback.Multiline = True
         Me.txtFeedback.Name = "txtFeedback"
@@ -147,11 +152,47 @@ Partial Class CustomerFeedback
         Me.lblGuestID.Text = "Label3"
         Me.lblGuestID.Visible = False
         '
+        'cmdMinimize
+        '
+        Me.cmdMinimize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdMinimize.CheckedState.Parent = Me.cmdMinimize
+        Me.cmdMinimize.CustomImages.Parent = Me.cmdMinimize
+        Me.cmdMinimize.FillColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(198, Byte), Integer))
+        Me.cmdMinimize.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdMinimize.ForeColor = System.Drawing.Color.White
+        Me.cmdMinimize.HoverState.Parent = Me.cmdMinimize
+        Me.cmdMinimize.Location = New System.Drawing.Point(273, 6)
+        Me.cmdMinimize.Name = "cmdMinimize"
+        Me.cmdMinimize.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.cmdMinimize.ShadowDecoration.Parent = Me.cmdMinimize
+        Me.cmdMinimize.Size = New System.Drawing.Size(20, 20)
+        Me.cmdMinimize.TabIndex = 108
+        Me.cmdMinimize.Text = "-"
+        '
+        'cmdCLose
+        '
+        Me.cmdCLose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdCLose.CheckedState.Parent = Me.cmdCLose
+        Me.cmdCLose.CustomImages.Parent = Me.cmdCLose
+        Me.cmdCLose.FillColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.cmdCLose.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdCLose.ForeColor = System.Drawing.Color.White
+        Me.cmdCLose.HoverState.Parent = Me.cmdCLose
+        Me.cmdCLose.Location = New System.Drawing.Point(299, 6)
+        Me.cmdCLose.Name = "cmdCLose"
+        Me.cmdCLose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.cmdCLose.ShadowDecoration.Parent = Me.cmdCLose
+        Me.cmdCLose.Size = New System.Drawing.Size(20, 20)
+        Me.cmdCLose.TabIndex = 109
+        Me.cmdCLose.Text = "X"
+        '
         'CustomerFeedback
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(330, 459)
+        Me.Controls.Add(Me.cmdMinimize)
+        Me.Controls.Add(Me.cmdCLose)
         Me.Controls.Add(Me.lblGuestID)
         Me.Controls.Add(Me.cmdSubmit)
         Me.Controls.Add(Me.txtGuestName)
@@ -161,7 +202,9 @@ Partial Class CustomerFeedback
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtFeedback)
         Me.Controls.Add(Me.ctRating)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "CustomerFeedback"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CustomerFeedback"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -177,4 +220,7 @@ Partial Class CustomerFeedback
     Friend WithEvents Label2 As Label
     Friend WithEvents cmdSubmit As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents lblGuestID As Label
+    Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
+    Friend WithEvents cmdMinimize As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents cmdCLose As Guna.UI2.WinForms.Guna2CircleButton
 End Class

@@ -155,6 +155,7 @@ Partial Class CheckIn
         '
         Me.cmdAddCount.CheckedState.Parent = Me.cmdAddCount
         Me.cmdAddCount.CustomImages.Parent = Me.cmdAddCount
+        Me.cmdAddCount.Enabled = False
         Me.cmdAddCount.FillColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmdAddCount.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdAddCount.ForeColor = System.Drawing.Color.White
@@ -171,6 +172,7 @@ Partial Class CheckIn
         '
         Me.cmdMinusCount.CheckedState.Parent = Me.cmdMinusCount
         Me.cmdMinusCount.CustomImages.Parent = Me.cmdMinusCount
+        Me.cmdMinusCount.Enabled = False
         Me.cmdMinusCount.FillColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.cmdMinusCount.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdMinusCount.ForeColor = System.Drawing.Color.White
@@ -327,6 +329,7 @@ Partial Class CheckIn
         Me.txtNumGuest.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtNumGuest.DisabledState.Parent = Me.txtNumGuest
         Me.txtNumGuest.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtNumGuest.Enabled = False
         Me.txtNumGuest.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.txtNumGuest.FocusedState.Parent = Me.txtNumGuest
         Me.txtNumGuest.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -742,7 +745,7 @@ Partial Class CheckIn
         Me.txtTotal.Location = New System.Drawing.Point(509, 294)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtTotal.PlaceholderText = "Select Room"
+        Me.txtTotal.PlaceholderText = ""
         Me.txtTotal.SelectedText = ""
         Me.txtTotal.ShadowDecoration.Parent = Me.txtTotal
         Me.txtTotal.Size = New System.Drawing.Size(169, 31)
@@ -761,6 +764,7 @@ Partial Class CheckIn
         Me.txtAdvPay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.txtAdvPay.DisabledState.Parent = Me.txtAdvPay
         Me.txtAdvPay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtAdvPay.Enabled = False
         Me.txtAdvPay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.txtAdvPay.FocusedState.Parent = Me.txtAdvPay
         Me.txtAdvPay.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -800,7 +804,7 @@ Partial Class CheckIn
         Me.txtSubtotal.Location = New System.Drawing.Point(508, 113)
         Me.txtSubtotal.Name = "txtSubtotal"
         Me.txtSubtotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSubtotal.PlaceholderText = "Select Room"
+        Me.txtSubtotal.PlaceholderText = ""
         Me.txtSubtotal.SelectedText = ""
         Me.txtSubtotal.ShadowDecoration.Parent = Me.txtSubtotal
         Me.txtSubtotal.Size = New System.Drawing.Size(169, 31)

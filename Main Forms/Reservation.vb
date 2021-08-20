@@ -42,6 +42,8 @@ Public Class Reservation
 #End Region
     Private Sub Reservation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Guna2ShadowForm1.SetShadowForm(Me)
+        cmbTypes.Items.Clear()
+
         Dim time As DateTime = DateTime.Now
         clear_text()
 
@@ -85,7 +87,8 @@ Public Class Reservation
         cmbTypes.Enabled = True
         txtNumGuest.Enabled = True
 
-
+        txtSubtotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
+        lblMinPay.Text = Val(txtSubtotal.Text) / 2
     End Sub
 
 
@@ -111,7 +114,17 @@ Public Class Reservation
     Private Sub dtpCheckIn_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckIn.ValueChanged
 
         dtpCheckOut.Text = dtpCheckIn.Value.AddDays(1D)
+        Dim T As TimeSpan = dtpCheckOut.Value - dtpCheckIn.Value
+        If T.Days < 1 Then
+            dtpCheckOut.Text = dtpCheckIn.Value.AddDays(1D)
+            txtNumDays.Text = "1"
+        Else
+            txtNumDays.Text = T.Days
+        End If
 
+        'txtTotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
+        txtSubtotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
+        lblMinPay.Text = Val(txtSubtotal.Text) / 2
 
     End Sub
 
@@ -240,5 +253,9 @@ Public Class Reservation
 
     Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
         Me.Close()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
     End Sub
 End Class

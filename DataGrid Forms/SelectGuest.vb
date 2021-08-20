@@ -45,6 +45,7 @@ Public Class SelectGuest
 
 #End Region
     Private Sub SelectGuest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Guna2ShadowForm1.SetShadowForm(Me)
         checkOpen()
         dt = New DataTable("Guests")
 
@@ -59,6 +60,7 @@ Public Class SelectGuest
         dr.Dispose()
 
         dgList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgList.Sort(dgList.Columns(0), ListSortDirection.Ascending)
         con.Close()
     End Sub
 
@@ -78,6 +80,35 @@ Public Class SelectGuest
     End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+        checkOpen()
+        dt = New DataTable("Guests")
 
+        sql = "SELECT guestID as ID, guestName as Guest, guestAddress as Address, guestAge as Age, guestPhone as PhoneNum,
+               guestEmail as Email FROM Guest WHERE Remarks = 'Available'
+               AND guestName like '%" & txtSearch.Text & "%'"
+
+        cmd = New OleDbCommand(sql, con)
+        dr = cmd.ExecuteReader
+
+        dt.Load(dr)
+        dgList.DataSource = dt
+        dr.Dispose()
+
+        dgList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        con.Close()
+    End Sub
+
+    Private Sub cmdRegister_Click(sender As Object, e As EventArgs) Handles cmdRegister.Click
+        RegisterGuest.Show()
+    End Sub
+
+    Private Sub cmdSelect_Click(sender As Object, e As EventArgs) Handles cmdSelect.Click
+        CheckIn.lblGuestID.Text = Me.dgList.CurrentRow.Cells("ID").Value
+        CheckIn.txtGuest.Text = Me.dgList.CurrentRow.Cells("Guest").Value
+
+        Reservation.txtGuest.Text = Me.dgList.CurrentRow.Cells("Guest").Value
+        Reservation.lblGuestID.Text = Me.dgList.CurrentRow.Cells("ID").Value
+        dt.Clear()
+        Me.Close()
     End Sub
 End Class

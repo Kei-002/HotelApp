@@ -65,7 +65,7 @@ Public Class Main
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Guna2ShadowForm1.SetShadowForm(Me)
     End Sub
 
     Private Sub cmdCheckIn_Click(sender As Object, e As EventArgs) Handles cmdCheckIn.Click

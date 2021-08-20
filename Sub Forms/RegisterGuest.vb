@@ -1,5 +1,5 @@
 ﻿Imports System.Data.OleDb
-Public Class CustomerFeedback
+Public Class RegisterGuest
 #Region " Move Form "
 
     ' [ Move Form ]
@@ -44,33 +44,48 @@ Public Class CustomerFeedback
 
 #End Region
 
-    Private Sub cmdSubmit_Click(sender As Object, e As EventArgs) Handles cmdSubmit.Click
-        checkOpen()
-
-        Dim guestID As Integer = lblGuestID.Text
-        Dim rate As Integer = ctRating.Value
-        Dim feedback As String = txtFeedback.Text
-
-        sql = "INSERT INTO Feedback(guestID, feedbackDesc, feedbackRating) VALUES (@guestID, [@feedDesc], @feedRating)"
-        cmd = New OleDbCommand(sql, con)
-
-        With cmd
-            .Parameters.AddWithValue("@guestID", guestID)
-            .Parameters.AddWithValue("@feedDesc", feedback)
-            .Parameters.AddWithValue("@feedRating", rate)
-        End With
-
-        Dim i As Integer = cmd.ExecuteNonQuery
-        If i > 0 Then
-            MsgBox("Thank you for your feedback! Hope you enjoyed your stay. This form will now close", Title:="Feedback Submitted")
-            Me.Close()
-        Else
-            MsgBox("Feedback saving failed")
-        End If
-        con.Close()
+    Private Sub RegisterGuest_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Guna2ShadowForm1.SetShadowForm(Me)
+        clear_text()
     End Sub
 
-    Private Sub CustomerFeedback_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Guna2ShadowForm1.SetShadowForm(Me)
+    Private Sub cmdRegister_Click(sender As Object, e As EventArgs) Handles cmdRegister.Click
+        checkOpen()
+
+
+        sql = "INSERT INTO Guest (guestName, guestAddress, guestAge, guestPhone, guestEmail, Remarks) 
+        VALUES ('" & txtGuest.Text & "','" & txtAddress.Text & "','" & txtAge.Text & "','" & txtPhone.Text & "','" & txtEmail.Text & "', 'Available')"
+        cmd = New OleDbCommand(sql, con)
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+        If i > 0 Then
+            MsgBox("User successfully registered! registration form will now close", "Registration Success")
+        Else
+            MsgBox("User registration failed. registration form will now close", "Registration failed")
+        End If
+
+        con.Close()
+
+
+        Dim ans As String = MsgBox("Register another user?", vbQuestion + vbYesNo, "User registration")
+        If ans = vbNo Then
+            Me.Close()
+        Else
+            clear_text()
+        End If
+
+    End Sub
+
+
+    Private Sub clear_text()
+        txtAddress.Clear()
+        txtGuest.Clear()
+        txtAge.Clear()
+        txtEmail.Clear()
+        txtPhone.Clear()
+    End Sub
+
+    Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
+        Me.Close()
     End Sub
 End Class

@@ -1,4 +1,5 @@
-﻿Imports System.Data.OleDb
+﻿Imports System.ComponentModel
+Imports System.Data.OleDb
 Public Class ReserveList
 #Region " Move Form "
 
@@ -44,6 +45,7 @@ Public Class ReserveList
 #End Region
 
     Private Sub ReserveList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Guna2ShadowForm1.SetShadowForm(Me)
         checkOpen()
         dt = New DataTable("Guests")
 
@@ -58,6 +60,8 @@ Public Class ReserveList
         dr.Dispose()
 
         dgList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgList.Sort(dgList.Columns(8), ListSortDirection.Ascending)
+
         con.Close()
     End Sub
 
@@ -75,6 +79,7 @@ Public Class ReserveList
         dgList.DataSource = dt
         dr.Dispose()
 
+        ' dgList.Sort(dgList.Columns(8), ListSortDirection.Ascending)
         dgList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         con.Close()
     End Sub

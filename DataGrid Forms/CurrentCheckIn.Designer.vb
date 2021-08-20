@@ -22,16 +22,20 @@ Partial Class CurrentCheckIn
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CurrentCheckIn))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.dgCheckedIn = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.cmdMinimize = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.cmdSelect = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgCheckedIn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -78,30 +82,30 @@ Partial Class CurrentCheckIn
         Me.dgCheckedIn.AllowUserToAddRows = False
         Me.dgCheckedIn.AllowUserToDeleteRows = False
         Me.dgCheckedIn.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dgCheckedIn.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.dgCheckedIn.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgCheckedIn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgCheckedIn.BackgroundColor = System.Drawing.Color.White
         Me.dgCheckedIn.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgCheckedIn.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgCheckedIn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgCheckedIn.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgCheckedIn.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgCheckedIn.ColumnHeadersHeight = 4
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgCheckedIn.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgCheckedIn.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgCheckedIn.EnableHeadersVisualStyles = False
         Me.dgCheckedIn.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgCheckedIn.Location = New System.Drawing.Point(12, 100)
@@ -143,7 +147,7 @@ Partial Class CurrentCheckIn
         Me.cmdMinimize.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdMinimize.ForeColor = System.Drawing.Color.White
         Me.cmdMinimize.HoverState.Parent = Me.cmdMinimize
-        Me.cmdMinimize.Location = New System.Drawing.Point(725, 12)
+        Me.cmdMinimize.Location = New System.Drawing.Point(727, 12)
         Me.cmdMinimize.Name = "cmdMinimize"
         Me.cmdMinimize.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.cmdMinimize.ShadowDecoration.Parent = Me.cmdMinimize
@@ -160,7 +164,7 @@ Partial Class CurrentCheckIn
         Me.cmdCLose.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdCLose.ForeColor = System.Drawing.Color.White
         Me.cmdCLose.HoverState.Parent = Me.cmdCLose
-        Me.cmdCLose.Location = New System.Drawing.Point(751, 12)
+        Me.cmdCLose.Location = New System.Drawing.Point(753, 12)
         Me.cmdCLose.Name = "cmdCLose"
         Me.cmdCLose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.cmdCLose.ShadowDecoration.Parent = Me.cmdCLose
@@ -179,11 +183,36 @@ Partial Class CurrentCheckIn
         Me.Label2.TabIndex = 100
         Me.Label2.Text = "Double click to select"
         '
+        'Guna2Elipse1
+        '
+        Me.Guna2Elipse1.BorderRadius = 10
+        Me.Guna2Elipse1.TargetControl = Me.dgCheckedIn
+        '
+        'cmdSelect
+        '
+        Me.cmdSelect.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdSelect.Animated = True
+        Me.cmdSelect.AutoRoundedCorners = True
+        Me.cmdSelect.BorderRadius = 15
+        Me.cmdSelect.CheckedState.Parent = Me.cmdSelect
+        Me.cmdSelect.CustomImages.Parent = Me.cmdSelect
+        Me.cmdSelect.FillColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(158, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.cmdSelect.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdSelect.ForeColor = System.Drawing.Color.White
+        Me.cmdSelect.HoverState.Parent = Me.cmdSelect
+        Me.cmdSelect.Location = New System.Drawing.Point(648, 409)
+        Me.cmdSelect.Name = "cmdSelect"
+        Me.cmdSelect.ShadowDecoration.Parent = Me.cmdSelect
+        Me.cmdSelect.Size = New System.Drawing.Size(123, 32)
+        Me.cmdSelect.TabIndex = 101
+        Me.cmdSelect.Text = "Select"
+        '
         'CurrentCheckIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(783, 415)
+        Me.ClientSize = New System.Drawing.Size(785, 453)
+        Me.Controls.Add(Me.cmdSelect)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtSearch)
@@ -205,4 +234,7 @@ Partial Class CurrentCheckIn
     Friend WithEvents cmdMinimize As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents cmdCLose As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents Label2 As Label
+    Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents cmdSelect As Guna.UI2.WinForms.Guna2Button
 End Class

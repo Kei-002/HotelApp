@@ -43,6 +43,7 @@ Public Class AvailService
 #End Region
 
     Private Sub AvailService_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Guna2ShadowForm1.SetShadowForm(Me)
         checkOpen()
 
         sql = "SELECT DISTINCT serviceDesc FROM Services"
@@ -92,6 +93,11 @@ Public Class AvailService
 
         con.Close()
 
+        Dim ans As String = MsgBox("Avail service again?", vbQuestion + vbYesNo, "Service")
+        If ans = vbNo Then
+            Me.Close()
+        End If
+
 
     End Sub
 
@@ -118,4 +124,8 @@ Public Class AvailService
         dr.Dispose()
         Return fee
     End Function
+
+    Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
+        Me.Close()
+    End Sub
 End Class

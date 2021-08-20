@@ -22,9 +22,10 @@ Partial Class SelectRoom
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cmdRegister = New Guna.UI2.WinForms.Guna2Button()
@@ -34,6 +35,8 @@ Partial Class SelectRoom
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cmbTypes = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
+        Me.cmdSelect = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,7 +55,7 @@ Partial Class SelectRoom
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Playfair Display", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(220, 9)
+        Me.Label7.Location = New System.Drawing.Point(232, 9)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(150, 29)
         Me.Label7.TabIndex = 100
@@ -70,7 +73,7 @@ Partial Class SelectRoom
         Me.cmdRegister.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdRegister.ForeColor = System.Drawing.Color.White
         Me.cmdRegister.HoverState.Parent = Me.cmdRegister
-        Me.cmdRegister.Location = New System.Drawing.Point(466, 348)
+        Me.cmdRegister.Location = New System.Drawing.Point(337, 348)
         Me.cmdRegister.Name = "cmdRegister"
         Me.cmdRegister.ShadowDecoration.Parent = Me.cmdRegister
         Me.cmdRegister.Size = New System.Drawing.Size(123, 32)
@@ -82,30 +85,30 @@ Partial Class SelectRoom
         Me.dgList.AllowUserToAddRows = False
         Me.dgList.AllowUserToDeleteRows = False
         Me.dgList.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.dgList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.dgList.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgList.BackgroundColor = System.Drawing.Color.LightGray
         Me.dgList.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.dgList.ColumnHeadersHeight = 4
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgList.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgList.DefaultCellStyle = DataGridViewCellStyle6
         Me.dgList.EnableHeadersVisualStyles = False
         Me.dgList.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgList.Location = New System.Drawing.Point(12, 117)
@@ -177,7 +180,7 @@ Partial Class SelectRoom
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(196, 40)
+        Me.Label2.Location = New System.Drawing.Point(208, 40)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(187, 15)
         Me.Label2.TabIndex = 103
@@ -217,6 +220,25 @@ Partial Class SelectRoom
         Me.Label4.TabIndex = 103
         Me.Label4.Text = "Room Type"
         '
+        'cmdSelect
+        '
+        Me.cmdSelect.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdSelect.Animated = True
+        Me.cmdSelect.AutoRoundedCorners = True
+        Me.cmdSelect.BorderRadius = 15
+        Me.cmdSelect.CheckedState.Parent = Me.cmdSelect
+        Me.cmdSelect.CustomImages.Parent = Me.cmdSelect
+        Me.cmdSelect.FillColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(158, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.cmdSelect.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdSelect.ForeColor = System.Drawing.Color.White
+        Me.cmdSelect.HoverState.Parent = Me.cmdSelect
+        Me.cmdSelect.Location = New System.Drawing.Point(466, 348)
+        Me.cmdSelect.Name = "cmdSelect"
+        Me.cmdSelect.ShadowDecoration.Parent = Me.cmdSelect
+        Me.cmdSelect.Size = New System.Drawing.Size(123, 32)
+        Me.cmdSelect.TabIndex = 97
+        Me.cmdSelect.Text = "Select"
+        '
         'SelectRoom
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -228,6 +250,7 @@ Partial Class SelectRoom
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.cmdSelect)
         Me.Controls.Add(Me.cmdRegister)
         Me.Controls.Add(Me.dgList)
         Me.Controls.Add(Me.cmdMinimize)
@@ -250,4 +273,6 @@ Partial Class SelectRoom
     Friend WithEvents Label2 As Label
     Friend WithEvents cmbTypes As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
+    Friend WithEvents cmdSelect As Guna.UI2.WinForms.Guna2Button
 End Class

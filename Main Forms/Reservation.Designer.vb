@@ -775,6 +775,7 @@ Partial Class Reservation
         Me.lblGuestID.Size = New System.Drawing.Size(46, 13)
         Me.lblGuestID.TabIndex = 69
         Me.lblGuestID.Text = "GuestID"
+        Me.lblGuestID.Visible = False
         '
         'Label16
         '
@@ -799,6 +800,7 @@ Partial Class Reservation
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Reservation"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reservation"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

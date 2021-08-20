@@ -22,6 +22,7 @@ Partial Class AvailService
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AvailService))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -40,6 +41,9 @@ Partial Class AvailService
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.cmdMinimize = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
+        Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
         Me.Guna2Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,7 +52,7 @@ Partial Class AvailService
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Montserrat", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(60, 38)
+        Me.Label2.Location = New System.Drawing.Point(60, 45)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(216, 15)
         Me.Label2.TabIndex = 104
@@ -58,7 +62,7 @@ Partial Class AvailService
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Playfair Display", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(104, 9)
+        Me.Label7.Location = New System.Drawing.Point(104, 16)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(140, 29)
         Me.Label7.TabIndex = 103
@@ -364,15 +368,53 @@ Partial Class AvailService
         Me.Label8.TabIndex = 50
         Me.Label8.Text = "Room Num:"
         '
+        'cmdMinimize
+        '
+        Me.cmdMinimize.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdMinimize.CheckedState.Parent = Me.cmdMinimize
+        Me.cmdMinimize.CustomImages.Parent = Me.cmdMinimize
+        Me.cmdMinimize.FillColor = System.Drawing.Color.FromArgb(CType(CType(124, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(198, Byte), Integer))
+        Me.cmdMinimize.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdMinimize.ForeColor = System.Drawing.Color.White
+        Me.cmdMinimize.HoverState.Parent = Me.cmdMinimize
+        Me.cmdMinimize.Location = New System.Drawing.Point(272, 9)
+        Me.cmdMinimize.Name = "cmdMinimize"
+        Me.cmdMinimize.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.cmdMinimize.ShadowDecoration.Parent = Me.cmdMinimize
+        Me.cmdMinimize.Size = New System.Drawing.Size(20, 20)
+        Me.cmdMinimize.TabIndex = 106
+        Me.cmdMinimize.Text = "-"
+        '
+        'cmdCLose
+        '
+        Me.cmdCLose.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdCLose.CheckedState.Parent = Me.cmdCLose
+        Me.cmdCLose.CustomImages.Parent = Me.cmdCLose
+        Me.cmdCLose.FillColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.cmdCLose.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdCLose.ForeColor = System.Drawing.Color.White
+        Me.cmdCLose.HoverState.Parent = Me.cmdCLose
+        Me.cmdCLose.Location = New System.Drawing.Point(298, 9)
+        Me.cmdCLose.Name = "cmdCLose"
+        Me.cmdCLose.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.cmdCLose.ShadowDecoration.Parent = Me.cmdCLose
+        Me.cmdCLose.Size = New System.Drawing.Size(20, 20)
+        Me.cmdCLose.TabIndex = 107
+        Me.cmdCLose.Text = "X"
+        '
         'AvailService
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(330, 465)
+        Me.Controls.Add(Me.cmdMinimize)
+        Me.Controls.Add(Me.cmdCLose)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label7)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AvailService"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AvailService"
         Me.Guna2Panel1.ResumeLayout(False)
         Me.Guna2Panel1.PerformLayout()
@@ -398,4 +440,7 @@ Partial Class AvailService
     Friend WithEvents txtGuestID As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents cmbEmployee As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents cmdMinimize As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents cmdCLose As Guna.UI2.WinForms.Guna2CircleButton
+    Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
 End Class

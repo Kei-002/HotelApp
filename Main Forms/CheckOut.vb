@@ -47,6 +47,7 @@ Public Class CheckOut
 
     Private Sub CheckOut_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Guna2ShadowForm1.SetShadowForm(Me)
+        cmbType.Items.Clear()
         checkOpen()
 
         sql = "Select * FROM PaymentType"
@@ -71,7 +72,7 @@ Public Class CheckOut
     End Sub
 
     Private Sub CheckOut_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Dim exit_app As String = MsgBox("Cancel Transaction?", vbQuestion + vbYesNo, "Cancel Check In")
+        Dim exit_app As String = MsgBox("Exit check out?", vbQuestion + vbYesNo, "Exit Check Out")
         If exit_app = vbNo Then
             e.Cancel = True
 

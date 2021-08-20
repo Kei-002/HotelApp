@@ -45,6 +45,7 @@ Public Class SelectRoom
 #End Region
 
     Private Sub SelectRoom_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Guna2ShadowForm1.SetShadowForm(Me)
         checkOpen()
         dt = New DataTable("Guests")
 
@@ -112,5 +113,22 @@ Public Class SelectRoom
         Reservation.txtRate.Text = Me.dgList.CurrentRow.Cells("Rate").Value
         Reservation.lblMaxOccu.Text = Me.dgList.CurrentRow.Cells("Capacity").Value
         Me.Close()
+    End Sub
+
+    Private Sub cmdSelect_Click(sender As Object, e As EventArgs) Handles cmdSelect.Click
+        CheckIn.txtRoomNum.Text = Me.dgList.CurrentRow.Cells("RoomNum").Value
+        CheckIn.txtRoomType.Text = Me.dgList.CurrentRow.Cells("Type").Value
+        CheckIn.txtRate.Text = Me.dgList.CurrentRow.Cells("Rate").Value
+        CheckIn.lblMaxOccu.Text = Me.dgList.CurrentRow.Cells("Capacity").Value
+
+        Reservation.txtRoomNum.Text = Me.dgList.CurrentRow.Cells("RoomNum").Value
+        Reservation.txtRoomType.Text = Me.dgList.CurrentRow.Cells("Type").Value
+        Reservation.txtRate.Text = Me.dgList.CurrentRow.Cells("Rate").Value
+        Reservation.lblMaxOccu.Text = Me.dgList.CurrentRow.Cells("Capacity").Value
+        Me.Close()
+    End Sub
+
+    Private Sub cmdRegister_Click(sender As Object, e As EventArgs) Handles cmdRegister.Click
+        NewRoom.ShowDialog()
     End Sub
 End Class

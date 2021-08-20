@@ -45,6 +45,7 @@ Public Class NewRoom
 #End Region
 
     Private Sub NewRoom_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Guna2ShadowForm1.SetShadowForm(Me)
         'con.ConnectionString = dbcon
 
         checkOpen()

@@ -49,6 +49,7 @@ Public Class CheckIn
 
     Private Sub CheckIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Guna2ShadowForm1.SetShadowForm(Me)
+        cmbTypes.Items.Clear()
         Dim time As DateTime = DateTime.Now
 
         dtpCheckIn.Text = time
@@ -84,7 +85,7 @@ Public Class CheckIn
 
 
     Private Sub CheckIn_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Dim exit_app As String = MsgBox("Cancel Transaction?", vbQuestion + vbYesNo, "Cancel Check In")
+        Dim exit_app As String = MsgBox("Exit check in?", vbQuestion + vbYesNo, "Exit Check In")
         If exit_app = vbNo Then
             e.Cancel = True
         Else
@@ -101,6 +102,10 @@ Public Class CheckIn
         txtTotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
         txtSubtotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
         lblMinPay.Text = Val(txtSubtotal.Text) / 2
+
+        cmdAddCount.Enabled = True
+        cmdMinusCount.Enabled = True
+        txtAdvPay.Enabled = True
     End Sub
 
     Private Sub dtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckOut.ValueChanged
@@ -214,6 +219,7 @@ Public Class CheckIn
         txtRate.Clear()
         txtNumGuest.Text = 0
         lblMaxOccu.Text = "X"
+        txtAdvPay.Text = 0
 
         dtpCheckIn.Value = Now
         dtpCheckOut.Text = Now.AddDays(1D)

@@ -22,6 +22,7 @@ Partial Class ReserveList
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -34,6 +35,7 @@ Partial Class ReserveList
         Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.cmdCheckIn = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
         CType(Me.dgList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -232,7 +234,9 @@ Partial Class ReserveList
         Me.Controls.Add(Me.dgList)
         Me.Controls.Add(Me.cmdMinimize)
         Me.Controls.Add(Me.cmdCLose)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ReserveList"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ReserveList"
         CType(Me.dgList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -248,4 +252,5 @@ Partial Class ReserveList
     Friend WithEvents cmdMinimize As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents cmdCLose As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents cmdCheckIn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
 End Class
