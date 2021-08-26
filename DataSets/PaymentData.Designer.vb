@@ -415,7 +415,7 @@ Partial Public Class PaymentData
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddPaymentRow(ByVal paymentID As String, ByVal guestName As String, ByVal paymentDesc As String, ByVal paymentName As String, ByVal paymentDate As String, ByVal paymentAmount As String) As PaymentRow
+        Public Overloads Function AddPaymentRow(ByVal paymentID As String, ByVal guestName As String, ByVal paymentDesc As String, ByVal paymentName As String, ByVal paymentDate As Date, ByVal paymentAmount As Decimal) As PaymentRow
             Dim rowPaymentRow As PaymentRow = CType(Me.NewRow,PaymentRow)
             Dim columnValuesArray() As Object = New Object() {paymentID, guestName, paymentDesc, paymentName, paymentDate, paymentAmount}
             rowPaymentRow.ItemArray = columnValuesArray
@@ -459,9 +459,9 @@ Partial Public Class PaymentData
             MyBase.Columns.Add(Me.columnpaymentDesc)
             Me.columnpaymentName = New Global.System.Data.DataColumn("paymentName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpaymentName)
-            Me.columnpaymentDate = New Global.System.Data.DataColumn("paymentDate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnpaymentDate = New Global.System.Data.DataColumn("paymentDate", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpaymentDate)
-            Me.columnpaymentAmount = New Global.System.Data.DataColumn("paymentAmount", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnpaymentAmount = New Global.System.Data.DataColumn("paymentAmount", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnpaymentAmount)
         End Sub
         
@@ -669,10 +669,10 @@ Partial Public Class PaymentData
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property paymentDate() As String
+        Public Property paymentDate() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablePayment.paymentDateColumn),String)
+                    Return CType(Me(Me.tablePayment.paymentDateColumn),Date)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'paymentDate' in table 'Payment' is DBNull.", e)
                 End Try
@@ -684,10 +684,10 @@ Partial Public Class PaymentData
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property paymentAmount() As String
+        Public Property paymentAmount() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tablePayment.paymentAmountColumn),String)
+                    Return CType(Me(Me.tablePayment.paymentAmountColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'paymentAmount' in table 'Payment' is DBNull.", e)
                 End Try

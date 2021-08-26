@@ -4,7 +4,6 @@ Public Class RoomReportForm
         checkOpen()
         Dim dt As New DataTable
 
-
         Dim roomReport As New RoomReport
 
         sql = " SELECT reservationID, roomNum, guestName, reservationDesc, reservationDate, checkIN, checkOUT, advancePayment

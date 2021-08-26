@@ -84,7 +84,7 @@ Public Class AvailService
 
         checkOpen()
 
-        Dim i As Integer = InsertIntoServices(serviceDesc, guestID, serviceFee, empID)
+        Dim i As Integer = InsertIntoServices(serviceDesc, guestID, serviceFee, empID, "Active")
         If i > 0 Then
             MsgBox("Service Avail Successful")
         Else

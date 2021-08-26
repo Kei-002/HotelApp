@@ -136,7 +136,6 @@ Public Class Guests
 
         con.Close()
 
-
         Call Guests_Load(sender, e)
 
     End Sub
@@ -153,13 +152,15 @@ Public Class Guests
         cmdDelete.Enabled = True
     End Sub
 
-
-
     Private Sub cmdClear_Click(sender As Object, e As EventArgs) Handles cmdClear.Click
         txtGuest.Clear()
         txtEmail.Clear()
         txtAge.Clear()
         txtAddress.Clear()
         txtPhone.Clear()
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        GuestForm.ShowDialog()
     End Sub
 End Class

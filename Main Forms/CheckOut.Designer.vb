@@ -59,12 +59,16 @@ Partial Class CheckOut
         Me.Guna2ShadowPanel1 = New Guna.UI2.WinForms.Guna2ShadowPanel()
         Me.cmbType = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lblGuestID = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lblReserveID = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.txtServiceAvailed = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtSubtotal = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.lblBalance = New System.Windows.Forms.Label()
         Me.Guna2ShadowPanel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -221,10 +225,10 @@ Partial Class CheckOut
         Me.txtTotal.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtTotal.HoverState.Parent = Me.txtTotal
-        Me.txtTotal.Location = New System.Drawing.Point(552, 167)
+        Me.txtTotal.Location = New System.Drawing.Point(552, 169)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtTotal.PlaceholderText = "Select Room"
+        Me.txtTotal.PlaceholderText = ""
         Me.txtTotal.SelectedText = ""
         Me.txtTotal.ShadowDecoration.Parent = Me.txtTotal
         Me.txtTotal.Size = New System.Drawing.Size(125, 31)
@@ -308,7 +312,7 @@ Partial Class CheckOut
         Me.txtRoomNum.Location = New System.Drawing.Point(120, 95)
         Me.txtRoomNum.Name = "txtRoomNum"
         Me.txtRoomNum.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtRoomNum.PlaceholderText = "Select Room"
+        Me.txtRoomNum.PlaceholderText = ""
         Me.txtRoomNum.SelectedText = ""
         Me.txtRoomNum.ShadowDecoration.Parent = Me.txtRoomNum
         Me.txtRoomNum.Size = New System.Drawing.Size(170, 31)
@@ -333,10 +337,10 @@ Partial Class CheckOut
         Me.txtNumGuest.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNumGuest.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtNumGuest.HoverState.Parent = Me.txtNumGuest
-        Me.txtNumGuest.Location = New System.Drawing.Point(552, 46)
+        Me.txtNumGuest.Location = New System.Drawing.Point(552, 11)
         Me.txtNumGuest.Name = "txtNumGuest"
         Me.txtNumGuest.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtNumGuest.PlaceholderText = "Enter guests"
+        Me.txtNumGuest.PlaceholderText = ""
         Me.txtNumGuest.SelectedText = ""
         Me.txtNumGuest.ShadowDecoration.Parent = Me.txtNumGuest
         Me.txtNumGuest.Size = New System.Drawing.Size(125, 31)
@@ -387,7 +391,7 @@ Partial Class CheckOut
         Me.Label12.AutoSize = True
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(487, 173)
+        Me.Label12.Location = New System.Drawing.Point(487, 175)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(38, 17)
         Me.Label12.TabIndex = 46
@@ -431,7 +435,7 @@ Partial Class CheckOut
         Me.Label10.AutoSize = True
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(422, 51)
+        Me.Label10.Location = New System.Drawing.Point(422, 16)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(109, 17)
         Me.Label10.TabIndex = 41
@@ -509,10 +513,10 @@ Partial Class CheckOut
         Me.txtAdvance.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAdvance.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtAdvance.HoverState.Parent = Me.txtAdvance
-        Me.txtAdvance.Location = New System.Drawing.Point(552, 130)
+        Me.txtAdvance.Location = New System.Drawing.Point(552, 95)
         Me.txtAdvance.Name = "txtAdvance"
         Me.txtAdvance.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtAdvance.PlaceholderText = "Select Room"
+        Me.txtAdvance.PlaceholderText = ""
         Me.txtAdvance.SelectedText = ""
         Me.txtAdvance.ShadowDecoration.Parent = Me.txtAdvance
         Me.txtAdvance.Size = New System.Drawing.Size(125, 31)
@@ -524,7 +528,7 @@ Partial Class CheckOut
         Me.Label11.AutoSize = True
         Me.Label11.BackColor = System.Drawing.Color.Transparent
         Me.Label11.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(421, 136)
+        Me.Label11.Location = New System.Drawing.Point(421, 101)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(107, 17)
         Me.Label11.TabIndex = 42
@@ -611,6 +615,7 @@ Partial Class CheckOut
         Me.Guna2ShadowPanel1.Controls.Add(Me.Label15)
         Me.Guna2ShadowPanel1.Controls.Add(Me.Label13)
         Me.Guna2ShadowPanel1.Controls.Add(Me.txtChange)
+        Me.Guna2ShadowPanel1.Controls.Add(Me.Guna2Button1)
         Me.Guna2ShadowPanel1.Controls.Add(Me.txtCheckOut)
         Me.Guna2ShadowPanel1.Controls.Add(Me.txtCash)
         Me.Guna2ShadowPanel1.Controls.Add(Me.Label14)
@@ -657,6 +662,24 @@ Partial Class CheckOut
         Me.Label15.TabIndex = 69
         Me.Label15.Text = "Payment Type:"
         '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BorderRadius = 17
+        Me.Guna2Button1.BorderThickness = 1
+        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
+        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.Guna2Button1.Font = New System.Drawing.Font("Montserrat", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Location = New System.Drawing.Point(35, 125)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Size = New System.Drawing.Size(83, 36)
+        Me.Guna2Button1.TabIndex = 64
+        Me.Guna2Button1.Text = "Reciept"
+        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -695,7 +718,9 @@ Partial Class CheckOut
         Me.Panel1.Controls.Add(Me.cmdCheckList)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.txtNumDays)
+        Me.Panel1.Controls.Add(Me.Label17)
         Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.txtServiceAvailed)
         Me.Panel1.Controls.Add(Me.txtTotal)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.txtRate)
@@ -725,11 +750,50 @@ Partial Class CheckOut
         Me.Label16.AutoSize = True
         Me.Label16.BackColor = System.Drawing.Color.Transparent
         Me.Label16.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(474, 99)
+        Me.Label16.Location = New System.Drawing.Point(474, 64)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(57, 17)
         Me.Label16.TabIndex = 42
         Me.Label16.Text = "Subtotal:"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.Transparent
+        Me.Label17.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(428, 138)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(97, 17)
+        Me.Label17.TabIndex = 46
+        Me.Label17.Text = "Services Availed:"
+        '
+        'txtServiceAvailed
+        '
+        Me.txtServiceAvailed.AutoRoundedCorners = True
+        Me.txtServiceAvailed.BorderColor = System.Drawing.Color.FromArgb(CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(229, Byte), Integer))
+        Me.txtServiceAvailed.BorderRadius = 14
+        Me.txtServiceAvailed.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtServiceAvailed.DefaultText = ""
+        Me.txtServiceAvailed.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtServiceAvailed.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtServiceAvailed.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtServiceAvailed.DisabledState.Parent = Me.txtServiceAvailed
+        Me.txtServiceAvailed.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtServiceAvailed.Enabled = False
+        Me.txtServiceAvailed.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.txtServiceAvailed.FocusedState.Parent = Me.txtServiceAvailed
+        Me.txtServiceAvailed.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtServiceAvailed.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtServiceAvailed.HoverState.Parent = Me.txtServiceAvailed
+        Me.txtServiceAvailed.Location = New System.Drawing.Point(549, 132)
+        Me.txtServiceAvailed.Name = "txtServiceAvailed"
+        Me.txtServiceAvailed.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtServiceAvailed.PlaceholderText = ""
+        Me.txtServiceAvailed.SelectedText = ""
+        Me.txtServiceAvailed.ShadowDecoration.Parent = Me.txtServiceAvailed
+        Me.txtServiceAvailed.Size = New System.Drawing.Size(125, 31)
+        Me.txtServiceAvailed.TabIndex = 54
+        Me.txtServiceAvailed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtSubtotal
         '
@@ -749,21 +813,31 @@ Partial Class CheckOut
         Me.txtSubtotal.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSubtotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSubtotal.HoverState.Parent = Me.txtSubtotal
-        Me.txtSubtotal.Location = New System.Drawing.Point(552, 93)
+        Me.txtSubtotal.Location = New System.Drawing.Point(552, 58)
         Me.txtSubtotal.Name = "txtSubtotal"
         Me.txtSubtotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtSubtotal.PlaceholderText = "Select Room"
+        Me.txtSubtotal.PlaceholderText = ""
         Me.txtSubtotal.SelectedText = ""
         Me.txtSubtotal.ShadowDecoration.Parent = Me.txtSubtotal
         Me.txtSubtotal.Size = New System.Drawing.Size(125, 31)
         Me.txtSubtotal.TabIndex = 52
         Me.txtSubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'lblBalance
+        '
+        Me.lblBalance.AutoSize = True
+        Me.lblBalance.Location = New System.Drawing.Point(409, 19)
+        Me.lblBalance.Name = "lblBalance"
+        Me.lblBalance.Size = New System.Drawing.Size(45, 13)
+        Me.lblBalance.TabIndex = 75
+        Me.lblBalance.Text = "Label18"
+        '
         'CheckOut
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(768, 457)
+        Me.Controls.Add(Me.lblBalance)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.lblGuestID)
         Me.Controls.Add(Me.PictureBox1)
@@ -825,4 +899,8 @@ Partial Class CheckOut
     Friend WithEvents Label16 As Label
     Friend WithEvents txtSubtotal As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents lblReserveID As Label
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label17 As Label
+    Friend WithEvents txtServiceAvailed As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents lblBalance As Label
 End Class

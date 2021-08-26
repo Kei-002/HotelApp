@@ -51,6 +51,7 @@ Public Class CurrentCheckIn
     End Sub
 
     Private Sub CurrentCheckIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         Guna2ShadowForm1.SetShadowForm(Me)
         checkOpen()
         dt = New DataTable("CheckedIN")
@@ -69,10 +70,14 @@ Public Class CurrentCheckIn
         dgCheckedIn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         dgCheckedIn.Sort(dgCheckedIn.Columns(9), ListSortDirection.Ascending)
         con.Close()
+        'dgCheckedIn.CurrentCell.Selected = False
+        dgCheckedIn.ClearSelection()
     End Sub
 
     Private Sub dgCheckedIn_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles dgCheckedIn.MouseDoubleClick
-        CheckOut.lblGuestID.Text = Me.dgCheckedIn.CurrentRow.Cells("ID").Value
+        Dim serviceFees As Decimal = 0
+        Dim gID As Integer = Me.dgCheckedIn.CurrentRow.Cells("ID").Value
+        CheckOut.lblGuestID.Text = gID
         CheckOut.txtGuest.Text = Me.dgCheckedIn.CurrentRow.Cells("Guest").Value
         CheckOut.txtRoomNum.Text = Me.dgCheckedIn.CurrentRow.Cells("RoomNum").Value
         CheckOut.txtRoomType.Text = Me.dgCheckedIn.CurrentRow.Cells("Type").Value
@@ -82,6 +87,19 @@ Public Class CurrentCheckIn
         CheckOut.dtpCheckOut.Text = Me.dgCheckedIn.CurrentRow.Cells("OutDate").Value
         CheckOut.txtNumGuest.Text = Me.dgCheckedIn.CurrentRow.Cells("GuestsInRoom").Value
         CheckOut.txtAdvance.Text = Me.dgCheckedIn.CurrentRow.Cells("AdvancePayment").Value
+        checkOpen()
+        sql = "SELECT serviceFee FROM Services WHERE Status = 'Active' AND guestID = " & gID
+
+        cmd = New OleDbCommand(sql, con)
+        dr = cmd.ExecuteReader
+
+        While dr.Read
+            serviceFees = serviceFees + Val(dr(0))
+        End While
+        dr.Dispose()
+
+        CheckOut.txtServiceAvailed.Text = serviceFees
+        con.Close()
         Me.Close()
     End Sub
 
@@ -107,7 +125,9 @@ Public Class CurrentCheckIn
     End Sub
 
     Private Sub cmdSelect_Click(sender As Object, e As EventArgs) Handles cmdSelect.Click
-        CheckOut.lblGuestID.Text = Me.dgCheckedIn.CurrentRow.Cells("ID").Value
+        Dim serviceFees As Decimal = 0
+        Dim gID As Integer = Me.dgCheckedIn.CurrentRow.Cells("ID").Value
+        CheckOut.lblGuestID.Text = gID
         CheckOut.txtGuest.Text = Me.dgCheckedIn.CurrentRow.Cells("Guest").Value
         CheckOut.txtRoomNum.Text = Me.dgCheckedIn.CurrentRow.Cells("RoomNum").Value
         CheckOut.txtRoomType.Text = Me.dgCheckedIn.CurrentRow.Cells("Type").Value
@@ -117,6 +137,36 @@ Public Class CurrentCheckIn
         CheckOut.dtpCheckOut.Text = Me.dgCheckedIn.CurrentRow.Cells("OutDate").Value
         CheckOut.txtNumGuest.Text = Me.dgCheckedIn.CurrentRow.Cells("GuestsInRoom").Value
         CheckOut.txtAdvance.Text = Me.dgCheckedIn.CurrentRow.Cells("AdvancePayment").Value
+
+        checkOpen()
+        sql = "SELECT serviceFee FROM Services WHERE Status = 'Active' AND guestID = " & gID
+
+        cmd = New OleDbCommand(sql, con)
+        dr = cmd.ExecuteReader
+
+        While dr.Read
+            serviceFees = serviceFees + Val(dr(0))
+        End While
+        dr.Dispose()
+
+        CheckOut.txtServiceAvailed.Text = serviceFees
+        con.Close()
         Me.Close()
+    End Sub
+
+    Private Sub dgCheckedIn_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgCheckedIn.CellFormatting
+        For Each row As DataGridViewRow In dgCheckedIn.Rows
+
+            If row.Cells("OutDate").Value = Now.ToString("dd/MM/yyyy") Then
+
+                row.DefaultCellStyle.ForeColor = Color.White
+                row.DefaultCellStyle.BackColor = Color.DarkRed
+
+
+            End If
+
+
+        Next
+
     End Sub
 End Class

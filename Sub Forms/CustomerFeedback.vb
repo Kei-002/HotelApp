@@ -45,6 +45,7 @@ Public Class CustomerFeedback
 #End Region
 
     Private Sub cmdSubmit_Click(sender As Object, e As EventArgs) Handles cmdSubmit.Click
+
         checkOpen()
 
         Dim guestID As Integer = lblGuestID.Text
@@ -72,5 +73,7 @@ Public Class CustomerFeedback
 
     Private Sub CustomerFeedback_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Guna2ShadowForm1.SetShadowForm(Me)
+        txtFeedback.Clear()
+        ctRating.Value = 0
     End Sub
 End Class

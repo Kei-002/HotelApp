@@ -79,4 +79,8 @@ Public Class Feedback
     Private Sub cmdCLose_Click(sender As Object, e As EventArgs) Handles cmdCLose.Click
         Me.Close()
     End Sub
+
+    Private Sub cmdFeedbackRep_Click(sender As Object, e As EventArgs) Handles cmdFeedbackRep.Click
+        FeedReportForm.Show()
+    End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Guests
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Guests
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -36,6 +36,7 @@ Partial Class Guests
         Me.cmdUpdate = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.cmdDelete = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.cmdClear = New Guna.UI2.WinForms.Guna2Button()
         Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txtPhone = New Guna.UI2.WinForms.Guna2TextBox()
@@ -48,7 +49,7 @@ Partial Class Guests
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblCusID = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.cmdClear = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgGuests, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -165,7 +166,7 @@ Partial Class Guests
         '
         Me.cmdAdd.Animated = True
         Me.cmdAdd.AutoRoundedCorners = True
-        Me.cmdAdd.BorderRadius = 21
+        Me.cmdAdd.BorderRadius = 14
         Me.cmdAdd.CheckedState.Parent = Me.cmdAdd
         Me.cmdAdd.CustomImages.Parent = Me.cmdAdd
         Me.cmdAdd.FillColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -173,10 +174,10 @@ Partial Class Guests
         Me.cmdAdd.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdAdd.ForeColor = System.Drawing.Color.White
         Me.cmdAdd.HoverState.Parent = Me.cmdAdd
-        Me.cmdAdd.Location = New System.Drawing.Point(662, 312)
+        Me.cmdAdd.Location = New System.Drawing.Point(661, 312)
         Me.cmdAdd.Name = "cmdAdd"
         Me.cmdAdd.ShadowDecoration.Parent = Me.cmdAdd
-        Me.cmdAdd.Size = New System.Drawing.Size(180, 45)
+        Me.cmdAdd.Size = New System.Drawing.Size(177, 31)
         Me.cmdAdd.TabIndex = 74
         Me.cmdAdd.Text = "Add Customer"
         '
@@ -184,7 +185,7 @@ Partial Class Guests
         '
         Me.cmdUpdate.Animated = True
         Me.cmdUpdate.AutoRoundedCorners = True
-        Me.cmdUpdate.BorderRadius = 21
+        Me.cmdUpdate.BorderRadius = 14
         Me.cmdUpdate.CheckedState.Parent = Me.cmdUpdate
         Me.cmdUpdate.CustomImages.Parent = Me.cmdUpdate
         Me.cmdUpdate.Enabled = False
@@ -193,10 +194,10 @@ Partial Class Guests
         Me.cmdUpdate.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdUpdate.ForeColor = System.Drawing.Color.White
         Me.cmdUpdate.HoverState.Parent = Me.cmdUpdate
-        Me.cmdUpdate.Location = New System.Drawing.Point(662, 375)
+        Me.cmdUpdate.Location = New System.Drawing.Point(661, 349)
         Me.cmdUpdate.Name = "cmdUpdate"
         Me.cmdUpdate.ShadowDecoration.Parent = Me.cmdUpdate
-        Me.cmdUpdate.Size = New System.Drawing.Size(180, 45)
+        Me.cmdUpdate.Size = New System.Drawing.Size(177, 31)
         Me.cmdUpdate.TabIndex = 74
         Me.cmdUpdate.Text = "Update Customer Info"
         '
@@ -204,7 +205,7 @@ Partial Class Guests
         '
         Me.cmdDelete.Animated = True
         Me.cmdDelete.AutoRoundedCorners = True
-        Me.cmdDelete.BorderRadius = 21
+        Me.cmdDelete.BorderRadius = 14
         Me.cmdDelete.CheckedState.Parent = Me.cmdDelete
         Me.cmdDelete.CustomImages.Parent = Me.cmdDelete
         Me.cmdDelete.Enabled = False
@@ -213,10 +214,10 @@ Partial Class Guests
         Me.cmdDelete.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDelete.ForeColor = System.Drawing.Color.White
         Me.cmdDelete.HoverState.Parent = Me.cmdDelete
-        Me.cmdDelete.Location = New System.Drawing.Point(662, 435)
+        Me.cmdDelete.Location = New System.Drawing.Point(661, 386)
         Me.cmdDelete.Name = "cmdDelete"
         Me.cmdDelete.ShadowDecoration.Parent = Me.cmdDelete
-        Me.cmdDelete.Size = New System.Drawing.Size(180, 45)
+        Me.cmdDelete.Size = New System.Drawing.Size(177, 31)
         Me.cmdDelete.TabIndex = 74
         Me.cmdDelete.Text = "Delete Customer"
         '
@@ -238,6 +239,22 @@ Partial Class Guests
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
         Me.Guna2Panel1.Size = New System.Drawing.Size(296, 241)
         Me.Guna2Panel1.TabIndex = 75
+        '
+        'cmdClear
+        '
+        Me.cmdClear.AutoRoundedCorners = True
+        Me.cmdClear.BorderRadius = 12
+        Me.cmdClear.CheckedState.Parent = Me.cmdClear
+        Me.cmdClear.CustomImages.Parent = Me.cmdClear
+        Me.cmdClear.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.cmdClear.ForeColor = System.Drawing.Color.White
+        Me.cmdClear.HoverState.Parent = Me.cmdClear
+        Me.cmdClear.Location = New System.Drawing.Point(162, 197)
+        Me.cmdClear.Name = "cmdClear"
+        Me.cmdClear.ShadowDecoration.Parent = Me.cmdClear
+        Me.cmdClear.Size = New System.Drawing.Size(124, 26)
+        Me.cmdClear.TabIndex = 52
+        Me.cmdClear.Text = "Clear Text"
         '
         'txtEmail
         '
@@ -454,27 +471,28 @@ Partial Class Guests
         Me.PictureBox1.TabIndex = 69
         Me.PictureBox1.TabStop = False
         '
-        'cmdClear
+        'Guna2Button1
         '
-        Me.cmdClear.AutoRoundedCorners = True
-        Me.cmdClear.BorderRadius = 12
-        Me.cmdClear.CheckedState.Parent = Me.cmdClear
-        Me.cmdClear.CustomImages.Parent = Me.cmdClear
-        Me.cmdClear.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.cmdClear.ForeColor = System.Drawing.Color.White
-        Me.cmdClear.HoverState.Parent = Me.cmdClear
-        Me.cmdClear.Location = New System.Drawing.Point(162, 197)
-        Me.cmdClear.Name = "cmdClear"
-        Me.cmdClear.ShadowDecoration.Parent = Me.cmdClear
-        Me.cmdClear.Size = New System.Drawing.Size(124, 26)
-        Me.cmdClear.TabIndex = 52
-        Me.cmdClear.Text = "Clear Text"
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BorderRadius = 12
+        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Location = New System.Drawing.Point(611, 469)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Size = New System.Drawing.Size(124, 26)
+        Me.Guna2Button1.TabIndex = 52
+        Me.Guna2Button1.Text = "Guest Report"
         '
         'Guests
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(907, 507)
+        Me.ClientSize = New System.Drawing.Size(907, 511)
+        Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.lblCusID)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.cmdDelete)
@@ -520,4 +538,5 @@ Partial Class Guests
     Friend WithEvents txtEmail As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents cmdClear As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
 End Class

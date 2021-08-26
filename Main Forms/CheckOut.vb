@@ -90,8 +90,10 @@ Public Class CheckOut
             txtNumDays.Text = T.Days
         End If
 
+
         txtSubtotal.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
-        txtTotal.Text = Val(txtSubtotal.Text) - Val(txtAdvance.Text)
+        txtTotal.Text = Val(txtSubtotal.Text) - Val(txtAdvance.Text) + Val(txtServiceAvailed.Text)
+        lblBalance.Text = Val(txtSubtotal.Text) - Val(txtAdvance.Text)
         'txtAdvance.Text = Val(txtRate.Text) * Val(txtNumDays.Text)
     End Sub
 
@@ -107,7 +109,6 @@ Public Class CheckOut
     End Sub
 
     Private Sub txtCheckOut_Click(sender As Object, e As EventArgs) Handles txtCheckOut.Click
-
 
         Dim guestID As Integer = lblGuestID.Text
         Dim roomNum As Integer = txtRoomNum.Text
@@ -171,15 +172,34 @@ Public Class CheckOut
             Else
                 MsgBox("Room set failed")
             End If
+
+            Dim m As Integer = SetServiceStatus(guestID, "Inactive")
+
+            If m > 0 Then
+                MsgBox("Services paid")
+
+            Else
+                MsgBox("No Services Applied")
+            End If
+
+
+
+            'CustomerFeedback.lblGuestID.Text = guestID
+            'CustomerFeedback.txtGuestName.Text = txtGuest.Text
+            'CustomerFeedback.ShowDialog()
+
+
         End If
 
+        'Provide vbYes
+        Dim fBack As String = MsgBox("Provide Feedback", vbQuestion + vbYesNo, "Feedback")
+        If fBack = vbYes Then
+            CustomerFeedback.lblGuestID.Text = guestID
+            CustomerFeedback.txtGuestName.Text = txtGuest.Text
+            CustomerFeedback.ShowDialog()
+        End If
 
         con.Close()
-
-        CustomerFeedback.lblGuestID.Text = guestID
-        CustomerFeedback.txtGuestName.Text = txtGuest.Text
-        CustomerFeedback.ShowDialog()
-
         clear_text()
     End Sub
 
@@ -206,5 +226,9 @@ Public Class CheckOut
 
     Private Sub dtpCheckOut_ValueChanged(sender As Object, e As EventArgs) Handles dtpCheckOut.ValueChanged
 
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        RecieptForm.Show()
     End Sub
 End Class

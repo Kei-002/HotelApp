@@ -32,6 +32,7 @@ Partial Class Feedback
         Me.cmdMinimize = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.cmdCLose = New Guna.UI2.WinForms.Guna2CircleButton()
         Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
+        Me.cmdFeedbackRep = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -149,11 +150,29 @@ Partial Class Feedback
         Me.cmdCLose.TabIndex = 104
         Me.cmdCLose.Text = "X"
         '
+        'cmdFeedbackRep
+        '
+        Me.cmdFeedbackRep.AutoRoundedCorners = True
+        Me.cmdFeedbackRep.BorderRadius = 21
+        Me.cmdFeedbackRep.CheckedState.Parent = Me.cmdFeedbackRep
+        Me.cmdFeedbackRep.CustomImages.Parent = Me.cmdFeedbackRep
+        Me.cmdFeedbackRep.FillColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(195, Byte), Integer))
+        Me.cmdFeedbackRep.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.cmdFeedbackRep.ForeColor = System.Drawing.Color.White
+        Me.cmdFeedbackRep.HoverState.Parent = Me.cmdFeedbackRep
+        Me.cmdFeedbackRep.Location = New System.Drawing.Point(468, 413)
+        Me.cmdFeedbackRep.Name = "cmdFeedbackRep"
+        Me.cmdFeedbackRep.ShadowDecoration.Parent = Me.cmdFeedbackRep
+        Me.cmdFeedbackRep.Size = New System.Drawing.Size(180, 45)
+        Me.cmdFeedbackRep.TabIndex = 105
+        Me.cmdFeedbackRep.Text = "Feedback Report"
+        '
         'Feedback
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(663, 419)
+        Me.ClientSize = New System.Drawing.Size(663, 469)
+        Me.Controls.Add(Me.cmdFeedbackRep)
         Me.Controls.Add(Me.cmdMinimize)
         Me.Controls.Add(Me.cmdCLose)
         Me.Controls.Add(Me.Label2)
@@ -175,4 +194,5 @@ Partial Class Feedback
     Friend WithEvents cmdMinimize As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents cmdCLose As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
+    Friend WithEvents cmdFeedbackRep As Guna.UI2.WinForms.Guna2Button
 End Class

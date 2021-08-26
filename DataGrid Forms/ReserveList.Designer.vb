@@ -36,6 +36,7 @@ Partial Class ReserveList
         Me.txtSearch = New Guna.UI2.WinForms.Guna2TextBox()
         Me.cmdCheckIn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2ShadowForm1 = New Guna.UI2.WinForms.Guna2ShadowForm(Me.components)
+        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -221,11 +222,29 @@ Partial Class ReserveList
         Me.cmdCheckIn.TabIndex = 97
         Me.cmdCheckIn.Text = "Check In"
         '
+        'Guna2Button3
+        '
+        Me.Guna2Button3.AutoRoundedCorners = True
+        Me.Guna2Button3.BorderRadius = 15
+        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
+        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
+        Me.Guna2Button3.FillColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(195, Byte), Integer))
+        Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
+        Me.Guna2Button3.Location = New System.Drawing.Point(12, 392)
+        Me.Guna2Button3.Name = "Guna2Button3"
+        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
+        Me.Guna2Button3.Size = New System.Drawing.Size(105, 32)
+        Me.Guna2Button3.TabIndex = 101
+        Me.Guna2Button3.Text = "Report"
+        '
         'ReserveList
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(752, 436)
+        Me.Controls.Add(Me.Guna2Button3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtSearch)
@@ -253,4 +272,5 @@ Partial Class ReserveList
     Friend WithEvents cmdCLose As Guna.UI2.WinForms.Guna2CircleButton
     Friend WithEvents cmdCheckIn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2ShadowForm1 As Guna.UI2.WinForms.Guna2ShadowForm
+    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
 End Class

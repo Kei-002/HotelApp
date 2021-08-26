@@ -4,7 +4,7 @@ Module Module1
     Public da As OleDbDataAdapter
     Public ds As New DataSet 'Temporarily Stores Data'
 
-    Public sql, sql1 As String
+    Public sql, sql1, sql2 As String
     Public cmd, cmd1 As OleDbCommand
     Public dt As New DataTable
 
@@ -31,34 +31,7 @@ Module Module1
         End If
     End Sub
 
-    ''' <summary>
-    ''' Inserts the info to Reservation Table
-    ''' </summary>
-    Public Function InsertGuestReservation(ByVal gID As Integer, ByVal rNum As Integer, ByVal rDesc As String, ByVal rDate As Date,
-                                           ByVal cIN As Date, ByVal cOUT As Date, ByVal advPay As Decimal, ByVal reStatus As String)
-
-        sql = "INSERT INTO Reservation(guestID, roomNum, reservationDesc,reservationDate, checkIN, checkOUT, advancePayment, reserveStatus)
-               VALUES  (@gID, @rNum,@rDesc , @rDate, @cIN, @cOUT, @advPay, @rStatus)"
-
-        cmd = New OleDbCommand(sql, con)
-
-        With cmd
-            .Parameters.AddWithValue("@gID", gID)
-            .Parameters.AddWithValue("@rNum", rNum)
-            .Parameters.AddWithValue("@rDesc", rDesc)
-            .Parameters.AddWithValue("@rDate", rDate)
-            .Parameters.AddWithValue("@cIN", cIN)
-            .Parameters.AddWithValue("@cOUT", cOUT)
-            .Parameters.AddWithValue("@advPay", advPay)
-            .Parameters.AddWithValue("rStatus", reStatus)
-        End With
-
-        Dim i As Integer = cmd.ExecuteNonQuery
-
-        cmd.Dispose()
-
-        Return i
-    End Function
+#Region "Update Functions"
 
     ''' <summary>
     ''' Updates the Reservation Info based on the reservationID
@@ -126,6 +99,84 @@ Module Module1
 
     End Function
 
+
+    Public Function SetReservationStatus(ByVal reID As Integer, ByVal reStatus As String)
+
+        sql = "UPDATE Reservation SET reserveStatus = @reStat WHERE reservationID = @rID"
+
+        cmd = New OleDbCommand(sql, con)
+
+        With cmd
+            .Parameters.AddWithValue("@reStat", reStatus)
+            .Parameters.AddWithValue("@rID", reID)
+        End With
+
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+
+        cmd.Dispose()
+
+        Return i
+
+    End Function
+
+
+    Public Function SetServiceStatus(ByVal gID As Integer, ByVal stat As String)
+
+        sql = "UPDATE Services SET Status = @stat WHERE guestID = @gID AND Status = 'Active'"
+
+        cmd = New OleDbCommand(sql, con)
+
+        With cmd
+            .Parameters.AddWithValue("@stat", stat)
+            .Parameters.AddWithValue("@gID", gID)
+        End With
+
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+
+        cmd.Dispose()
+
+        Return i
+
+
+
+    End Function
+
+#End Region
+
+
+#Region "Insert Functions"
+    ''' <summary>
+    ''' Inserts the info to Reservation Table
+    ''' </summary>
+    Public Function InsertGuestReservation(ByVal gID As Integer, ByVal rNum As Integer, ByVal rDesc As String, ByVal rDate As Date,
+                                           ByVal cIN As Date, ByVal cOUT As Date, ByVal advPay As Decimal, ByVal reStatus As String)
+
+        sql = "INSERT INTO Reservation(guestID, roomNum, reservationDesc,reservationDate, checkIN, checkOUT, advancePayment, reserveStatus)
+               VALUES  (@gID, @rNum,@rDesc , @rDate, @cIN, @cOUT, @advPay, @rStatus)"
+
+        cmd = New OleDbCommand(sql, con)
+
+        With cmd
+            .Parameters.AddWithValue("@gID", gID)
+            .Parameters.AddWithValue("@rNum", rNum)
+            .Parameters.AddWithValue("@rDesc", rDesc)
+            .Parameters.AddWithValue("@rDate", rDate)
+            .Parameters.AddWithValue("@cIN", cIN)
+            .Parameters.AddWithValue("@cOUT", cOUT)
+            .Parameters.AddWithValue("@advPay", advPay)
+            .Parameters.AddWithValue("rStatus", reStatus)
+        End With
+
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+        cmd.Dispose()
+
+        Return i
+    End Function
+
+
     ''' <summary>
     ''' Inserts payment with guestID and the paymentDescription
     ''' </summary>
@@ -154,29 +205,12 @@ Module Module1
 
     End Function
 
-    Public Function SetReservationStatus(ByVal reID As Integer, ByVal reStatus As String)
-
-        sql = "UPDATE Reservation SET reserveStatus = @reStat WHERE reservationID = @rID"
-
-        cmd = New OleDbCommand(sql, con)
-
-        With cmd
-            .Parameters.AddWithValue("@reStat", reStatus)
-            .Parameters.AddWithValue("@rID", reID)
-        End With
-
-        Dim i As Integer = cmd.ExecuteNonQuery
 
 
-        cmd.Dispose()
 
-        Return i
-
-    End Function
-
-    Public Function InsertIntoServices(ByVal serviceDesc As String, ByVal guestID As Integer, ByVal serviceFee As Decimal, ByVal empID As Integer)
-        sql = "INSERT INTO Services(serviceDesc, guestID, serviceFee, employeeID)
-               VALUES  (@serDesc, @gID, @serFee, @empID)"
+    Public Function InsertIntoServices(ByVal serviceDesc As String, ByVal guestID As Integer, ByVal serviceFee As Decimal, ByVal empID As Integer, ByVal stat As String)
+        sql = "INSERT INTO Services(serviceDesc, guestID, serviceFee, employeeID, Status)
+               VALUES  (@serDesc, @gID, @serFee, @empID, @stat)"
 
         cmd = New OleDbCommand(sql, con)
 
@@ -185,6 +219,7 @@ Module Module1
             .Parameters.AddWithValue("@gID", guestID)
             .Parameters.AddWithValue("@serFee", serviceFee)
             .Parameters.AddWithValue("@empID", empID)
+            .Parameters.AddWithValue("@stat", stat)
         End With
 
         Dim i As Integer = cmd.ExecuteNonQuery
@@ -194,7 +229,7 @@ Module Module1
         Return i
 
     End Function
-
+#End Region
 
 End Module
 
