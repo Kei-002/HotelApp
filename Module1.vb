@@ -53,6 +53,26 @@ Module Module1
         Return i
 
     End Function
+
+    Public Function UpdateGuestExtend(ByVal reserveID As Integer, ByVal rDesc As String, ByVal rOut As String, ByVal rAdvPay As Decimal)
+
+        sql = "UPDATE Reservation SET reservationDesc = @rDesc, checkOUT = @rOut, advancePayment = @rAdvPay WHERE reservationID = @reID"
+        cmd = New OleDbCommand(sql, con)
+
+        With cmd
+            .Parameters.AddWithValue("@rDesc", rDesc)
+            .Parameters.AddWithValue("@rOut", rOut)
+            .Parameters.AddWithValue("@rAdvPay", rAdvPay)
+            .Parameters.AddWithValue("@reID", reserveID)
+        End With
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+        cmd.Dispose()
+
+        Return i
+
+    End Function
+
     'Sets the room status based on the pased string
     Public Function SetRoomStatus(ByVal roomNum As Integer, ByVal numGuest As Integer, ByVal status As String)
         If status = "Checkin" Then

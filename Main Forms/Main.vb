@@ -178,4 +178,19 @@ Public Class Main
     Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Call Main_Load(sender, e)
     End Sub
+
+    Private Sub cmdExtend_Click(sender As Object, e As EventArgs) Handles cmdExtend.Click
+        cmdExtend.Checked = True
+        Extend.ShowDialog()
+        Call Main_Load(sender, e)
+        cmdExtend.Checked = False
+    End Sub
+
+    Private Sub Guna2Button3_Click_1(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        CheckOutForm.Show()
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        AdvancePayReport.Show()
+    End Sub
 End Class

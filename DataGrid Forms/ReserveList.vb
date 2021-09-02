@@ -49,7 +49,7 @@ Public Class ReserveList
         checkOpen()
         dt = New DataTable("Guests")
 
-        sql = "Select reservationID, G.guestID As ID, guestName As Guest, R.roomNum As RoomNum, roomType As Type, roomRate As Rate, NumOfOccupants As GuestsInRoom,checkIN As InDate, checkOUT As OutDate FROM Guest G, Reservation RV, Rooms R
+        sql = "Select reservationID, G.guestID As ID, guestName As Guest, R.roomNum As RoomNum, roomType As Type, roomRate As Rate, NumOfOccupants As GuestsInRoom,reservationDate as ReserveDate, checkIN As InDate, checkOUT As OutDate FROM Guest G, Reservation RV, Rooms R
               WHERE G.guestID = RV.guestID And RV.roomNum = R.roomNum And reservationDesc = 'Reserve'"
 
         cmd = New OleDbCommand(sql, con)
@@ -69,7 +69,7 @@ Public Class ReserveList
         checkOpen()
         dt = New DataTable("Guests")
 
-        sql = "Select reservationID, G.guestID As ID, guestName As Guest, R.roomNum As RoomNum, roomType As Type, roomRate As Rate, NumOfOccupants As GuestsInRoom,checkIN As InDate, checkOUT As OutDate FROM Guest G, Reservation RV, Rooms R
+        sql = "Select reservationID, G.guestID As ID, guestName As Guest, R.roomNum As RoomNum, roomType As Type, roomRate As Rate, NumOfOccupants As GuestsInRoom,reservationDate as ReserveDate, checkIN As InDate, checkOUT As OutDate FROM Guest G, Reservation RV, Rooms R
               WHERE G.guestID = RV.guestID And RV.roomNum = R.roomNum And reservationDesc = 'Reserve' AND guestName LIKE '%" & txtSearch.Text & "%'"
 
         cmd = New OleDbCommand(sql, con)
@@ -134,24 +134,46 @@ Public Class ReserveList
     End Sub
 
     Private Sub cmdCancel_Click(sender As Object, e As EventArgs) Handles cmdCancel.Click
-        checkOpen()
-
-
         Dim guest_ID As Integer = Me.dgList.CurrentRow.Cells("ID").Value
         Dim room_Num As Integer = Me.dgList.CurrentRow.Cells("RoomNum").Value
         Dim reserveID As Integer = Me.dgList.CurrentRow.Cells("reservationID").Value
         Dim numGuest As Integer = Me.dgList.CurrentRow.Cells("GuestsInRoom").Value
         Dim myStatus As String = "Available"
 
-        Dim i As Integer = UpdateGuestReservation(reserveID, "Canceled", "Inactive")
 
-        If i > 0 Then
-            MsgBox("Customer reservation successfully cancelled")
+        checkOpen()
+        Dim T As TimeSpan = CDate(Me.dgList.CurrentRow.Cells("InDate").Value) - CDate(Me.dgList.CurrentRow.Cells("ReserveDate").Value)
+        Dim X As TimeSpan = Now - CDate(Me.dgList.CurrentRow.Cells("ReserveDate").Value)
+
+        If X.Days < (T.Days / 2) Then
+
+            MsgBox("Reservation cancelled and refunded")
+            Dim i As Integer = UpdateGuestReservation(reserveID, "Refunded", "Inactive")
+
+            If i > 0 Then
+                MsgBox("Customer reservation successfully cancelled and refunded")
+            Else
+                MsgBox("Customer reservation cancel failed")
+            End If
+
+
         Else
-            MsgBox("Customer reservation cancel failed")
+            'Dim guest_ID As Integer = Me.dgList.CurrentRow.Cells("ID").Value
+            'Dim room_Num As Integer = Me.dgList.CurrentRow.Cells("RoomNum").Value
+            'Dim reserveID As Integer = Me.dgList.CurrentRow.Cells("reservationID").Value
+            'Dim numGuest As Integer = Me.dgList.CurrentRow.Cells("GuestsInRoom").Value
+            'Dim myStatus As String = "Available"
+
+            Dim i As Integer = UpdateGuestReservation(reserveID, "Canceled", "Inactive")
+
+            If i > 0 Then
+                MsgBox("Customer reservation successfully cancelled")
+            Else
+                MsgBox("Customer reservation cancel failed")
+            End If
+
+
         End If
-
-
 
         Dim j As Integer = SetRoomStatus(room_Num, numGuest, myStatus)
 
@@ -169,7 +191,6 @@ Public Class ReserveList
             MsgBox("Guest set failed")
 
         End If
-
         con.Close()
 
         Call ReserveList_Load(sender, e)

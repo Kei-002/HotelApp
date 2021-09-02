@@ -30,6 +30,7 @@ Partial Class Main
         Me.cmdRoom = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdGuest = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdReservation = New Guna.UI2.WinForms.Guna2Button()
+        Me.cmdExtend = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdCheckOut = New Guna.UI2.WinForms.Guna2Button()
         Me.cmdCheckIn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
@@ -69,6 +70,8 @@ Partial Class Main
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,6 +97,7 @@ Partial Class Main
         Me.Guna2Panel1.Controls.Add(Me.cmdRoom)
         Me.Guna2Panel1.Controls.Add(Me.cmdGuest)
         Me.Guna2Panel1.Controls.Add(Me.cmdReservation)
+        Me.Guna2Panel1.Controls.Add(Me.cmdExtend)
         Me.Guna2Panel1.Controls.Add(Me.cmdCheckOut)
         Me.Guna2Panel1.Controls.Add(Me.cmdCheckIn)
         Me.Guna2Panel1.Controls.Add(Me.Guna2Panel2)
@@ -125,7 +129,7 @@ Partial Class Main
         Me.cmdFeedback.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdFeedback.ImageOffset = New System.Drawing.Point(0, -3)
         Me.cmdFeedback.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdFeedback.Location = New System.Drawing.Point(0, 507)
+        Me.cmdFeedback.Location = New System.Drawing.Point(0, 566)
         Me.cmdFeedback.Name = "cmdFeedback"
         Me.cmdFeedback.ShadowDecoration.Parent = Me.cmdFeedback
         Me.cmdFeedback.Size = New System.Drawing.Size(196, 59)
@@ -150,7 +154,7 @@ Partial Class Main
         Me.cmdServices.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdServices.ImageOffset = New System.Drawing.Point(0, -3)
         Me.cmdServices.ImageSize = New System.Drawing.Size(28, 28)
-        Me.cmdServices.Location = New System.Drawing.Point(0, 448)
+        Me.cmdServices.Location = New System.Drawing.Point(0, 507)
         Me.cmdServices.Name = "cmdServices"
         Me.cmdServices.ShadowDecoration.Parent = Me.cmdServices
         Me.cmdServices.Size = New System.Drawing.Size(196, 59)
@@ -175,7 +179,7 @@ Partial Class Main
         Me.cmdRoom.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdRoom.ImageOffset = New System.Drawing.Point(0, -3)
         Me.cmdRoom.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdRoom.Location = New System.Drawing.Point(0, 389)
+        Me.cmdRoom.Location = New System.Drawing.Point(0, 448)
         Me.cmdRoom.Name = "cmdRoom"
         Me.cmdRoom.ShadowDecoration.Parent = Me.cmdRoom
         Me.cmdRoom.Size = New System.Drawing.Size(196, 59)
@@ -200,7 +204,7 @@ Partial Class Main
         Me.cmdGuest.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdGuest.ImageOffset = New System.Drawing.Point(0, -3)
         Me.cmdGuest.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdGuest.Location = New System.Drawing.Point(0, 330)
+        Me.cmdGuest.Location = New System.Drawing.Point(0, 389)
         Me.cmdGuest.Name = "cmdGuest"
         Me.cmdGuest.ShadowDecoration.Parent = Me.cmdGuest
         Me.cmdGuest.Size = New System.Drawing.Size(196, 59)
@@ -224,13 +228,38 @@ Partial Class Main
         Me.cmdReservation.Image = CType(resources.GetObject("cmdReservation.Image"), System.Drawing.Image)
         Me.cmdReservation.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.cmdReservation.ImageSize = New System.Drawing.Size(30, 30)
-        Me.cmdReservation.Location = New System.Drawing.Point(0, 271)
+        Me.cmdReservation.Location = New System.Drawing.Point(0, 330)
         Me.cmdReservation.Name = "cmdReservation"
         Me.cmdReservation.ShadowDecoration.Parent = Me.cmdReservation
         Me.cmdReservation.Size = New System.Drawing.Size(196, 59)
         Me.cmdReservation.TabIndex = 5
         Me.cmdReservation.Text = "Reservation"
         Me.cmdReservation.TextOffset = New System.Drawing.Point(10, 0)
+        '
+        'cmdExtend
+        '
+        Me.cmdExtend.CheckedState.ForeColor = System.Drawing.Color.Black
+        Me.cmdExtend.CheckedState.Image = Global.zzzz.My.Resources.Resources.extended
+        Me.cmdExtend.CheckedState.Parent = Me.cmdExtend
+        Me.cmdExtend.CustomImages.Parent = Me.cmdExtend
+        Me.cmdExtend.Dock = System.Windows.Forms.DockStyle.Top
+        Me.cmdExtend.FillColor = System.Drawing.Color.Transparent
+        Me.cmdExtend.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdExtend.ForeColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.cmdExtend.HoverState.FillColor = System.Drawing.Color.Transparent
+        Me.cmdExtend.HoverState.ForeColor = System.Drawing.Color.Black
+        Me.cmdExtend.HoverState.Image = Global.zzzz.My.Resources.Resources.extended
+        Me.cmdExtend.HoverState.Parent = Me.cmdExtend
+        Me.cmdExtend.Image = Global.zzzz.My.Resources.Resources.extendedd
+        Me.cmdExtend.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.cmdExtend.ImageSize = New System.Drawing.Size(30, 30)
+        Me.cmdExtend.Location = New System.Drawing.Point(0, 271)
+        Me.cmdExtend.Name = "cmdExtend"
+        Me.cmdExtend.ShadowDecoration.Parent = Me.cmdExtend
+        Me.cmdExtend.Size = New System.Drawing.Size(196, 59)
+        Me.cmdExtend.TabIndex = 8
+        Me.cmdExtend.Text = "Extend Stay"
+        Me.cmdExtend.TextOffset = New System.Drawing.Point(10, 0)
         '
         'cmdCheckOut
         '
@@ -688,6 +717,40 @@ Partial Class Main
         Me.Guna2Button1.TabIndex = 4
         Me.Guna2Button1.Text = "Refresh"
         '
+        'Guna2Button3
+        '
+        Me.Guna2Button3.AutoRoundedCorners = True
+        Me.Guna2Button3.BorderRadius = 17
+        Me.Guna2Button3.CheckedState.Parent = Me.Guna2Button3
+        Me.Guna2Button3.CustomImages.Parent = Me.Guna2Button3
+        Me.Guna2Button3.FillColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(195, Byte), Integer))
+        Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button3.HoverState.Parent = Me.Guna2Button3
+        Me.Guna2Button3.Location = New System.Drawing.Point(873, 578)
+        Me.Guna2Button3.Name = "Guna2Button3"
+        Me.Guna2Button3.ShadowDecoration.Parent = Me.Guna2Button3
+        Me.Guna2Button3.Size = New System.Drawing.Size(136, 37)
+        Me.Guna2Button3.TabIndex = 4
+        Me.Guna2Button3.Text = "Check Out Report"
+        '
+        'Guna2Button4
+        '
+        Me.Guna2Button4.AutoRoundedCorners = True
+        Me.Guna2Button4.BorderRadius = 17
+        Me.Guna2Button4.CheckedState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.CustomImages.Parent = Me.Guna2Button4
+        Me.Guna2Button4.FillColor = System.Drawing.Color.FromArgb(CType(CType(120, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(195, Byte), Integer))
+        Me.Guna2Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button4.HoverState.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Location = New System.Drawing.Point(873, 535)
+        Me.Guna2Button4.Name = "Guna2Button4"
+        Me.Guna2Button4.ShadowDecoration.Parent = Me.Guna2Button4
+        Me.Guna2Button4.Size = New System.Drawing.Size(136, 37)
+        Me.Guna2Button4.TabIndex = 4
+        Me.Guna2Button4.Text = "Advance payment Report"
+        '
         'Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -702,6 +765,8 @@ Partial Class Main
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Guna2Button1)
+        Me.Controls.Add(Me.Guna2Button4)
+        Me.Controls.Add(Me.Guna2Button3)
         Me.Controls.Add(Me.Guna2Button2)
         Me.Controls.Add(Me.cmdMinimize)
         Me.Controls.Add(Me.cmdCLose)
@@ -780,4 +845,7 @@ Partial Class Main
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cmdExtend As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
 End Class

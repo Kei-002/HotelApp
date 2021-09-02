@@ -50,6 +50,7 @@ Partial Class Guests
         Me.lblCusID = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgGuests, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -474,24 +475,41 @@ Partial Class Guests
         'Guna2Button1
         '
         Me.Guna2Button1.AutoRoundedCorners = True
-        Me.Guna2Button1.BorderRadius = 12
+        Me.Guna2Button1.BorderRadius = 19
         Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
         Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
         Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
         Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Location = New System.Drawing.Point(611, 469)
+        Me.Guna2Button1.Location = New System.Drawing.Point(611, 455)
         Me.Guna2Button1.Name = "Guna2Button1"
         Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
-        Me.Guna2Button1.Size = New System.Drawing.Size(124, 26)
+        Me.Guna2Button1.Size = New System.Drawing.Size(124, 40)
         Me.Guna2Button1.TabIndex = 52
-        Me.Guna2Button1.Text = "Guest Report"
+        Me.Guna2Button1.Text = "Guest Reservation Report"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.AutoRoundedCorners = True
+        Me.Guna2Button2.BorderRadius = 19
+        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Location = New System.Drawing.Point(761, 455)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Size = New System.Drawing.Size(124, 40)
+        Me.Guna2Button2.TabIndex = 52
+        Me.Guna2Button2.Text = "Guest Info Report"
         '
         'Guests
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(907, 511)
+        Me.Controls.Add(Me.Guna2Button2)
         Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.lblCusID)
         Me.Controls.Add(Me.Guna2Panel1)
@@ -539,4 +557,5 @@ Partial Class Guests
     Friend WithEvents Label6 As Label
     Friend WithEvents cmdClear As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
 End Class

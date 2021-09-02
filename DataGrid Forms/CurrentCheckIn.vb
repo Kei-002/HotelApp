@@ -138,6 +138,19 @@ Public Class CurrentCheckIn
         CheckOut.txtNumGuest.Text = Me.dgCheckedIn.CurrentRow.Cells("GuestsInRoom").Value
         CheckOut.txtAdvance.Text = Me.dgCheckedIn.CurrentRow.Cells("AdvancePayment").Value
 
+        Extend.lblGuestID.Text = gID
+        Extend.txtGuest.Text = Me.dgCheckedIn.CurrentRow.Cells("Guest").Value
+        Extend.txtRoomNum.Text = Me.dgCheckedIn.CurrentRow.Cells("RoomNum").Value
+        Extend.txtRoomType.Text = Me.dgCheckedIn.CurrentRow.Cells("Type").Value
+        Extend.txtRate.Text = Me.dgCheckedIn.CurrentRow.Cells("Rate").Value
+        Extend.lblReserveID.Text = Me.dgCheckedIn.CurrentRow.Cells("ReserveID").Value
+        Extend.dtpCheckIn.Text = Me.dgCheckedIn.CurrentRow.Cells("InDate").Value
+        Extend.dtpCheckOut.Text = Me.dgCheckedIn.CurrentRow.Cells("OutDate").Value
+        Extend.txtNumGuest.Text = Me.dgCheckedIn.CurrentRow.Cells("GuestsInRoom").Value
+        Extend.lblOldAdvance.Text = Me.dgCheckedIn.CurrentRow.Cells("AdvancePayment").Value
+        'Extend.txtAdvPay.Text = Me.dgCheckedIn.CurrentRow.Cells("AdvancePayment").Value
+
+
         checkOpen()
         sql = "SELECT serviceFee FROM Services WHERE Status = 'Active' AND guestID = " & gID
 

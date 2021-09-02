@@ -293,6 +293,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property extended() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("extended", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property extendedd() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("extendedd", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property loupe() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("loupe", resourceCulture)

@@ -124,10 +124,28 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CrystalForms\AdvancePayReport.Designer.vb">
+      <DependentUpon>AdvancePayReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalForms\AdvancePayReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrystalForms\CheckOutForm.Designer.vb">
+      <DependentUpon>CheckOutForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalForms\CheckOutForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CrystalForms\FeedReportForm.Designer.vb">
       <DependentUpon>FeedReportForm.vb</DependentUpon>
     </Compile>
     <Compile Include="CrystalForms\FeedReportForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrystalForms\GuestInfoForm.Designer.vb">
+      <DependentUpon>GuestInfoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalForms\GuestInfoForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CrystalForms\RecieptForm.Designer.vb">
@@ -135,6 +153,18 @@
     </Compile>
     <Compile Include="CrystalForms\RecieptForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crystals\AdvancePaymentCrystal.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdvancePaymentCrystal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crystals\CheckOutReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckOutReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Crystals\GuestCrystal.vb">
       <AutoGen>True</AutoGen>
@@ -172,10 +202,32 @@
     <Compile Include="CrystalForms\GuestForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DataSets\CheckOutData.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CheckOutData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\CheckOutData.vb">
+      <DependentUpon>CheckOutData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\GuestData.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GuestData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\GuestInfoCrystal.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuestInfoCrystal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\GuestInfoData.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuestInfoData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\GuestInfoData.vb">
+      <DependentUpon>GuestInfoData.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\RoomData.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -325,6 +377,12 @@
     <Compile Include="Main Forms\CheckOut.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Main Forms\Extend.Designer.vb">
+      <DependentUpon>Extend.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Main Forms\Extend.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Main Forms\Feedback.Designer.vb">
       <DependentUpon>Feedback.vb</DependentUpon>
     </Compile>
@@ -405,11 +463,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CrystalForms\AdvancePayReport.resx">
+      <DependentUpon>AdvancePayReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalForms\CheckOutForm.resx">
+      <DependentUpon>CheckOutForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalForms\FeedReportForm.resx">
       <DependentUpon>FeedReportForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalForms\GuestForm.resx">
       <DependentUpon>GuestForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalForms\GuestInfoForm.resx">
+      <DependentUpon>GuestInfoForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalForms\RecieptForm.resx">
       <DependentUpon>RecieptForm.vb</DependentUpon>
@@ -419,6 +486,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalForms\ServicesReportForm.resx">
       <DependentUpon>ServicesReportForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystals\AdvancePaymentCrystal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AdvancePaymentCrystal.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crystals\CheckOutReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CheckOutReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Crystals\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -487,11 +562,18 @@
     <EmbeddedResource Include="CrystalForms\PaymentReport.resx">
       <DependentUpon>PaymentReport.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataSets\GuestInfoCrystal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>GuestInfoCrystal.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main Forms\CheckIn.resx">
       <DependentUpon>CheckIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Forms\CheckOut.resx">
       <DependentUpon>CheckOut.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Forms\Extend.resx">
+      <DependentUpon>Extend.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main Forms\Feedback.resx">
       <DependentUpon>Feedback.vb</DependentUpon>
@@ -531,6 +613,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSets\CheckOutData.xsc">
+      <DependentUpon>CheckOutData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\CheckOutData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CheckOutData.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSets\CheckOutData.xss">
+      <DependentUpon>CheckOutData.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\GuestData.xsc">
       <DependentUpon>GuestData.xsd</DependentUpon>
     </None>
@@ -541,6 +634,17 @@
     </None>
     <None Include="DataSets\GuestData.xss">
       <DependentUpon>GuestData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\GuestInfoData.xsc">
+      <DependentUpon>GuestInfoData.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\GuestInfoData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GuestInfoData.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSets\GuestInfoData.xss">
+      <DependentUpon>GuestInfoData.xsd</DependentUpon>
     </None>
     <None Include="DataSets\RoomData.xsc">
       <DependentUpon>RoomData.xsd</DependentUpon>
@@ -785,6 +889,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\where.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\extendedd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\extended.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
