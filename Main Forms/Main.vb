@@ -1,4 +1,4 @@
-﻿
+﻿Imports System.Data.OleDb
 Public Class Main
 #Region " Move Form "
 
@@ -65,29 +65,132 @@ Public Class Main
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Guna2ShadowForm1.SetShadowForm(Me)
 
+        checkOpen()
+
+        sql = "SELECT COUNT(guestID) FROM Guest"
+        cmd = New OleDbCommand(sql, con)
+
+        dr = cmd.ExecuteReader
+        While dr.Read
+            lblGuests.Text = dr(0)
+        End While
+        dr.Dispose()
+
+
+        sql1 = "SELECT COUNT(roomNum) FROM Rooms WHERE Status = 'Available'"
+
+        cmd = New OleDbCommand(sql1, con)
+
+        dr = cmd.ExecuteReader
+
+        While dr.Read
+            lblRoomsOccupied.Text = dr(0)
+        End While
+        dr.Dispose()
+
+
+        sql2 = "SELECT COUNT(reservationID) from Reservation WHERE reserveStatus = 'Active'
+                AND checkOUT = #" & Now.ToString("dd/MM/yyyy") & "#"
+
+        cmd = New OleDbCommand(sql2, con)
+
+        dr = cmd.ExecuteReader
+
+        While dr.Read
+            lblCheckOut.Text = dr(0)
+        End While
+        dr.Dispose()
+
+
+        con.Close()
     End Sub
 
     Private Sub cmdCheckIn_Click(sender As Object, e As EventArgs) Handles cmdCheckIn.Click
-        Dim cIN As New CheckIn
-        cIN.Show()
+
+
+        cmdCheckIn.Checked = True
+        CheckIn.ShowDialog()
+
+        cmdCheckIn.Checked = False
+        Call Main_Load(sender, e)
     End Sub
 
     Private Sub cmdCheckOut_Click(sender As Object, e As EventArgs) Handles cmdCheckOut.Click
-        Dim cOut As New CheckIn
-        cOut.Show()
+        cmdCheckOut.Checked = True
+        CheckOut.ShowDialog()
+        Call Main_Load(sender, e)
+        cmdCheckOut.Checked = False
     End Sub
 
     Private Sub cmdReservation_Click(sender As Object, e As EventArgs) Handles cmdReservation.Click
-        Dim reserveR As New Reservation
-
-        reserveR.Show()
-
+        cmdReservation.Checked = True
+        Reservation.ShowDialog()
+        Call Main_Load(sender, e)
+        cmdReservation.Checked = False
     End Sub
 
     Private Sub cmdGuest_Click(sender As Object, e As EventArgs) Handles cmdGuest.Click
-        Dim gList As New Guests
+        cmdGuest.Checked = True
+        Guests.ShowDialog()
+        Call Main_Load(sender, e)
+        cmdGuest.Checked = False
+    End Sub
 
-        gList.Show()
+    Private Sub cmdRoom_Click(sender As Object, e As EventArgs) Handles cmdRoom.Click
+        cmdRoom.Checked = True
+        Rooms.ShowDialog()
+        Call Main_Load(sender, e)
+        cmdRoom.Checked = False
+    End Sub
+
+    Private Sub cmdServices_Click(sender As Object, e As EventArgs) Handles cmdServices.Click
+        cmdServices.Checked = True
+        Services.ShowDialog()
+        Call Main_Load(sender, e)
+        cmdServices.Checked = False
+    End Sub
+
+    Private Sub cmdFeedback_Click(sender As Object, e As EventArgs) Handles cmdFeedback.Click
+        cmdFeedback.Checked = True
+        Feedback.ShowDialog()
+        Call Main_Load(sender, e)
+        cmdFeedback.Checked = False
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs)
+        ServicesReportForm.Show()
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        PaymentReport.Show()
+    End Sub
+
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs)
+        RoomReportForm.Show()
+    End Sub
+
+    Private Sub cmdFeedbackRep_Click(sender As Object, e As EventArgs)
+        FeedReportForm.Show()
+    End Sub
+
+    Private Sub Guna2Button1_Click_1(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        Call Main_Load(sender, e)
+    End Sub
+
+    Private Sub cmdExtend_Click(sender As Object, e As EventArgs) Handles cmdExtend.Click
+        cmdExtend.Checked = True
+        Extend.ShowDialog()
+        Call Main_Load(sender, e)
+        cmdExtend.Checked = False
+    End Sub
+
+    Private Sub Guna2Button3_Click_1(sender As Object, e As EventArgs) Handles Guna2Button3.Click
+        CheckOutForm.Show()
+    End Sub
+
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
+        AdvancePayReport.Show()
     End Sub
 End Class

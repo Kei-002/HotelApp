@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Guests
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,12 @@ Partial Class Guests
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Guests))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgGuests = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -36,6 +36,9 @@ Partial Class Guests
         Me.cmdUpdate = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.cmdDelete = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.cmdClear = New Guna.UI2.WinForms.Guna2Button()
+        Me.txtEmail = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtPhone = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtAge = New Guna.UI2.WinForms.Guna2TextBox()
@@ -46,6 +49,8 @@ Partial Class Guests
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblCusID = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         CType(Me.dgGuests, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,31 +70,31 @@ Partial Class Guests
         '
         Me.dgGuests.AllowUserToAddRows = False
         Me.dgGuests.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.dgGuests.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.dgGuests.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgGuests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgGuests.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(248, Byte), Integer), CType(CType(243, Byte), Integer))
         Me.dgGuests.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgGuests.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgGuests.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(61, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgGuests.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(61, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Montserrat", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgGuests.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgGuests.ColumnHeadersHeight = 35
         Me.dgGuests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Source Sans Pro", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgGuests.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Source Sans Pro", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgGuests.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgGuests.EnableHeadersVisualStyles = False
         Me.dgGuests.GridColor = System.Drawing.Color.White
         Me.dgGuests.Location = New System.Drawing.Point(12, 65)
@@ -162,7 +167,7 @@ Partial Class Guests
         '
         Me.cmdAdd.Animated = True
         Me.cmdAdd.AutoRoundedCorners = True
-        Me.cmdAdd.BorderRadius = 21
+        Me.cmdAdd.BorderRadius = 14
         Me.cmdAdd.CheckedState.Parent = Me.cmdAdd
         Me.cmdAdd.CustomImages.Parent = Me.cmdAdd
         Me.cmdAdd.FillColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(138, Byte), Integer))
@@ -170,10 +175,10 @@ Partial Class Guests
         Me.cmdAdd.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdAdd.ForeColor = System.Drawing.Color.White
         Me.cmdAdd.HoverState.Parent = Me.cmdAdd
-        Me.cmdAdd.Location = New System.Drawing.Point(662, 312)
+        Me.cmdAdd.Location = New System.Drawing.Point(661, 312)
         Me.cmdAdd.Name = "cmdAdd"
         Me.cmdAdd.ShadowDecoration.Parent = Me.cmdAdd
-        Me.cmdAdd.Size = New System.Drawing.Size(180, 45)
+        Me.cmdAdd.Size = New System.Drawing.Size(177, 31)
         Me.cmdAdd.TabIndex = 74
         Me.cmdAdd.Text = "Add Customer"
         '
@@ -181,18 +186,19 @@ Partial Class Guests
         '
         Me.cmdUpdate.Animated = True
         Me.cmdUpdate.AutoRoundedCorners = True
-        Me.cmdUpdate.BorderRadius = 21
+        Me.cmdUpdate.BorderRadius = 14
         Me.cmdUpdate.CheckedState.Parent = Me.cmdUpdate
         Me.cmdUpdate.CustomImages.Parent = Me.cmdUpdate
+        Me.cmdUpdate.Enabled = False
         Me.cmdUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.cmdUpdate.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.cmdUpdate.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdUpdate.ForeColor = System.Drawing.Color.White
         Me.cmdUpdate.HoverState.Parent = Me.cmdUpdate
-        Me.cmdUpdate.Location = New System.Drawing.Point(662, 375)
+        Me.cmdUpdate.Location = New System.Drawing.Point(661, 349)
         Me.cmdUpdate.Name = "cmdUpdate"
         Me.cmdUpdate.ShadowDecoration.Parent = Me.cmdUpdate
-        Me.cmdUpdate.Size = New System.Drawing.Size(180, 45)
+        Me.cmdUpdate.Size = New System.Drawing.Size(177, 31)
         Me.cmdUpdate.TabIndex = 74
         Me.cmdUpdate.Text = "Update Customer Info"
         '
@@ -200,23 +206,27 @@ Partial Class Guests
         '
         Me.cmdDelete.Animated = True
         Me.cmdDelete.AutoRoundedCorners = True
-        Me.cmdDelete.BorderRadius = 21
+        Me.cmdDelete.BorderRadius = 14
         Me.cmdDelete.CheckedState.Parent = Me.cmdDelete
         Me.cmdDelete.CustomImages.Parent = Me.cmdDelete
+        Me.cmdDelete.Enabled = False
         Me.cmdDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(56, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.cmdDelete.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.cmdDelete.Font = New System.Drawing.Font("Montserrat", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDelete.ForeColor = System.Drawing.Color.White
         Me.cmdDelete.HoverState.Parent = Me.cmdDelete
-        Me.cmdDelete.Location = New System.Drawing.Point(662, 435)
+        Me.cmdDelete.Location = New System.Drawing.Point(661, 386)
         Me.cmdDelete.Name = "cmdDelete"
         Me.cmdDelete.ShadowDecoration.Parent = Me.cmdDelete
-        Me.cmdDelete.Size = New System.Drawing.Size(180, 45)
+        Me.cmdDelete.Size = New System.Drawing.Size(177, 31)
         Me.cmdDelete.TabIndex = 74
         Me.cmdDelete.Text = "Delete Customer"
         '
         'Guna2Panel1
         '
+        Me.Guna2Panel1.Controls.Add(Me.cmdClear)
+        Me.Guna2Panel1.Controls.Add(Me.txtEmail)
+        Me.Guna2Panel1.Controls.Add(Me.Label6)
         Me.Guna2Panel1.Controls.Add(Me.txtPhone)
         Me.Guna2Panel1.Controls.Add(Me.Label5)
         Me.Guna2Panel1.Controls.Add(Me.txtAge)
@@ -225,11 +235,66 @@ Partial Class Guests
         Me.Guna2Panel1.Controls.Add(Me.Label2)
         Me.Guna2Panel1.Controls.Add(Me.txtGuest)
         Me.Guna2Panel1.Controls.Add(Me.Label4)
-        Me.Guna2Panel1.Location = New System.Drawing.Point(599, 136)
+        Me.Guna2Panel1.Location = New System.Drawing.Point(599, 65)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.ShadowDecoration.Parent = Me.Guna2Panel1
-        Me.Guna2Panel1.Size = New System.Drawing.Size(296, 161)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(296, 241)
         Me.Guna2Panel1.TabIndex = 75
+        '
+        'cmdClear
+        '
+        Me.cmdClear.AutoRoundedCorners = True
+        Me.cmdClear.BorderRadius = 12
+        Me.cmdClear.CheckedState.Parent = Me.cmdClear
+        Me.cmdClear.CustomImages.Parent = Me.cmdClear
+        Me.cmdClear.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.cmdClear.ForeColor = System.Drawing.Color.White
+        Me.cmdClear.HoverState.Parent = Me.cmdClear
+        Me.cmdClear.Location = New System.Drawing.Point(162, 197)
+        Me.cmdClear.Name = "cmdClear"
+        Me.cmdClear.ShadowDecoration.Parent = Me.cmdClear
+        Me.cmdClear.Size = New System.Drawing.Size(124, 26)
+        Me.cmdClear.TabIndex = 52
+        Me.cmdClear.Text = "Clear Text"
+        '
+        'txtEmail
+        '
+        Me.txtEmail.AutoRoundedCorners = True
+        Me.txtEmail.BorderColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(44, Byte), Integer), CType(CType(61, Byte), Integer))
+        Me.txtEmail.BorderRadius = 14
+        Me.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.txtEmail.DefaultText = ""
+        Me.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmail.DisabledState.Parent = Me.txtEmail
+        Me.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.txtEmail.FocusedState.Parent = Me.txtEmail
+        Me.txtEmail.Font = New System.Drawing.Font("Source Sans Pro", 8.999999!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.ForeColor = System.Drawing.Color.Black
+        Me.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txtEmail.HoverState.Parent = Me.txtEmail
+        Me.txtEmail.Location = New System.Drawing.Point(116, 157)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.txtEmail.PlaceholderText = ""
+        Me.txtEmail.SelectedText = ""
+        Me.txtEmail.ShadowDecoration.Parent = Me.txtEmail
+        Me.txtEmail.Size = New System.Drawing.Size(170, 31)
+        Me.txtEmail.TabIndex = 51
+        Me.txtEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Source Sans Pro", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(9, 162)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 17)
+        Me.Label6.TabIndex = 50
+        Me.Label6.Text = "Email"
         '
         'txtPhone
         '
@@ -252,7 +317,7 @@ Partial Class Guests
         Me.txtPhone.Location = New System.Drawing.Point(116, 120)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtPhone.PlaceholderText = "Select Guest"
+        Me.txtPhone.PlaceholderText = ""
         Me.txtPhone.SelectedText = ""
         Me.txtPhone.ShadowDecoration.Parent = Me.txtPhone
         Me.txtPhone.Size = New System.Drawing.Size(170, 31)
@@ -291,7 +356,7 @@ Partial Class Guests
         Me.txtAge.Location = New System.Drawing.Point(116, 83)
         Me.txtAge.Name = "txtAge"
         Me.txtAge.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtAge.PlaceholderText = "Select Guest"
+        Me.txtAge.PlaceholderText = ""
         Me.txtAge.SelectedText = ""
         Me.txtAge.ShadowDecoration.Parent = Me.txtAge
         Me.txtAge.Size = New System.Drawing.Size(170, 31)
@@ -330,7 +395,7 @@ Partial Class Guests
         Me.txtAddress.Location = New System.Drawing.Point(116, 46)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtAddress.PlaceholderText = "Select Guest"
+        Me.txtAddress.PlaceholderText = ""
         Me.txtAddress.SelectedText = ""
         Me.txtAddress.ShadowDecoration.Parent = Me.txtAddress
         Me.txtAddress.Size = New System.Drawing.Size(170, 31)
@@ -369,7 +434,7 @@ Partial Class Guests
         Me.txtGuest.Location = New System.Drawing.Point(116, 9)
         Me.txtGuest.Name = "txtGuest"
         Me.txtGuest.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtGuest.PlaceholderText = "Select Guest"
+        Me.txtGuest.PlaceholderText = ""
         Me.txtGuest.SelectedText = ""
         Me.txtGuest.ShadowDecoration.Parent = Me.txtGuest
         Me.txtGuest.Size = New System.Drawing.Size(170, 31)
@@ -395,6 +460,7 @@ Partial Class Guests
         Me.lblCusID.Size = New System.Drawing.Size(35, 13)
         Me.lblCusID.TabIndex = 76
         Me.lblCusID.Text = "cusID"
+        Me.lblCusID.Visible = False
         '
         'PictureBox1
         '
@@ -406,11 +472,45 @@ Partial Class Guests
         Me.PictureBox1.TabIndex = 69
         Me.PictureBox1.TabStop = False
         '
+        'Guna2Button1
+        '
+        Me.Guna2Button1.AutoRoundedCorners = True
+        Me.Guna2Button1.BorderRadius = 19
+        Me.Guna2Button1.CheckedState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.CustomImages.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button1.HoverState.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Location = New System.Drawing.Point(611, 455)
+        Me.Guna2Button1.Name = "Guna2Button1"
+        Me.Guna2Button1.ShadowDecoration.Parent = Me.Guna2Button1
+        Me.Guna2Button1.Size = New System.Drawing.Size(124, 40)
+        Me.Guna2Button1.TabIndex = 52
+        Me.Guna2Button1.Text = "Guest Reservation Report"
+        '
+        'Guna2Button2
+        '
+        Me.Guna2Button2.AutoRoundedCorners = True
+        Me.Guna2Button2.BorderRadius = 19
+        Me.Guna2Button2.CheckedState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.CustomImages.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
+        Me.Guna2Button2.HoverState.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Location = New System.Drawing.Point(761, 455)
+        Me.Guna2Button2.Name = "Guna2Button2"
+        Me.Guna2Button2.ShadowDecoration.Parent = Me.Guna2Button2
+        Me.Guna2Button2.Size = New System.Drawing.Size(124, 40)
+        Me.Guna2Button2.TabIndex = 52
+        Me.Guna2Button2.Text = "Guest Info Report"
+        '
         'Guests
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(907, 507)
+        Me.ClientSize = New System.Drawing.Size(907, 511)
+        Me.Controls.Add(Me.Guna2Button2)
+        Me.Controls.Add(Me.Guna2Button1)
         Me.Controls.Add(Me.lblCusID)
         Me.Controls.Add(Me.Guna2Panel1)
         Me.Controls.Add(Me.cmdDelete)
@@ -453,4 +553,9 @@ Partial Class Guests
     Friend WithEvents txtGuest As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents lblCusID As Label
+    Friend WithEvents txtEmail As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents cmdClear As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
 End Class

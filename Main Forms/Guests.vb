@@ -51,7 +51,7 @@ Public Class Guests
     End Sub
 
     Private Sub Guests_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
-        Dim exit_app As String = MsgBox("Cancel Transaction?", vbQuestion + vbYesNo, "Cancel Check In")
+        Dim exit_app As String = MsgBox("Exit Guest List?", vbQuestion + vbYesNo, "Exit List")
         If exit_app = vbNo Then
             e.Cancel = True
         Else
@@ -64,12 +64,11 @@ Public Class Guests
 
         Guna2ShadowForm1.SetShadowForm(Me)
 
-        con.ConnectionString = dbcon
-        con.Open()
+        checkOpen()
         ds = New DataSet
 
-        sql = "SELECT customerID as ID, cusName as Name, cusAddress as Address,
-               cusAge as Age, cusPhoneNum as Phone FROM Guest ORDER BY customerID"
+        sql = "SELECT guestID as ID, guestName as Name, guestAddress as Address, guestAge as Age, guestPhone as Phone,
+              guestEmail as Email, Remarks as Status FROM Guest"
 
         da = New OleDbDataAdapter(sql, con)
 
@@ -79,18 +78,65 @@ Public Class Guests
         da.Dispose()
         con.Close()
 
+        cmdUpdate.Enabled = False
+        cmdDelete.Enabled = False
         dgGuests.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgGuests.Sort(dgGuests.Columns(0), ListSortDirection.Ascending)
     End Sub
 
     Private Sub cmdAdd_Click(sender As Object, e As EventArgs) Handles cmdAdd.Click
 
+        checkOpen()
+
+        sql = "INSERT INTO Guest (guestName, guestAddress, guestAge, guestPhone, guestEmail, Remarks) 
+        VALUES ('" & txtGuest.Text & "','" & txtAddress.Text & "','" & txtAge.Text & "','" & txtPhone.Text & "','" & txtEmail.Text & "', 'Available')"
+        cmd = New OleDbCommand(sql, con)
+        Dim i As Integer = cmd.ExecuteNonQuery
+
+        If i > 0 Then
+            MsgBox("User successfully registered! registration form will now close", Title:="Registration Success")
+        Else
+            MsgBox("User registration failed. registration form will now close", "Registration failed")
+        End If
+
+        con.Close()
+
+        Call cmdClear_Click(sender, e)
+
+        Call Guests_Load(sender, e)
     End Sub
 
     Private Sub cmdUpdate_Click(sender As Object, e As EventArgs) Handles cmdUpdate.Click
 
+        checkOpen()
+
+        sql = "UPDATE Guest set guestName = '" & txtGuest.Text & "', guestAddress = '" & txtAddress.Text & "', guestAge = '" & txtAge.Text & "', 
+        guestPhone = '" & txtPhone.Text & "', guestEmail = '" & txtEmail.Text & "' WHERE guest.guestID = " & lblCusID.Text & ""
+        cmd = New OleDbCommand(sql, con)
+        cmd.ExecuteNonQuery()
+
+
+        MsgBox("Data updated.")
+
+        con.Close()
+
+
+        Call Guests_Load(sender, e)
     End Sub
 
     Private Sub cmdDelete_Click(sender As Object, e As EventArgs) Handles cmdDelete.Click
+
+        checkOpen()
+
+        sql = "DELETE FROM Guest where guest.guestID = " & lblCusID.Text & ""
+        cmd = New OleDbCommand(sql, con)
+        cmd.ExecuteNonQuery()
+
+        MsgBox("Data deleted.")
+
+        con.Close()
+
+        Call Guests_Load(sender, e)
 
     End Sub
 
@@ -100,5 +146,25 @@ Public Class Guests
         txtAge.Text = Me.dgGuests.CurrentRow.Cells("Age").Value
         txtPhone.Text = Me.dgGuests.CurrentRow.Cells("Phone").Value
         lblCusID.Text = Me.dgGuests.CurrentRow.Cells("ID").Value
+        txtEmail.Text = Me.dgGuests.CurrentRow.Cells("Email").Value
+
+        cmdUpdate.Enabled = True
+        cmdDelete.Enabled = True
+    End Sub
+
+    Private Sub cmdClear_Click(sender As Object, e As EventArgs) Handles cmdClear.Click
+        txtGuest.Clear()
+        txtEmail.Clear()
+        txtAge.Clear()
+        txtAddress.Clear()
+        txtPhone.Clear()
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+        GuestForm.ShowDialog()
+    End Sub
+
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        GuestInfoForm.Show()
     End Sub
 End Class

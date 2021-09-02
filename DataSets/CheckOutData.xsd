@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CheckOutData" targetNamespace="http://tempuri.org/CheckOutData.xsd" xmlns:mstns="http://tempuri.org/CheckOutData.xsd" xmlns="http://tempuri.org/CheckOutData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HotelTestConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HotelTestConnectionString (MySettings)" PropertyReference="ApplicationSettings.zzzz.My.MySettings.GlobalReference.Default.HotelTestConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CheckOutData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CheckOutData" msprop:Generator_UserDSName="CheckOutData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="cout" msprop:Generator_TableClassName="coutDataTable" msprop:Generator_TableVarName="tablecout" msprop:Generator_RowChangedName="coutRowChanged" msprop:Generator_TablePropName="cout" msprop:Generator_RowDeletingName="coutRowDeleting" msprop:Generator_RowChangingName="coutRowChanging" msprop:Generator_RowEvHandlerName="coutRowChangeEventHandler" msprop:Generator_RowDeletedName="coutRowDeleted" msprop:Generator_RowClassName="coutRow" msprop:Generator_UserTableName="cout" msprop:Generator_RowEvArgName="coutRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GuestName" msprop:Generator_ColumnVarNameInTable="columnGuestName" msprop:Generator_ColumnPropNameInRow="GuestName" msprop:Generator_ColumnPropNameInTable="GuestNameColumn" msprop:Generator_UserColumnName="GuestName" type="xs:string" minOccurs="0" />
+              <xs:element name="paymentDesc" msprop:Generator_ColumnVarNameInTable="columnpaymentDesc" msprop:Generator_ColumnPropNameInRow="paymentDesc" msprop:Generator_ColumnPropNameInTable="paymentDescColumn" msprop:Generator_UserColumnName="paymentDesc" type="xs:string" minOccurs="0" />
+              <xs:element name="paymentDate" msprop:Generator_ColumnVarNameInTable="columnpaymentDate" msprop:Generator_ColumnPropNameInRow="paymentDate" msprop:Generator_ColumnPropNameInTable="paymentDateColumn" msprop:Generator_UserColumnName="paymentDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="paymentAmount" msprop:Generator_ColumnVarNameInTable="columnpaymentAmount" msprop:Generator_ColumnPropNameInRow="paymentAmount" msprop:Generator_ColumnPropNameInTable="paymentAmountColumn" msprop:Generator_UserColumnName="paymentAmount" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
